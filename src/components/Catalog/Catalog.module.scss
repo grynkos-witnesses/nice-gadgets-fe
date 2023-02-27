@@ -2,15 +2,13 @@
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(272px, 1fr));
   gap: 16px;
-  justify-content: flex-end;
 
   &__item {
     display: flex;
     justify-content: center;
     align-items: center;
     min-width: 272px;
-    // max-width: 288px;
-    // width: auto;
+    width: auto;
     height: 506px;
     padding: 20px;
 
@@ -18,35 +16,3 @@
     border-radius: 5px;
   }
 }
-
-// .catalog {
-//   display: grid;
-//   grid-template-columns: 272px;
-//   justify-content: center;
-//   gap: 48px;
-
-//   margin: 0 auto;
-//   padding: 50px 0;
-
-//   &__item {
-//     display: flex;
-//     justify-content: center;
-//     align-items: center;
-//     width: 272px;
-//     height: 506px;
-//     border: 1px solid #ccc;
-//     border-radius: 5px;
-//   }
-
-//   // @include onMobile {
-//   //   grid-template-columns: repeat(2, $card-width);
-//   // }
-
-//   // @include onTablet {
-//   //   grid-template-columns: repeat(3, $card-width);
-//   // }
-
-//   // @include onDesktop {
-//   //   grid-template-columns: repeat(4, $card-width);
-//   // }
-// }
