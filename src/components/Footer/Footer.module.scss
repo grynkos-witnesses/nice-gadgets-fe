@@ -1,3 +1,5 @@
+@import '../../base_styles/index.scss';
+
 .footer {
   display: flex;
 
@@ -58,6 +60,8 @@
 
 .link {
   position: relative;
+
+  font-family: 'Mont-Regular';
 
   text-decoration: none;
   letter-spacing: 0.04em;
