@@ -57,6 +57,8 @@
 }
 
 .link {
+  position: relative;
+
   text-decoration: none;
   letter-spacing: 0.04em;
   color: #89939a;
@@ -68,7 +70,17 @@
   border-bottom: 1px solid transparent;
 
   &_back_to_top {
+    margin-right: 42px;
+
     font-weight: 600;
+
+    &::after {
+      content: url('./FooterButton/button.svg');
+
+      position: absolute;
+      right: -50%;
+      bottom: -100%;
+    }
   }
 
   transition: all 0.3s ease-in-out;
@@ -109,15 +121,15 @@
 
   padding: 0px 0px 3px;
 
-  border: 1px solid #b4bdc3;
+  border: 1px solid #B4BDC3;
 
   background-color: #fff;
 
   color: #313237;
 
   transition: all 0.3s ease-in-out;
-
-  &:hover {
+  
+  &:hover{
     transform: scale(1.1);
     box-shadow: 1px 4px 16px 0 #e8e8f066;
   }
