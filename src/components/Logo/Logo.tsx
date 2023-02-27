@@ -5,15 +5,8 @@ import LogoSCSS from './Logo.module.scss';
 
 export const Logo: React.FC = memo(() => {
   return (
-    <Link
-      className={LogoSCSS.logo}
-      to="/"
-    >
-      <img
-        src={logo}
-        className="logo_image"
-        alt="NiceGadgets"
-      />
+    <Link className={LogoSCSS.logo} to="/">
+      <img src={logo} className="logo_image" alt="NiceGadgets" />
     </Link>
   );
 });
