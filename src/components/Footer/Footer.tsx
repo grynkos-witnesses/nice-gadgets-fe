@@ -1,19 +1,15 @@
-/* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { memo } from 'react';
+import { Logo } from '../Logo/Logo';
+import { FooterButton } from './FooterButton/FooterButton';
+import { FooterNav } from './FooterNav/FooterNav';
+import FooterSCSS from './Footer.module.scss';
 
 export const Footer: React.FC = memo(() => {
   return (
-    <footer className="footer">
-      <a
-        className="logo"
-        href="#"
-      >
-        <img
-          className="logo_image"
-          src="./Logo.svg"
-          alt="NiceGadgets"
-        />
-      </a>
+    <footer className={FooterSCSS.footer}>
+      <Logo />
+      <FooterNav />
+      <FooterButton />
     </footer>
   );
 });
