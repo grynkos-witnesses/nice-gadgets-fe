@@ -1,0 +1,87 @@
+// Typography:
+
+%H1Text {
+  font-family: 'Mont-Bold';
+  font-size: 48px;
+  line-height: 56px;
+  letter-spacing: -0.01em;
+}
+
+%H2Text {
+  font-family: 'Mont-Bold';
+  font-size: 32px;
+  line-height: 41px;
+  letter-spacing: -0.01em;
+}
+
+%H3Text {
+  font-family: 'Mont-Bold';
+  font-size: 22px;
+  line-height: 31px;
+  letter-spacing: 0;
+}
+
+%H4Text {
+  font-family: 'Mont-SemiBold';
+  font-size: 20px;
+  line-height: 26px;
+  letter-spacing: 0;
+}
+
+%UppercaseText {
+  font-family: 'Mont-Bold';
+  font-size: 12px;
+  line-height: 11px;
+  letter-spacing: 0.04em;
+}
+
+%ButtonsText {
+  font-family: 'Mont-SemiBold';
+  font-size: 14px;
+  line-height: 21px;
+  letter-spacing: 0;
+}
+
+%BodyText {
+  font-family: 'Mont-Regular';
+  font-size: 14px;
+  line-height: 21px;
+  letter-spacing: 0;
+}
+
+%BodyText {
+  font-family: 'Mont-SemiBold';
+  font-size: 12px;
+  line-height: 15px;
+  letter-spacing: 0;
+}
+
+// Mobile Typography
+
+%H1MobileText {
+  font-family: 'Mont-Bold';
+  font-size: 32px;
+  line-height: 41px;
+  letter-spacing: -0.01em;
+}
+
+%H2MobileText {
+  font-family: 'Mont-Bold';
+  font-size: 22px;
+  line-height: 31px;
+  letter-spacing: 0;
+}
+
+%H3MobileText {
+  font-family: 'Mont-SemiBold';
+  font-size: 20px;
+  line-height: 26px;
+  letter-spacing: 0;
+}
+
+%H4MobileText {
+  font-family: 'Mont-SemiBold';
+  font-size: 16px;
+  line-height: 20px;
+  letter-spacing: 0;
+}
