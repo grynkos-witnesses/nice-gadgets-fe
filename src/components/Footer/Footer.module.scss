@@ -59,7 +59,7 @@
 .link {
   text-decoration: none;
   letter-spacing: 0.04em;
-  color: #89939A;
+  color: #89939a;
   font-weight: 700;
   font-size: 12px;
   line-height: 11px;
@@ -73,7 +73,7 @@
 
   transition: all 0.3s ease-in-out;
 
-  &:hover{
+  &:hover {
     transform: scale(1.1);
     border-bottom: 1px solid #313237;
   }
@@ -109,15 +109,15 @@
 
   padding: 0px 0px 3px;
 
-  border: 1px solid #B4BDC3;
+  border: 1px solid #b4bdc3;
 
   background-color: #fff;
 
   color: #313237;
 
   transition: all 0.3s ease-in-out;
-  
-  &:hover{
+
+  &:hover {
     transform: scale(1.1);
     box-shadow: 1px 4px 16px 0 #e8e8f066;
   }
