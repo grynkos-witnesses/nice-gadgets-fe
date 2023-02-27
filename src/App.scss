@@ -1,4 +1,13 @@
 @import './base_styles/index.scss';
+.App {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+
+  &_content {
+    flex-grow: 1;
+  }
+}
 
 .page {
   &__title {
