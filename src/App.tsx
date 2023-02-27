@@ -2,8 +2,5 @@ import React from 'react';
 import './App.scss';
 
 export const App: React.FC = () => {
-  return (
-    <div className="starter">
-    </div>
-  );
+  return <div className="starter"></div>;
 };
