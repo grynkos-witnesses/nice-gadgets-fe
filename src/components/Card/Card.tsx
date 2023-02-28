@@ -14,7 +14,9 @@ export const Card: React.FC = () => {
         className={CardSCSS.card__img}
       />
 
-      <h2 className={CardSCSS.card__name}>Apple iPhone Xs 64GB Silver (iMT9G2FS/A)</h2>
+      <h2 className={CardSCSS.card__name}>
+        Apple iPhone Xs 64GB Silver (iMT9G2FS/A)
+      </h2>
 
       <div className={CardSCSS.card__price}>
         <p className={CardSCSS.card__price__new}>$799</p>
@@ -49,11 +51,7 @@ export const Card: React.FC = () => {
 
         <div className={CardSCSS.card__buy__heart}>
           <a href="/" className={CardSCSS.card__buy__heart__icon}>
-            <img
-              src={heart}
-              alt="heart icon"
-              className={CardSCSS.card__icon}
-            />
+            <img src={heart} alt="heart icon" className={CardSCSS.card__icon} />
           </a>
         </div>
       </div>

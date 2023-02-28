@@ -1,112 +1,112 @@
 @import '../../base_styles';
 
 .card {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    box-sizing: border-box;
-    background-color: $whiteColor;
-  
-    width: 272px;
-    // height: 500px;
-  
-    padding: 32px;
-  
-    &__img {
-      display: block;
-      // height: 208px;
-      // width: 196px;
-      margin-bottom: 24px;
-    }
-  
-    &__name {
-      @extend %BodyTextTitle;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  box-sizing: border-box;
+  background-color: $whiteColor;
 
-      color: $primaryColor;
-      margin-bottom: 8px;
-    }
-  
-    &__price {
-      display: flex;
-      color: $primaryColor;
-      @extend %H3Text;
-  
-      &__old {
-        color: $secondaryColor;
-        text-decoration: line-through;
-        margin-left: 8px;
-        font-family: 'Mont-Regular';
-      }
-      margin-bottom: 8px;
-    }
-  
-    &__separator {
-      width: 100%;
-      border-bottom: 1px $elementsColor solid;
-      margin-bottom: 8px;
-    }
-  
-    &__params {
-      display: flex;
-      flex-direction: column;
-      @extend %BodyText;
+  width: 272px;
+  // height: 500px;
+
+  padding: 32px;
+
+  &__img {
+    display: block;
+    // height: 208px;
+    // width: 196px;
+    margin-bottom: 24px;
+  }
+
+  &__name {
+    @extend %BodyTextTitle;
+
+    color: $primaryColor;
+    margin-bottom: 8px;
+  }
+
+  &__price {
+    display: flex;
+    color: $primaryColor;
+    @extend %H3Text;
+
+    &__old {
+      color: $secondaryColor;
+      text-decoration: line-through;
+      margin-left: 8px;
       font-family: 'Mont-Regular';
-  
-      &__container {
-        margin: 0;
-        display: flex;
-        justify-content: space-between;
-  
-        padding: 0;
-        line-height: 100%;
-        margin-bottom: 8px;
-      }
-  
-      &__text {
-        color: $secondaryColor;
-      }
-  
-      &__num {
-        color: $primaryColor;
-      }
-  
+    }
+    margin-bottom: 8px;
+  }
+
+  &__separator {
+    width: 100%;
+    border-bottom: 1px $elementsColor solid;
+    margin-bottom: 8px;
+  }
+
+  &__params {
+    display: flex;
+    flex-direction: column;
+    @extend %BodyText;
+    font-family: 'Mont-Regular';
+
+    &__container {
+      margin: 0;
+      display: flex;
+      justify-content: space-between;
+
+      padding: 0;
+      line-height: 100%;
       margin-bottom: 8px;
     }
-  
-    &__buy {
+
+    &__text {
+      color: $secondaryColor;
+    }
+
+    &__num {
+      color: $primaryColor;
+    }
+
+    margin-bottom: 8px;
+  }
+
+  &__buy {
+    height: 40px;
+    display: flex;
+
+    &__add {
       height: 40px;
       display: flex;
-  
-      &__add {
-        height: 40px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        box-sizing: border-box;
-        @extend %ButtonsText;
-  
-        background-color: $primaryColor;
-        width: 100%;
-  
-        &_link {
-          line-height: 21px;
-          text-decoration: none;
-          color: $whiteColor;
-        }
-      }
-  
-      &__heart {
-        height: 40px;
-        width: 40px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        padding: 19px;
-  
+      justify-content: center;
+      align-items: center;
+      box-sizing: border-box;
+      @extend %ButtonsText;
+
+      background-color: $primaryColor;
+      width: 100%;
+
+      &_link {
+        line-height: 21px;
         text-decoration: none;
-        background-color: $whiteColor;
-        border: 1px solid $iconsColor;
-        margin-left: 8px;
+        color: $whiteColor;
       }
     }
+
+    &__heart {
+      height: 40px;
+      width: 40px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 19px;
+
+      text-decoration: none;
+      background-color: $whiteColor;
+      border: 1px solid $iconsColor;
+      margin-left: 8px;
+    }
   }
+}

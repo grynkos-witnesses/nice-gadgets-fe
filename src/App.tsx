@@ -3,7 +3,6 @@ import { Outlet } from 'react-router-dom';
 import './App.scss';
 import { Footer } from './components/Footer/Footer';
 import { Header } from './components/Header/Header';
-import { Card } from './components/Card';
 
 export const App: React.FC = () => {
   return (
@@ -11,7 +10,6 @@ export const App: React.FC = () => {
       <Header />
       <main className="App_content">
         <Outlet />
-        <Card />
       </main>
       <Footer />
     </div>
