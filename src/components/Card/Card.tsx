@@ -10,26 +10,14 @@ interface Props {
 
 export const Card: React.FC<Props> = ({ phone }) => {
   const {
-    name,
-    fullPrice,
-    price,
-    screen,
-    capacity,
-    ram,
-    image,
+    name, fullPrice, price, screen, capacity, ram, image,
   } = phone;
 
   return (
     <section className={CardSCSS.card}>
-      <img
-        src={image}
-        alt={name}
-        className={CardSCSS.card__img}
-      />
+      <img src={image} alt={name} className={CardSCSS.card__img} />
 
-      <h2 className={CardSCSS.card__name}>
-        {`${name} (iMT9G2FS/A)`}
-      </h2>
+      <h2 className={CardSCSS.card__name}>{`${name} (iMT9G2FS/A)`}</h2>
 
       <div className={CardSCSS.card__price}>
         <p className={CardSCSS.card__price__new}>{price}</p>
