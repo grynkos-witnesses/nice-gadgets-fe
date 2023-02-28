@@ -4,6 +4,11 @@ import FooterSCSS from '../Footer.module.scss';
 
 export const FooterButton: React.FC = memo(() => {
   return (
-    <Link to="/" className={[FooterSCSS.link_back_to_top, FooterSCSS.link].join(' ')}>Back to top</Link>
+    <Link
+      to="/"
+      className={[FooterSCSS.link_back_to_top, FooterSCSS.link].join(' ')}
+    >
+      Back to top
+    </Link>
   );
 });
