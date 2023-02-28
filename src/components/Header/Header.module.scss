@@ -1,0 +1,21 @@
+@import '../../base_styles/utils/extends';
+@import '../../base_styles/utils/variables';
+
+.header {
+  box-shadow: 0px 1px 0px $elementsColor;
+
+  &__logo {
+    margin-left: 24px;
+    margin-right: 48px;
+  }
+
+  &__content {
+    display: flex;
+    align-items: center;
+  }
+
+  &__navList {
+    display: flex;
+    gap: 64px;
+  }
+}

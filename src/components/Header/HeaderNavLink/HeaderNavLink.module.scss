@@ -1,0 +1,16 @@
+@import '../../../base_styles/utils/extends';
+@import '../../../base_styles/utils/variables';
+
+.headerNavLink {
+  @extend %UppercaseText;
+
+  display: inline-block;
+  padding: 26px 0;
+
+  color: $secondaryColor;
+  text-transform: uppercase;
+
+  &:hover {
+    color: $primaryColor;
+  }
+}
