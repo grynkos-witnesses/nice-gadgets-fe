@@ -10,7 +10,7 @@ type Props = {
 export const Catalog: React.FC<Props> = ({ phones }) => (
   <div className={CatalogSCSS.catalog}>
     {phones.map((phone) => (
-      <Card key={phone.id} />
+      <Card phone={phone} key={phone.id} />
     ))}
   </div>
 );
