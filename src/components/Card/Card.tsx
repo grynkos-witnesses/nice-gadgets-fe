@@ -1,26 +1,39 @@
 import React from 'react';
+import { Phone } from '../../types/Phone';
 
 import CardSCSS from './Card.module.scss';
-
 import heart from '../../icons/heart_icon.svg';
-import image from '../../icons/iphone.jpg';
 
-export const Card: React.FC = () => {
+interface Props {
+  phone: Phone;
+}
+
+export const Card: React.FC<Props> = ({ phone }) => {
+  const {
+    name,
+    fullPrice,
+    price,
+    screen,
+    capacity,
+    ram,
+    image,
+  } = phone;
+
   return (
     <section className={CardSCSS.card}>
       <img
         src={image}
-        alt="Apple iPhone Xs 64GB Silver (iMT9G2FS/A)"
+        alt={name}
         className={CardSCSS.card__img}
       />
 
       <h2 className={CardSCSS.card__name}>
-        Apple iPhone Xs 64GB Silver (iMT9G2FS/A)
+        {`${name} (iMT9G2FS/A)`}
       </h2>
 
       <div className={CardSCSS.card__price}>
-        <p className={CardSCSS.card__price__new}>$799</p>
-        <p className={CardSCSS.card__price__old}>$899</p>
+        <p className={CardSCSS.card__price__new}>{price}</p>
+        <p className={CardSCSS.card__price__old}>{fullPrice}</p>
       </div>
 
       <div className={CardSCSS.card__separator} />
@@ -28,15 +41,19 @@ export const Card: React.FC = () => {
       <div className={CardSCSS.card__params}>
         <div className={CardSCSS.card__params__container}>
           <p className={CardSCSS.card__params__text}>Screen</p>
-          <p className={CardSCSS.card__params__num}>5.8” OLED</p>
+          <p className={CardSCSS.card__params__num}>{screen}</p>
         </div>
         <div className={CardSCSS.card__params__container}>
           <p className={CardSCSS.card__params__text}>Capacity</p>
-          <p className={CardSCSS.card__params__num}>64 GB</p>
+          <p className={CardSCSS.card__params__num}>
+            {`${capacity.split('G')[0]} G${capacity.split('G')[1]}`}
+          </p>
         </div>
         <div className={CardSCSS.card__params__container}>
           <p className={CardSCSS.card__params__text}>RAM</p>
-          <p className={CardSCSS.card__params__num}>4 GB</p>
+          <p className={CardSCSS.card__params__num}>
+            {`${ram.slice(0, 1)} ${ram.slice(1)}`}
+          </p>
         </div>
       </div>
 
