@@ -1,8 +1,8 @@
 import React from 'react';
 import { Logo } from '../Logo/Logo';
-
 import s from './Header.module.scss';
 import { HeaderNavLink } from './HeaderNavLink/HeaderNavLink';
+import { HeaderIconLink } from './HeaderIconLink/HeaderIconLink';
 
 export const Header: React.FC = () => {
   return (
@@ -27,6 +27,17 @@ export const Header: React.FC = () => {
             </li>
           </ul>
         </nav>
+        <ul className={s.header__iconLinksList}>
+          <li className={s.header__iconLinksItem}>
+            <HeaderIconLink
+              path="/favorites"
+              iconId="icon-Favourites-Heart-Like"
+            />
+          </li>
+          <li className={s.header__iconLinksItem}>
+            <HeaderIconLink path="/cart" iconId="icon-Shopping-bag-Cart" />
+          </li>
+        </ul>
       </div>
     </div>
   );

@@ -4,13 +4,19 @@
 .headerNavLink {
   @extend %UppercaseText;
 
-  display: inline-block;
-  padding: 26px 0;
+  display: block;
+  padding: 25px 0;
 
   color: $secondaryColor;
   text-transform: uppercase;
 
+  transition: color $transitionsSettings;
   &:hover {
+    color: $primaryColor;
+  }
+  &.active {
+    border-bottom: 3px solid black;
+
     color: $primaryColor;
   }
 }
