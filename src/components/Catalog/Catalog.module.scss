@@ -20,26 +20,4 @@
   @include onDesktop {
     grid-template-columns: repeat(4, 1fr);
   }
-
-  // &__item {
-  //   display: flex;
-  //   justify-content: center;
-  //   // min-width: 230px;
-  //   // max-width: 288px;
-  //   // width: 288px;
-  //   height: 440px;
-
-  //   @include onTablet {
-  //     padding: 32px;
-  //     height: 506px;
-  //   }
-
-  //   @include onLaptop {
-  //     width: 230px;
-  //   }
-
-  //   @include onDesktop {
-  //     width: 272px;
-  //   }
-  // }
 }

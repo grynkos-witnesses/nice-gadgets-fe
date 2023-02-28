@@ -6,9 +6,21 @@
   flex-direction: column;
   background-color: $whiteColor;
 
-  width: 272px;
+  width: 288px;
   padding: 32px;
   border: 1px solid $elementsColor;
+
+  @include onTablet {
+    height: 506px;
+  }
+
+  @include onLaptop {
+    width: 230px;
+  }
+
+  @include onDesktop {
+    width: 272px;
+  }
 
   &__img {
     display: block;
