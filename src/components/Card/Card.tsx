@@ -1,6 +1,5 @@
 import React from 'react';
 import { Phone } from '../../types/Phone';
-
 import CardSCSS from './Card.module.scss';
 import heart from '../../icons/heart_icon.svg';
 
@@ -20,8 +19,8 @@ export const Card: React.FC<Props> = ({ phone }) => {
       <h2 className={CardSCSS.card__name}>{`${name} (iMT9G2FS/A)`}</h2>
 
       <div className={CardSCSS.card__price}>
-        <p className={CardSCSS.card__price__new}>{price}</p>
-        <p className={CardSCSS.card__price__old}>{fullPrice}</p>
+        <p className={CardSCSS.card__price__new}>{`$${price}`}</p>
+        <p className={CardSCSS.card__price__old}>{`$${fullPrice}`}</p>
       </div>
 
       <div className={CardSCSS.card__separator} />
