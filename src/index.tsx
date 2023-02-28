@@ -4,6 +4,7 @@ import {
   BrowserRouter, Routes, Route, Navigate,
 } from 'react-router-dom';
 import { App } from './App';
+import { NotFoundPage } from './components/NotFoundPage/NotFoundPage';
 import { HomePage } from './pages/HomePage';
 import { PhonesPage } from './pages/PhonesPage';
 import { ProductPage } from './pages/ProductPage';
@@ -13,7 +14,7 @@ ReactDOM.render(
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<App />}>
-          <Route path="*" element={<h1 className="title">Page not found</h1>} />
+          <Route path="*" element={<NotFoundPage />} />
 
           <Route path="home" element={<Navigate to="../" replace />} />
           <Route index element={<HomePage />} />
