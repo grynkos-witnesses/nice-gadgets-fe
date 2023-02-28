@@ -1,5 +1,4 @@
-@import '../../base_styles/index.scss';
-
+@import '../../base_styles/utils/variables';
 .footer {
   display: flex;
 
@@ -92,7 +91,7 @@
     }
   }
 
-  transition: all 0.3s ease-in-out;
+  transition: all $transitionsSettings;
 
   &:hover {
     transform: scale(1.1);

@@ -14,8 +14,42 @@
     align-items: center;
   }
 
+  &__nav {
+    flex-grow: 1;
+  }
+
   &__navList {
     display: flex;
     gap: 64px;
   }
+
+  &__iconLinksList {
+    display: flex;
+  }
+
+  &__iconLinksItem {
+    box-shadow: -1px 0px 0px $elementsColor;
+  }
+
+  &__iconLink {
+    display: block;
+    padding: 24px;
+
+    &:hover .header__iconLinkIcon {
+      transform: scale(1.3);
+    }
+
+    &.active {
+      border-bottom: 3px solid $primaryColor;
+    }
+  }
+
+  &__iconLinkIcon {
+    display: block;
+    width: 16px;
+    height: 16px;
+
+    transition: transform $transitionsSettings;
+  }
 }
+
