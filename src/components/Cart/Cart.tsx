@@ -9,11 +9,7 @@ export const Cart: React.FC = () => {
   return (
     <div className={CartSCSS.cart__page}>
       <Link to="/" className={CartSCSS.cart__page__back_content}>
-        <img
-          src={back}
-          alt="back icon"
-          className={CartSCSS.cart__page__link}
-        />
+        <img src={back} alt="back icon" className={CartSCSS.cart__page__link} />
         <span className={CartSCSS.cart__page__back_text}>Back</span>
       </Link>
 
@@ -22,31 +18,20 @@ export const Cart: React.FC = () => {
       {/* CartItem will be here */}
 
       <div>
-        <div className={CartSCSS.cart__page__card_item}>
-          Card Item 1
-        </div>
+        <div className={CartSCSS.cart__page__card_item}>Card Item 1</div>
 
-        <div className={CartSCSS.cart__page__card_item}>
-          Card Item 2
-        </div>
+        <div className={CartSCSS.cart__page__card_item}>Card Item 2</div>
 
-        <div className={CartSCSS.cart__page__card_item}>
-          Card Item 3
-        </div>
+        <div className={CartSCSS.cart__page__card_item}>Card Item 3</div>
       </div>
 
       <div className={CartSCSS.cart__page__checkout}>
         <span className={CartSCSS.cart__page__checkout_price}>$2657</span>
-        <span
-          className={CartSCSS.cart__page__checkout_total}
-        >
+        <span className={CartSCSS.cart__page__checkout_total}>
           Total for 3 items
         </span>
         <div className={CartSCSS.cart__page__checkout_pipe} />
-        <button
-          type="button"
-          className={CartSCSS.cart__page__checkout_button}
-        >
+        <button type="button" className={CartSCSS.cart__page__checkout_button}>
           Checkout
         </button>
       </div>

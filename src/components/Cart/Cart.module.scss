@@ -1,123 +1,123 @@
 @import '../../base_styles';
 
 .cart__page {
-    margin: 0 16px;
-  
-    &__back_content {
-      display: flex;
-      align-items: baseline;
+  margin: 0 16px;
 
-      margin-bottom: 32px;
-  
-      @include onTablet {
-        margin-bottom: 41px;
-      }
+  &__back_content {
+    display: flex;
+    align-items: baseline;
+
+    margin-bottom: 32px;
+
+    @include onTablet {
+      margin-bottom: 41px;
+    }
+  }
+
+  &__back_text {
+    text-decoration: none;
+    @extend %BodyText;
+    font-family: 'Mont-Regular';
+    color: $secondaryColor;
+
+    transition: color 0.3s ease-in-out;
+
+    &:hover {
+      color: $primaryColor;
+    }
+  }
+
+  &__link {
+    margin-right: 8px;
+  }
+
+  &__header {
+    @extend %H1MobileText;
+
+    @include onTablet {
+      font-size: 48px;
+      line-height: 56px;
     }
 
-    &__back_text {
-      text-decoration: none;
-      @extend %BodyText;
-      font-family: 'Mont-Regular';
+    margin-bottom: 32px;
+  }
+  &__card_item {
+    height: 160px;
+
+    @include onTablet {
+      height: 128px;
+    }
+
+    margin-bottom: 16px;
+
+    &:last-child {
+      margin-bottom: 28px;
+    }
+
+    background-color: $primaryColor;
+    color: $whiteColor;
+
+    text-align: center;
+    @extend %H4Text;
+    padding: 50px;
+  }
+
+  &__checkout {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    padding: 24px;
+    margin-bottom: 60px;
+
+    @include onTablet {
+      margin-bottom: 80px;
+    }
+
+    text-align: center;
+    border: 1px solid $elementsColor;
+
+    &_price {
+      @extend %H2Text;
+      color: $primaryColor;
+    }
+
+    &_total {
+      @extend %BodyTextTitle;
       color: $secondaryColor;
 
-      transition: color 0.3s ease-in-out;
-
-      &:hover {
-        color: $primaryColor;
-      }
+      margin-bottom: 16px;
     }
 
-    &__link {
-        margin-right: 8px;
+    &_pipe {
+      width: 100%;
+      border: 1px solid $elementsColor;
+      margin-bottom: 16px;
     }
-  
-    &__header {
-        @extend %H1MobileText;
-    
-        @include onTablet {
-            font-size: 48px;
-            line-height: 56px;
-        }
-        
-        margin-bottom: 32px;
-    }
-    &__card_item{
-        height: 160px;
 
-        @include onTablet {
-            height: 128px;
-        }
-
-        margin-bottom: 16px;
-
-        &:last-child {
-            margin-bottom: 28px;
-        }
-
-        background-color: $primaryColor;
-        color: $whiteColor;
-
-        text-align: center;
-        @extend %H4Text;
-        padding: 50px;
-    }
-  
-    &__checkout {
+    &_button {
       display: flex;
-      flex-direction: column;
       justify-content: center;
       align-items: center;
-  
-      padding: 24px;
-      margin-bottom: 60px;
 
-      @include onTablet {
-        margin-bottom: 80px;
-      }
-  
-      text-align: center;
-      border: 1px solid $elementsColor;
-  
-      &_price {
-        @extend %H2Text;
-        color: $primaryColor;
-      }
-  
-      &_total {
-        @extend %BodyTextTitle;
-        color: $secondaryColor;
-  
-        margin-bottom: 16px;
-      }
-  
-      &_pipe {
-        width: 100%;
-        border: 1px solid $elementsColor;
-        margin-bottom: 16px;
-      }
-  
-      &_button {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-  
-        box-sizing: border-box;
-        width: 100%;
-        height: 48px;
-        padding: 14px 86px;
-  
-        @extend %ButtonsText;
-  
-        color: $whiteColor;
-        background-color: $primaryColor;
-  
-        border: none;
-  
-        transition: box-shadow 0.3s ease-in-out;
-  
-        &:hover {
-            box-shadow: 0px 3px 13px rgba(23, 32, 49, 0.4);
-        }
+      box-sizing: border-box;
+      width: 100%;
+      height: 48px;
+      padding: 14px 86px;
+
+      @extend %ButtonsText;
+
+      color: $whiteColor;
+      background-color: $primaryColor;
+
+      border: none;
+
+      transition: box-shadow 0.3s ease-in-out;
+
+      &:hover {
+        box-shadow: 0px 3px 13px rgba(23, 32, 49, 0.4);
       }
     }
   }
+}
