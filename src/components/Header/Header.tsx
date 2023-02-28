@@ -35,10 +35,7 @@ export const Header: React.FC = () => {
             />
           </li>
           <li className={s.header__iconLinksItem}>
-            <HeaderIconLink
-              path="/cart"
-              iconId="icon-Shopping-bag-Cart"
-            />
+            <HeaderIconLink path="/cart" iconId="icon-Shopping-bag-Cart" />
           </li>
         </ul>
       </div>
