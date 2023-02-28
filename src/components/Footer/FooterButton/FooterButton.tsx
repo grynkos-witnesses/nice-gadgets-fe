@@ -5,8 +5,6 @@ import FooterSCSS from '../Footer.module.scss';
 
 export const FooterButton: React.FC = memo(() => {
   return (
-    <div className={FooterSCSS.back_to_top}>
-      <Link to="/" className={[FooterSCSS.link_back_to_top, FooterSCSS.link].join(' ')}>Back to top</Link>
-    </div>
+    <Link to="/" className={[FooterSCSS.link_back_to_top, FooterSCSS.link].join(' ')}>Back to top</Link>
   );
 });
