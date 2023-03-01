@@ -42,11 +42,7 @@ export const CartItem: React.FC<Props> = ({ phone }) => {
         <img src={close} alt="x" />
       </button>
 
-      <img
-        src={img}
-        alt={name}
-        className={CartItemSCSS.cartItem__img}
-      />
+      <img src={img} alt={name} className={CartItemSCSS.cartItem__img} />
 
       <a href="/" className={CartItemSCSS.cartItem__title}>
         {`${name} (iMT9G2FS/A)`}
