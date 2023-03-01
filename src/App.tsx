@@ -12,7 +12,7 @@ export const App: React.FC = () => {
 
   return (
     <div className="App">
-      {isMenuOpen && <BurgerMenu />}
+      <BurgerMenu isVisible={isMenuOpen} />
       <Header />
       <main className="App_content">
         <Outlet />
