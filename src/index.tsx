@@ -16,7 +16,7 @@ ReactDOM.render(
         <Route path="/" element={<App />}>
           <Route path="*" element={<NotFoundPage />} />
 
-          <Route path="home" element={<Navigate to="../" replace />} />
+          <Route path="home" element={<Navigate to="../" replace />} />  
           <Route index element={<HomePage />} />
 
           <Route path="phones">
