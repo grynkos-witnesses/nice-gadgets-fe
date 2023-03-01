@@ -1,25 +1,30 @@
+/* eslint-disable no-console */
 import React, { memo } from 'react';
 import { Link } from 'react-router-dom';
+import cn from 'classnames';
 import BurgerSCSS from './BurgerMenu.module.scss';
-import logo from './LogoBurger.svg';
 import cross from './cross.svg';
 import favourites from './Favourites.svg';
 import cart from './Cart.svg';
 import { BurgerNavLink } from './BurgerNavLink/BurgerNavLink';
+import { Logo } from '../Logo/Logo';
 
-export const BurgerMenu: React.FC = memo(() => {
+interface Props {
+  isVisible: boolean;
+}
+
+export const BurgerMenu: React.FC<Props> = memo(({ isVisible }) => {
   return (
-    <div className={BurgerSCSS.burger}>
+    <div className={cn(BurgerSCSS.burger, { [BurgerSCSS.visible]: isVisible })}>
       <div className={BurgerSCSS.burger_header}>
-        <Link
-          to="/home"
-          className={[BurgerSCSS.link, BurgerSCSS.link_logo].join(' ')}
-        >
-          <img src={logo} alt="NiceGadgets" />
-        </Link>
+        <div className={BurgerSCSS.burger_logo}>
+          <Logo />
+        </div>
 
         <Link
-          to="/"
+          to={{
+            hash: '',
+          }}
           className={[BurgerSCSS.link, BurgerSCSS.link_cross].join(' ')}
         >
           <img src={cross} alt="closeMenu" className={BurgerSCSS.icon} />

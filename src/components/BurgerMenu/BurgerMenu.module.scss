@@ -13,7 +13,10 @@
   display: flex;
   flex-direction: column;
 
-  height: 100vh;
+  transform: translateX(100%);
+  min-height: 100vh;
+
+  transition: transform $transitionsSettings;
 
   &_header {
     display: flex;
@@ -28,12 +31,21 @@
     border-bottom: 1px solid $elementsColor;
   }
 
+  &_logo {
+    margin-left: 16px;
+    width: 64px;
+  }
+
   &_footer {
     display: flex;
     flex-direction: row;
     align-items: center;
 
     border-top: 1px solid $elementsColor;
+  }
+
+  &.visible {
+    transform: translateX(0);
   }
 
   @include onTablet {
@@ -66,12 +78,6 @@
     text-align: center;
 
     border-left: 1px solid $elementsColor;
-  }
-
-  &_logo {
-    &:first-of-type {
-      margin-left: 16px;
-    }
   }
 
   &_footer {
