@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import {
-  BrowserRouter, Routes, Route, Navigate,
+  HashRouter, Routes, Route, Navigate,
 } from 'react-router-dom';
 import { App } from './App';
 import { NotFoundPage } from './pages/NotFoundPage/NotFoundPage';
@@ -12,7 +12,7 @@ import { CartPage } from './pages/CartPage';
 
 ReactDOM.render(
   <React.StrictMode>
-    <BrowserRouter>
+    <HashRouter>
       <Routes>
         <Route path="/" element={<App />}>
           <Route path="*" element={<NotFoundPage />} />
@@ -28,7 +28,7 @@ ReactDOM.render(
           <Route path="cart" element={<CartPage />} />
         </Route>
       </Routes>
-    </BrowserRouter>
+    </HashRouter>
   </React.StrictMode>,
   document.getElementById('root'),
 );
