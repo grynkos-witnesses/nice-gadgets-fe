@@ -1,7 +1,19 @@
 @import '../../base_styles';
 
-.cart__page {
+.cart {
   margin: 0 16px;
+
+  @include onTablet {
+    margin: 0 24px;
+  }
+
+  @include onLaptop {
+    margin: 0 32px;
+  }
+
+  @include onDesktop {
+    margin: 0 152px;
+  }
 
   &__back_content {
     display: flex;
@@ -90,7 +102,7 @@
       margin-bottom: 16px;
     }
 
-    &_pipe {
+    &_separator {
       width: 100%;
       border: 1px solid $elementsColor;
       margin-bottom: 16px;
