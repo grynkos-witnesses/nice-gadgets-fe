@@ -12,14 +12,15 @@ export const CartItem: React.FC = () => {
 
   return (
     <section className={CartItemSCSS.cartItem}>
-      <button
-        type="button"
-        className={CartItemSCSS.cartItem__button}
-      >
+      <button type="button" className={CartItemSCSS.cartItem__button}>
         <img src={close} alt="x" />
       </button>
 
-      <img src={image} alt="product_small" className={CartItemSCSS.cartItem__img} />
+      <img
+        src={image}
+        alt="product_small"
+        className={CartItemSCSS.cartItem__img}
+      />
 
       <a href="/" className="cartItem__title">
         Apple iPhone 11 Pro Max 64GB Gold (iMT9G2FS/A)
