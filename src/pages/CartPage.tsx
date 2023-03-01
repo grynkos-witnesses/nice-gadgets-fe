@@ -6,7 +6,7 @@ export {} from '../components/Cart';
 
 export const CartPage: React.FC = () => {
   return (
-    <div className="cart__page">
+    <div className="container">
       <Cart />
     </div>
   );
