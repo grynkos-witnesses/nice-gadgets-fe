@@ -8,6 +8,7 @@ import { NotFoundPage } from './components/NotFoundPage/NotFoundPage';
 import { HomePage } from './pages/HomePage';
 import { PhonesPage } from './pages/PhonesPage';
 import { ProductPage } from './pages/ProductPage';
+import { CartPage } from './pages/CartPage';
 
 ReactDOM.render(
   <React.StrictMode>
@@ -23,6 +24,8 @@ ReactDOM.render(
             <Route index element={<PhonesPage />} />
             <Route path=":productId" element={<ProductPage />} />
           </Route>
+
+          <Route path="cart" element={<CartPage />} />
         </Route>
       </Routes>
     </BrowserRouter>
