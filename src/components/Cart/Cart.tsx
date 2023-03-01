@@ -16,8 +16,8 @@ export const Cart: React.FC = () => {
 
       <h1 className={CartSCSS.cart__header}>Cart</h1>
 
-      <div className={CartSCSS.cart__grid}>
-        <div className={CartSCSS.cart__container}>
+      <div className={CartSCSS.cart__container}>
+        <div className={CartSCSS.cart__card_container}>
           <div className={CartSCSS.cart__card_item}>Card Item 1</div>
 
           <div className={CartSCSS.cart__card_item}>Card Item 2</div>
@@ -26,9 +26,7 @@ export const Cart: React.FC = () => {
         </div>
 
         <div className={CartSCSS.cart__checkout}>
-          <span className={CartSCSS.cart__checkout_price}>
-            $2657
-          </span>
+          <span className={CartSCSS.cart__checkout_price}>$2657</span>
 
           <span className={CartSCSS.cart__checkout_total}>
             Total for 3 items
