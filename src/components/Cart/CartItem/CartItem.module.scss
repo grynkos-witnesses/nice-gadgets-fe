@@ -1,0 +1,114 @@
+@import '../../../base_styles/';
+
+.cartItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 160px;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 16px;
+
+  border: 1px solid $iconsColor;
+
+  margin-bottom: 16px;
+
+  &:last-child {
+    margin-bottom: 28px;
+  }
+
+  @include onTablet {
+    height: 128px;
+    padding: 24px;
+  }
+
+  &__img {
+    display: block;
+    object-fit: scale-down;
+    height: 66px;
+    width: 66px;
+    padding: 8px;
+    margin-bottom: 25px;
+  }
+
+  &__close_button {
+    border: 0;
+    height: 16px;
+    width: 16px;
+    background-color: $whiteColor;
+
+    transition: transform 0.3s ease-in-out;
+
+    &:hover {
+      transform: scale(1.2);
+    }
+  }
+
+  &__title {
+    display: inline;
+    @extend %BodyTextTitle;
+    color: $primaryColor;
+    text-decoration: none;
+    text-align: left;
+    word-break: break-all;
+
+    transition: text-decoration 0.3s ease-in-out;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  &__price {
+    @extend %H3Text;
+    color: $primaryColor;
+  }
+
+  &__counter {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 32px;
+    width: 96px;
+    margin: 8px;
+
+    &__number {
+      text-align: center;
+      @extend %ButtonsText;
+      color: $primaryColor;
+    }
+
+    &__button__plus {
+      display: flex;
+      height: 32px;
+      width: 32px;
+      justify-content: center;
+      align-items: center;
+      border: 1px solid $iconsColor;
+      background-color: $whiteColor;
+
+      transition: border-color 0.3s ease-in-out;
+
+      &:hover {
+        border-color: $primaryColor;
+      }
+    }
+
+    &__button__minus {
+      display: flex;
+      height: 32px;
+      width: 32px;
+      justify-content: center;
+      align-items: center;
+      border: 1px solid $elementsColor;
+      background-color: $whiteColor;
+
+      transition: border-color 0.3s ease-in-out;
+
+      &:hover {
+        border-color: $primaryColor;
+      }
+    }
+  }
+}

@@ -1,9 +1,11 @@
 /* eslint-disable jsx-a11y/control-has-associated-label */
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { CartItem } from './CartItem/CartItem';
 import back from '../../icons/back_icon.svg';
 
 import CartSCSS from './Cart.module.scss';
+import '../../base_styles/utils/_grid.scss';
 
 export const Cart: React.FC = () => {
   return (
@@ -15,29 +17,39 @@ export const Cart: React.FC = () => {
 
       <h1 className={CartSCSS.cart__header}>Cart</h1>
 
-      <div className={CartSCSS.cart__grid}>
-        <div className={CartSCSS.cart__container}>
-          <div className={CartSCSS.cart__card_item}>Card Item 1</div>
-
-          <div className={CartSCSS.cart__card_item}>Card Item 2</div>
-
-          <div className={CartSCSS.cart__card_item}>Card Item 3</div>
+      <div className="grid">
+        <div
+          className="
+            grid__item--mobile--1-4
+            grid__item--tablet--1-12
+            grid__item--desktop--1-16"
+        >
+          <div className={CartSCSS.cart__card_container}>
+            <CartItem />
+            <CartItem />
+            <CartItem />
+          </div>
         </div>
 
-        <div className={CartSCSS.cart__checkout}>
-          <span className={CartSCSS.cart__checkout_price}>
-            $2657
-          </span>
+        <div
+          className="
+            grid__item--mobile--1-4
+            grid__item--tablet--1-12
+            grid__item--desktop--17-24"
+        >
+          <div className={CartSCSS.cart__checkout}>
+            <span className={CartSCSS.cart__checkout_price}>$2657</span>
 
-          <span className={CartSCSS.cart__checkout_total}>
-            Total for 3 items
-          </span>
+            <span className={CartSCSS.cart__checkout_total}>
+              Total for 3 items
+            </span>
 
-          <div className={CartSCSS.cart__checkout_separator} />
+            <div className={CartSCSS.cart__checkout_separator} />
 
-          <button type="button" className={CartSCSS.cart__checkout_button}>
-            Checkout
-          </button>
+            <button type="button" className={CartSCSS.cart__checkout_button}>
+              Checkout
+            </button>
+          </div>
         </div>
       </div>
     </div>
