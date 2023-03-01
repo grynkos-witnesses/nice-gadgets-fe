@@ -4,6 +4,10 @@
 
   background-color: $whiteColor;
 
+  &__logo {
+    width: 89px;
+  }
+
   @media (min-width: 1201px) {
     height: 100px;
 

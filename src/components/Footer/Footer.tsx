@@ -7,7 +7,9 @@ import FooterSCSS from './Footer.module.scss';
 export const Footer: React.FC = memo(() => {
   return (
     <footer className={FooterSCSS.footer}>
-      <Logo />
+      <div className={FooterSCSS.footer__logo}>
+        <Logo />
+      </div>
       <FooterNav />
       <FooterButton />
     </footer>

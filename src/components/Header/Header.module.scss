@@ -1,4 +1,6 @@
-@import '../../base_styles';
+@import '../../base_styles/utils/extends';
+@import '../../base_styles/utils/variables';
+@import '../../base_styles/utils/mixins';
 
 .header {
   box-shadow: 0px 1px 0px $elementsColor;
@@ -8,23 +10,43 @@
     margin-bottom: 41px;
   }
 
-  &__logo {
-    margin-left: 24px;
-    margin-right: 48px;
-  }
-
   &__content {
     display: flex;
     align-items: center;
+    justify-content: space-between;
+  }
+
+  &__logo {
+    width: 64px;
+    margin-left: 16px;
+    margin-right: 32px;
+
+    @include onDesktop {
+      width: 80px;
+      margin-left: 24px;
+      margin-right: 48px;
+    }
   }
 
   &__nav {
+    display: none;
     flex-grow: 1;
+
+    @include onTablet {
+      display: block;
+    }
   }
 
   &__navList {
     display: flex;
-    gap: 64px;
+
+    @include onTablet {
+      gap: 32px;
+    }
+
+    @include onDesktop {
+      gap: 64px;
+    }
   }
 
   &__iconLinksList {
@@ -32,19 +54,56 @@
   }
 
   &__iconLinksItem {
+    display: none;
     box-shadow: -1px 0px 0px $elementsColor;
+
+    &.menuLinkItem {
+      display: block;
+
+      .header__iconLink::after {
+        display: none;
+      }
+
+      @include onTablet {
+        display: none;
+      }
+    }
+
+    @include onTablet {
+      display: block;
+    }
   }
 
   &__iconLink {
     display: block;
-    padding: 24px;
+    padding: 16px;
+
+    @include onDesktop {
+      padding: 24px;
+    }
 
     &:hover .header__iconLinkIcon {
       transform: scale(1.3);
     }
 
     &.active {
-      border-bottom: 3px solid $primaryColor;
+      position: relative;
+
+      &::after {
+        content: '';
+
+        display: block;
+        height: 3px;
+
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+
+        background-color: $primaryColor;
+      }
+
+      color: $primaryColor;
     }
   }
 
