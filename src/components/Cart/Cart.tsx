@@ -1,6 +1,7 @@
 /* eslint-disable jsx-a11y/control-has-associated-label */
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { CartItem } from './CartItem/CartItem';
 import back from '../../icons/back_icon.svg';
 
 import CartSCSS from './Cart.module.scss';
@@ -23,6 +24,8 @@ export const Cart: React.FC = () => {
           <div className={CartSCSS.cart__card_item}>Card Item 2</div>
 
           <div className={CartSCSS.cart__card_item}>Card Item 3</div>
+
+          <CartItem />
         </div>
 
         <div className={CartSCSS.cart__checkout}>
