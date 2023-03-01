@@ -4,7 +4,7 @@ import {
   BrowserRouter, Routes, Route, Navigate,
 } from 'react-router-dom';
 import { App } from './App';
-import { NotFoundPage } from './components/NotFoundPage/NotFoundPage';
+import { NotFoundPage } from './pages/NotFoundPage/NotFoundPage';
 import { HomePage } from './pages/HomePage';
 import { PhonesPage } from './pages/PhonesPage';
 import { ProductPage } from './pages/ProductPage';
