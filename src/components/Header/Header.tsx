@@ -25,10 +25,6 @@ export const Header: React.FC = () => {
             <li className={s.header__navItem}>
               <HeaderNavLink path="/accessories" text="Accessories" />
             </li>
-
-            <li className={s.header__navItem}>
-              <HeaderNavLink path="/cart" text="Cart" />
-            </li>
           </ul>
         </nav>
         <ul className={s.header__iconLinksList}>

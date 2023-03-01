@@ -54,25 +54,10 @@
     margin-bottom: 32px;
   }
 
-  &__card_item {
-    height: 160px;
-
-    @include onTablet {
-      height: 128px;
+  &__card_container {
+    @include onLaptop {
+      margin-bottom: 80px;
     }
-
-    margin-bottom: 16px;
-
-    &:last-child {
-      margin-bottom: 28px;
-    }
-
-    background-color: $primaryColor;
-    color: $whiteColor;
-
-    text-align: center;
-    @extend %H4Text;
-    padding: 50px;
   }
 
   &__checkout {
@@ -101,12 +86,20 @@
       color: $secondaryColor;
 
       margin-bottom: 16px;
+
+      @include onLaptop {
+        margin-bottom: 25px;
+      }
     }
 
     &_separator {
       width: 100%;
       border: 1px solid $elementsColor;
       margin-bottom: 16px;
+
+      @include onLaptop {
+        margin-bottom: 24px;
+      }
     }
 
     &_button {

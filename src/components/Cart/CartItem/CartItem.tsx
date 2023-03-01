@@ -12,7 +12,7 @@ export const CartItem: React.FC = () => {
 
   return (
     <section className={CartItemSCSS.cartItem}>
-      <button type="button" className={CartItemSCSS.cartItem__button}>
+      <button type="button" className={CartItemSCSS.cartItem__close_button}>
         <img src={close} alt="x" />
       </button>
 
@@ -22,31 +22,31 @@ export const CartItem: React.FC = () => {
         className={CartItemSCSS.cartItem__img}
       />
 
-      <a href="/" className="cartItem__title">
+      <a href="/" className={CartItemSCSS.cartItem__title}>
         Apple iPhone 11 Pro Max 64GB Gold (iMT9G2FS/A)
       </a>
 
-      <div className="cartItem__counter">
+      <div className={CartItemSCSS.cartItem__counter}>
         <button
           type="button"
-          className="cartItem__counter--button cartItem__counter--button--minus"
+          className={CartItemSCSS.cartItem__counter__button__minus}
           onClick={() => setCounter(counter - 1)}
         >
           <img src={minus} alt="-" />
         </button>
 
-        <p className="cartItem__counter--number">{counter}</p>
+        <p className={CartItemSCSS.cartItem__counter__number}>{counter}</p>
 
         <button
           type="button"
-          className="cartItem__counter--button cartItem__counter--button--plus"
+          className={CartItemSCSS.cartItem__counter__button__plus}
           onClick={() => setCounter(counter + 1)}
         >
           <img src={plus} alt="+" />
         </button>
       </div>
 
-      <p className="cartItem__price">$1099</p>
+      <p className={CartItemSCSS.cartItem__price}>$1099</p>
     </section>
   );
 };

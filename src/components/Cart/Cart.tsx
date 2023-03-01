@@ -5,6 +5,7 @@ import { CartItem } from './CartItem/CartItem';
 import back from '../../icons/back_icon.svg';
 
 import CartSCSS from './Cart.module.scss';
+import '../../base_styles/utils/_grid.scss';
 
 export const Cart: React.FC = () => {
   return (
@@ -25,12 +26,8 @@ export const Cart: React.FC = () => {
             grid__item--desktop--1-16"
         >
           <div className={CartSCSS.cart__card_container}>
-            <div className={CartSCSS.cart__card_item}>Card Item 1</div>
-
-            <div className={CartSCSS.cart__card_item}>Card Item 2</div>
-
-            <div className={CartSCSS.cart__card_item}>Card Item 3</div>
-
+            <CartItem />
+            <CartItem />
             <CartItem />
           </div>
         </div>
