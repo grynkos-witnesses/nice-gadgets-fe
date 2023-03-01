@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { Phone } from '../../types/Phone';
 import CardSCSS from './Card.module.scss';
 import heart from '../../icons/heart_icon.svg';
@@ -56,17 +57,17 @@ export const Card: React.FC<Props> = ({ phone }) => {
 
       <div className={CardSCSS.card__buy}>
         <div className={CardSCSS.card__buy__add}>
-          <a href="/" className={CardSCSS.card__buy__add_link}>
+          <Link to="/" className={CardSCSS.card__buy__add_link}>
             {' '}
             Add to cart
             {' '}
-          </a>
+          </Link>
         </div>
 
         <div className={CardSCSS.card__buy__heart}>
-          <a href="/" className={CardSCSS.card__buy__heart__icon}>
+          <Link to="/" className={CardSCSS.card__buy__heart__icon}>
             <img src={heart} alt="heart icon" className={CardSCSS.card__icon} />
-          </a>
+          </Link>
         </div>
       </div>
     </section>
