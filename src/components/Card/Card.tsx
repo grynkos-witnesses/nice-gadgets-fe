@@ -57,7 +57,7 @@ export const Card: React.FC<Props> = ({ phone }) => {
 
       <div className={CardSCSS.card__buy}>
         <div className={CardSCSS.card__buy__add}>
-          <Link to="/" className={CardSCSS.card__buy__add_link}>
+          <Link to="/home" className={CardSCSS.card__buy__add_link}>
             {' '}
             Add to cart
             {' '}
@@ -65,7 +65,7 @@ export const Card: React.FC<Props> = ({ phone }) => {
         </div>
 
         <div className={CardSCSS.card__buy__heart}>
-          <Link to="/" className={CardSCSS.card__buy__heart__icon}>
+          <Link to="/home" className={CardSCSS.card__buy__heart__icon}>
             <img src={heart} alt="heart icon" className={CardSCSS.card__icon} />
           </Link>
         </div>
