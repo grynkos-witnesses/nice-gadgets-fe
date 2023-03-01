@@ -1,0 +1,62 @@
+@import '../../base_styles/';
+
+.pagination {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 64px;
+
+  &__list {
+    display: flex;
+    padding-bottom: 16px;
+  }
+
+  @include onTablet {
+    margin-bottom: 80px;
+  }
+
+  &__link {
+    margin: 0 4px;
+    height: 32px;
+    width: 32px;
+
+    border: 1px solid $iconsColor;
+
+    &_prev {
+      margin-right: 16px;
+      border-color: $iconsColor;
+
+      &::after {
+        content: url('./icons/icon-Chevron-Arrow-Left.svg');
+      }
+    }
+
+    &_next {
+      margin-left: 16px;
+      border-color: $iconsColor;
+
+      &::after {
+        content: url('./icons/icon-Chevron-Arrow-Right.svg');
+      }
+    }
+
+    &:hover {
+      border-color: $primaryColor;
+      cursor: pointer;
+    }
+
+    &_active {
+      background-color: $primaryColor;
+      color: $whiteColor;
+    }
+
+    &_disabled {
+      border-color: $iconsColor;
+
+      &:hover {
+        border-color: $iconsColor;
+        cursor: default;
+      }
+    }
+  }
+}
