@@ -1,14 +1,40 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 import CartItemSCSS from './CartItem.module.scss';
 
-import image from '../../../icons/iphone.jpg';
+import img from '../../../icons/iphone.jpg';
 import close from '../../../icons/close_icon.svg';
 import minus from '../../../icons/minus_icon.svg';
 import plus from '../../../icons/plus_icon.svg';
 
-export const CartItem: React.FC = () => {
-  const [counter, setCounter] = useState(0);
+import { Phone } from '../../../types/Phone';
+
+type Props = {
+  phone: Phone;
+};
+
+export const CartItem: React.FC<Props> = ({ phone }) => {
+  const {
+    name,
+    price,
+    // image,
+    // we use img instead of image variable in img src
+    // until we able to fetch images from server
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  } = phone;
+
+  const [counter, setCounter] = useState(1);
+  const [isDisabled, setIsDisabled] = useState(false);
+
+  useEffect(() => {
+    if (counter === 1) {
+      setIsDisabled(true);
+    }
+
+    if (counter > 1) {
+      setIsDisabled(false);
+    }
+  }, [counter]);
 
   return (
     <section className={CartItemSCSS.cartItem}>
@@ -17,13 +43,13 @@ export const CartItem: React.FC = () => {
       </button>
 
       <img
-        src={image}
-        alt="product_small"
+        src={img}
+        alt={name}
         className={CartItemSCSS.cartItem__img}
       />
 
       <a href="/" className={CartItemSCSS.cartItem__title}>
-        Apple iPhone 11 Pro Max 64GB Gold (iMT9G2FS/A)
+        {`${name} (iMT9G2FS/A)`}
       </a>
 
       <div className={CartItemSCSS.cartItem__counter}>
@@ -31,6 +57,7 @@ export const CartItem: React.FC = () => {
           type="button"
           className={CartItemSCSS.cartItem__counter__button__minus}
           onClick={() => setCounter(counter - 1)}
+          disabled={isDisabled}
         >
           <img src={minus} alt="-" />
         </button>
@@ -46,7 +73,7 @@ export const CartItem: React.FC = () => {
         </button>
       </div>
 
-      <p className={CartItemSCSS.cartItem__price}>$1099</p>
+      <p className={CartItemSCSS.cartItem__price}>{`$${counter * price}`}</p>
     </section>
   );
 };

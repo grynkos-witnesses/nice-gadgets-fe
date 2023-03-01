@@ -7,7 +7,13 @@ import back from '../../icons/back_icon.svg';
 import CartSCSS from './Cart.module.scss';
 import '../../base_styles/utils/_grid.scss';
 
-export const Cart: React.FC = () => {
+import { Phone } from '../../types/Phone';
+
+type Props = {
+  phones: Phone[];
+};
+
+export const Cart: React.FC<Props> = ({ phones }) => {
   return (
     <div className={CartSCSS.cart}>
       <Link to="/" className={CartSCSS.cart__back_content}>
@@ -25,9 +31,9 @@ export const Cart: React.FC = () => {
             grid__item--desktop--1-16"
         >
           <div className={CartSCSS.cart__card_container}>
-            <CartItem />
-            <CartItem />
-            <CartItem />
+            {phones.map((phone: Phone) => (
+              <CartItem phone={phone} key={phone.id} />
+            ))}
           </div>
         </div>
 

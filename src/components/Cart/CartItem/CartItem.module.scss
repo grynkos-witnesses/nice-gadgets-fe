@@ -28,7 +28,11 @@
     object-fit: scale-down;
     height: 66px;
     width: 66px;
-    padding: 8px;
+
+    @include onTablet {
+      height: 100%;
+    }
+
     margin-bottom: 25px;
   }
 
@@ -52,6 +56,11 @@
     text-decoration: none;
     text-align: left;
     word-break: break-all;
+    margin-bottom: 8px;
+    
+    @include onLaptop {
+      max-width: 270px;
+    }
 
     transition: text-decoration 0.3s ease-in-out;
 
