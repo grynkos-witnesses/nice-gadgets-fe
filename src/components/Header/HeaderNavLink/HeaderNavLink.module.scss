@@ -1,21 +1,42 @@
 @import '../../../base_styles/utils/extends';
 @import '../../../base_styles/utils/variables';
+@import '../../../base_styles/utils/mixins';
 
 .headerNavLink {
   @extend %UppercaseText;
 
   display: block;
-  padding: 25px 0;
+  padding: 18.5px 0;
 
   color: $secondaryColor;
   text-transform: uppercase;
 
   transition: color $transitionsSettings;
+
+  @include onDesktop {
+    padding: 26.5px 0;
+  }
+
   &:hover {
     color: $primaryColor;
   }
+
   &.active {
-    border-bottom: 3px solid black;
+    position: relative;
+
+    &::after {
+      content: '';
+
+      display: block;
+      height: 3px;
+
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+
+      background-color: $primaryColor;
+    }
 
     color: $primaryColor;
   }

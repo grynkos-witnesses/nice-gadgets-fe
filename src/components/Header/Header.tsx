@@ -37,6 +37,9 @@ export const Header: React.FC = () => {
           <li className={s.header__iconLinksItem}>
             <HeaderIconLink path="/cart" iconId="icon-Shopping-bag-Cart" />
           </li>
+          <li className={`${s.header__iconLinksItem} ${s.menuLinkItem}`}>
+            <HeaderIconLink path="/#menu" iconId="icon-Menu" />
+          </li>
         </ul>
       </div>
     </div>
