@@ -1,27 +1,36 @@
 {
   "files": {
-    "main.css": "./static/css/main.6d01583b.chunk.css",
-    "main.js": "./static/js/main.bfc08a7f.chunk.js",
-    "main.js.map": "./static/js/main.bfc08a7f.chunk.js.map",
+    "main.css": "./static/css/main.2fd7bfa7.chunk.css",
+    "main.js": "./static/js/main.a7bb7424.chunk.js",
+    "main.js.map": "./static/js/main.a7bb7424.chunk.js.map",
     "runtime-main.js": "./static/js/runtime-main.8c9895b1.js",
     "runtime-main.js.map": "./static/js/runtime-main.8c9895b1.js.map",
-    "static/js/2.2579808f.chunk.js": "./static/js/2.2579808f.chunk.js",
-    "static/js/2.2579808f.chunk.js.map": "./static/js/2.2579808f.chunk.js.map",
+    "static/js/2.e4a82942.chunk.js": "./static/js/2.e4a82942.chunk.js",
+    "static/js/2.e4a82942.chunk.js.map": "./static/js/2.e4a82942.chunk.js.map",
     "index.html": "./index.html",
-    "static/css/main.6d01583b.chunk.css.map": "./static/css/main.6d01583b.chunk.css.map",
-    "static/js/2.2579808f.chunk.js.LICENSE.txt": "./static/js/2.2579808f.chunk.js.LICENSE.txt",
+    "static/css/main.2fd7bfa7.chunk.css.map": "./static/css/main.2fd7bfa7.chunk.css.map",
+    "static/js/2.e4a82942.chunk.js.LICENSE.txt": "./static/js/2.e4a82942.chunk.js.LICENSE.txt",
+    "static/media/Cart.61e00070.svg": "./static/media/Cart.61e00070.svg",
+    "static/media/Favourites.6c1d1b28.svg": "./static/media/Favourites.6c1d1b28.svg",
     "static/media/Logo.3c6bd188.svg": "./static/media/Logo.3c6bd188.svg",
+    "static/media/LogoBurger.e0b89a5f.svg": "./static/media/LogoBurger.e0b89a5f.svg",
     "static/media/App.scss": "./static/media/Mont-Regular.1d26d89f.otf",
+    "static/media/back_icon.911fec69.svg": "./static/media/back_icon.911fec69.svg",
     "static/media/Footer.module.scss": "./static/media/button.4a029ac0.svg",
+    "static/media/close_icon.50c10c10.svg": "./static/media/close_icon.50c10c10.svg",
+    "static/media/cross.b11c0434.svg": "./static/media/cross.b11c0434.svg",
     "static/media/heart_icon.dbd5bfb9.svg": "./static/media/heart_icon.dbd5bfb9.svg",
+    "static/media/Pagination.module.scss": "./static/media/icon-Chevron-Arrow-Right.09b2cf4a.svg",
     "static/media/iconsSprite.34ec4304.svg": "./static/media/iconsSprite.34ec4304.svg",
     "static/media/iphone.7257fc38.jpg": "./static/media/iphone.7257fc38.jpg",
-    "static/media/notFound.f04fba93.svg": "./static/media/notFound.f04fba93.svg"
+    "static/media/minus_icon.4f727ec4.svg": "./static/media/minus_icon.4f727ec4.svg",
+    "static/media/notFound.f04fba93.svg": "./static/media/notFound.f04fba93.svg",
+    "static/media/plus_icon.28f3b45a.svg": "./static/media/plus_icon.28f3b45a.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.8c9895b1.js",
-    "static/js/2.2579808f.chunk.js",
-    "static/css/main.6d01583b.chunk.css",
-    "static/js/main.bfc08a7f.chunk.js"
+    "static/js/2.e4a82942.chunk.js",
+    "static/css/main.2fd7bfa7.chunk.css",
+    "static/js/main.a7bb7424.chunk.js"
   ]
 }
