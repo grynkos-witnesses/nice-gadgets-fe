@@ -8,8 +8,11 @@ interface Props {
   phone: Phone;
 }
 
+type LocalPhone = Pick<Phone, 'id' | 'name' | 'price'>;
+
 export const Card: React.FC<Props> = ({ phone }) => {
   const {
+    id,
     name,
     fullPrice,
     price,
@@ -22,7 +25,7 @@ export const Card: React.FC<Props> = ({ phone }) => {
     image,
   } = phone;
 
-  const save = (key: string, value: string) => {
+  const save = (key: string, value: LocalPhone | Phone) => {
     const stringStorage = localStorage.getItem(key);
 
     let storage = [];
@@ -31,6 +34,10 @@ export const Card: React.FC<Props> = ({ phone }) => {
       storage = JSON.parse(stringStorage);
     } else {
       localStorage.setItem(key, JSON.stringify([]));
+    }
+
+    if (storage.some((elem: { id: string }) => elem.id === value.id)) {
+      return;
     }
 
     storage.push(value);
@@ -75,7 +82,7 @@ export const Card: React.FC<Props> = ({ phone }) => {
           <button
             type="button"
             className={CardSCSS.card__buy__add__button}
-            onClick={() => save('phoneData', JSON.stringify({ name, price }))}
+            onClick={() => save('phoneData', { id, name, price })}
           >
             {' '}
             Add to cart
@@ -87,7 +94,7 @@ export const Card: React.FC<Props> = ({ phone }) => {
         <button
           type="button"
           className={CardSCSS.card__buy__heart}
-          onClick={() => save('favouritePhone', JSON.stringify(phone))}
+          onClick={() => save('favouritePhone', phone)}
         >
           <img src={heart} alt="heart icon" className={CardSCSS.card__icon} />
         </button>
