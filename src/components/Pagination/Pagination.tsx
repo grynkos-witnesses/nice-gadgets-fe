@@ -46,11 +46,7 @@ export const Pagination: React.FC<Props> = ({
               [styles.pagination__link_disabled]: isFirstPage,
             },
           )}
-          to={
-            currentPage <= 2
-              ? './'
-              : `?page=${currentPage - 1}`
-          }
+          to={currentPage <= 2 ? './' : `?page=${currentPage - 1}`}
           onClick={goBack}
         >
         </Link>
@@ -64,11 +60,7 @@ export const Pagination: React.FC<Props> = ({
                 [styles.pagination__link_active]: page === currentPage,
               })}
               onClick={() => changePage(page)}
-              to={
-                page === 1
-                  ? './'
-                  : `?page=${page}`
-              }
+              to={page === 1 ? './' : `?page=${page}`}
             >
               {page}
             </Link>
@@ -84,11 +76,7 @@ export const Pagination: React.FC<Props> = ({
               [styles.pagination__link_disabled]: isLastPage,
             },
           )}
-          to={
-            isLastPage
-              ? `?page=${currentPage}`
-              : `?page=${currentPage + 1}`
-          }
+          to={isLastPage ? `?page=${currentPage}` : `?page=${currentPage + 1}`}
           onClick={goForward}
         >
         </Link>

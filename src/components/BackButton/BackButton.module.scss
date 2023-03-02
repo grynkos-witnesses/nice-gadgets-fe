@@ -11,9 +11,9 @@
     @extend %BodyText;
     font-family: 'Mont-Regular';
     color: $secondaryColor;
-  
+
     transition: color 0.3s ease-in-out;
-  
+
     &:hover {
       color: $primaryColor;
     }
@@ -23,8 +23,3 @@
     margin-right: 8px;
   }
 }
-
-
-
-
-
