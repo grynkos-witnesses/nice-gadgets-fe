@@ -60,12 +60,10 @@ export const Pagination: React.FC<Props> = ({
         {pages.map((page) => (
           <div key={page}>
             <Link
-              // type="button"
               className={cn(styles.pagination__link, {
                 [styles.pagination__link_active]: page === currentPage,
               })}
               onClick={() => changePage(page)}
-              // to={`?page=${page}`}
               to={
                 page === 1
                   ? './'

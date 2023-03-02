@@ -24,7 +24,7 @@ export const getRange = (
     return [startItem, endItem];
   }
 
-  startItem = (perPage * (currentPage - 1));
+  startItem = perPage * (currentPage - 1);
   endItem = startItem + perPage;
 
   return [startItem, endItem];
