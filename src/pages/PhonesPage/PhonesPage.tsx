@@ -25,8 +25,10 @@ export const PhonesPage = () => {
     loadGoods();
   }, []);
 
-  const changePage = (newPage: number) => {
-    setCurrentPage(newPage);
+  const changePage = (newPage: number | string) => {
+    if (typeof newPage === 'number') {
+      setCurrentPage(newPage);
+    }
   };
 
   // next line and corresponding helper func should be deleted
