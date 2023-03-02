@@ -6,9 +6,9 @@ import {
 import { App } from './App';
 import { NotFoundPage } from './pages/NotFoundPage/NotFoundPage';
 import { HomePage } from './pages/HomePage/HomePage';
-import { PhonesPage } from './pages/PhonesPage';
-import { ProductPage } from './pages/ProductPage';
-import { CartPage } from './pages/CartPage';
+import { PhonesPage } from './pages/PhonesPage/PhonesPage';
+import { ProductPage } from './pages/ProductPage/ProductPage';
+import { CartPage } from './pages/CartPage/CartPage';
 
 ReactDOM.render(
   <React.StrictMode>

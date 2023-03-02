@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from 'react';
 
-import { Catalog } from '../components/Catalog';
-import { Pagination } from '../components/Pagination';
-import { Phone } from '../types/Phone';
-import { getRange } from '../components/Pagination/helpers/getRange';
+import s from './PhonesPage.module.scss';
+import { Catalog } from '../../components/Catalog';
+import { Pagination } from '../../components/Pagination';
+import { Phone } from '../../types/Phone';
+import { getRange } from '../../components/Pagination/helpers/getRange';
 
-import phonesFromServer from '../mock_data/api/phones.json';
+import phonesFromServer from '../../mock_data/api/phones.json';
 
 export const PhonesPage = () => {
   const [phones, setPhones] = useState<Phone[]>([]);
@@ -33,7 +34,7 @@ export const PhonesPage = () => {
   const [startItem, endItem] = getRange(total, perPage, currentPage);
 
   return (
-    <div className="page">
+    <div className={s.phonesPage}>
       <div className="container">
         <h1 className="page__title">Mobile phones</h1>
 

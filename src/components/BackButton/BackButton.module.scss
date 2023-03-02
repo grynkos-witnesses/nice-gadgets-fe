@@ -1,0 +1,30 @@
+@import '../../base_styles/utils/mixins';
+@import '../../base_styles/utils/variables';
+@import '../../base_styles/utils/extends';
+
+.backBtn {
+  display: flex;
+  align-items: baseline;
+
+  &_text {
+    text-decoration: none;
+    @extend %BodyText;
+    font-family: 'Mont-Regular';
+    color: $secondaryColor;
+  
+    transition: color 0.3s ease-in-out;
+  
+    &:hover {
+      color: $primaryColor;
+    }
+  }
+
+  &_link {
+    margin-right: 8px;
+  }
+}
+
+
+
+
+

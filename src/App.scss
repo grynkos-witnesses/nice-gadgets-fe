@@ -12,7 +12,12 @@
 
 .page {
   &__title {
-    @extend %H1Text;
+    @extend %H1MobileText;
+
+    @include onTablet {
+      font-size: 48px;
+      line-height: 56px;
+    }
 
     color: $primaryColor;
   }

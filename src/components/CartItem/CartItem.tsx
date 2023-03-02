@@ -2,12 +2,12 @@ import React, { useEffect, useState } from 'react';
 
 import CartItemSCSS from './CartItem.module.scss';
 
-import img from '../../../icons/iphone.jpg';
-import close from '../../../icons/close_icon.svg';
-import minus from '../../../icons/minus_icon.svg';
-import plus from '../../../icons/plus_icon.svg';
+import img from '../../icons/iphone.jpg';
+import close from '../../icons/close_icon.svg';
+import minus from '../../icons/minus_icon.svg';
+import plus from '../../icons/plus_icon.svg';
 
-import { Phone } from '../../../types/Phone';
+import { Phone } from '../../types/Phone';
 
 type Props = {
   phone: Phone;

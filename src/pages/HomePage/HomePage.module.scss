@@ -2,12 +2,4 @@
 
 .homePage {
   padding: 24px 0 64px;
-
-  @include onTablet() {
-    padding: 32px 0 64px;
-  }
-
-  @include onDesktop() {
-    padding: 56px 0 80px;
-  }
 }
