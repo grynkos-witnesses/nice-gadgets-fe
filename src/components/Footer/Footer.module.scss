@@ -4,6 +4,8 @@
 
   background-color: $whiteColor;
 
+  box-shadow: 0px -1px 0px #E2E6E9;
+
   &__logo {
     width: 89px;
   }
@@ -95,7 +97,7 @@
     }
   }
 
-  transition: all $transitionsSettings;
+  transition: all $transitionSettings;
 
   &:hover {
     transform: scale(1.1);

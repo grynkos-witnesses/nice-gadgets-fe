@@ -11,7 +11,7 @@
   color: $secondaryColor;
   text-transform: uppercase;
 
-  transition: color $transitionsSettings;
+  transition: color $transitionSettings;
 
   @include onDesktop {
     padding: 26.5px 0;

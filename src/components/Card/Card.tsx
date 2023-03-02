@@ -1,8 +1,10 @@
+/* eslint-disable no-debugger */
 import React from 'react';
 import { Phone } from '../../types/Phone';
 import CardSCSS from './Card.module.scss';
 import heart from '../../icons/heart_icon.svg';
 import imageTest from '../../icons/iphone.jpg';
+import { PrimaryButton } from '../PrimaryButton/PrimaryButton';
 
 interface Props {
   phone: Phone;
@@ -79,18 +81,13 @@ export const Card: React.FC<Props> = ({ phone }) => {
 
       <div className={CardSCSS.card__buy}>
         <div className={CardSCSS.card__buy__add}>
-          <button
-            type="button"
-            className={CardSCSS.card__buy__add__button}
+          <PrimaryButton
             onClick={() => save('phoneData', { id, name, price })}
           >
-            {' '}
             Add to cart
-            {' '}
-          </button>
+          </PrimaryButton>
         </div>
 
-        {/* <div className={CardSCSS.card__buy__heart}> */}
         <button
           type="button"
           className={CardSCSS.card__buy__heart}
@@ -99,7 +96,6 @@ export const Card: React.FC<Props> = ({ phone }) => {
           <img src={heart} alt="heart icon" className={CardSCSS.card__icon} />
         </button>
       </div>
-      {/* </div> */}
     </section>
   );
 };

@@ -4,6 +4,7 @@ import s from './CartPage.module.scss';
 import phonesFromServer from '../../mock_data/api/phones.json';
 import { BackButton } from '../../components/BackButton/BackButton';
 import { CartItem } from '../../components/CartItem';
+import { Checkout } from '../../components/Checkout/Checkout';
 
 const phones = phonesFromServer.slice(0, 3);
 
@@ -37,19 +38,7 @@ export const CartPage: React.FC = () => {
             grid__item--tablet--1-12
             grid__item--desktop--17-24"
           >
-            <div className={s.cartPage__checkout}>
-              <span className={s.cartPage__checkout_price}>$2657</span>
-
-              <span className={s.cartPage__checkout_total}>
-                Total for 3 items
-              </span>
-
-              <div className={s.cartPage__checkout_separator} />
-
-              <button type="button" className={s.cartPage__checkout_button}>
-                Checkout
-              </button>
-            </div>
+            <Checkout />
           </div>
         </div>
       </div>
