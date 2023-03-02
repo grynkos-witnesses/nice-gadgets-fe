@@ -81,9 +81,7 @@ export const Card: React.FC<Props> = ({ phone }) => {
 
       <div className={CardSCSS.card__buy}>
         <div className={CardSCSS.card__buy__add}>
-          <PrimaryButton
-            onClick={() => save('phoneData', { id, name, price })}
-          >
+          <PrimaryButton onClick={() => save('phoneData', { id, name, price })}>
             Add to cart
           </PrimaryButton>
         </div>

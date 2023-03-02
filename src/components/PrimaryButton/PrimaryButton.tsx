@@ -3,7 +3,7 @@ import React, { FC } from 'react';
 import s from './PrimaryButton.module.scss';
 
 interface Props {
-  onClick?: () => void
+  onClick?: () => void;
 }
 
 export const PrimaryButton: FC<Props> = ({ onClick, children }) => {
