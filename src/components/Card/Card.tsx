@@ -1,8 +1,9 @@
+/* eslint-disable no-console */
 /* eslint-disable no-debugger */
 import React from 'react';
 import { Phone } from '../../types/Phone';
-import CardSCSS from './Card.module.scss';
-import heart from '../../icons/heart_icon.svg';
+import s from './Card.module.scss';
+import icons from '../../icons/iconsSprite.svg';
 import imageTest from '../../icons/iphone.jpg';
 import { PrimaryButton } from '../PrimaryButton/PrimaryButton';
 
@@ -48,39 +49,39 @@ export const Card: React.FC<Props> = ({ phone }) => {
   };
 
   return (
-    <section className={CardSCSS.card}>
-      <img src={imageTest} alt={name} className={CardSCSS.card__img} />
+    <section className={s.card}>
+      <img src={imageTest} alt={name} className={s.card__img} />
 
-      <h2 className={CardSCSS.card__name}>{`${name} (iMT9G2FS/A)`}</h2>
+      <h2 className={s.card__name}>{`${name} (iMT9G2FS/A)`}</h2>
 
-      <div className={CardSCSS.card__price}>
-        <p className={CardSCSS.card__price__new}>{`$${price}`}</p>
-        <p className={CardSCSS.card__price__old}>{`$${fullPrice}`}</p>
+      <div className={s.card__price}>
+        <p className={s.card__price__new}>{`$${price}`}</p>
+        <p className={s.card__price__old}>{`$${fullPrice}`}</p>
       </div>
 
-      <div className={CardSCSS.card__separator} />
+      <div className={s.card__separator} />
 
-      <div className={CardSCSS.card__params}>
-        <div className={CardSCSS.card__params__container}>
-          <p className={CardSCSS.card__params__text}>Screen</p>
-          <p className={CardSCSS.card__params__num}>{screen}</p>
+      <div className={s.card__params}>
+        <div className={s.card__params__container}>
+          <p className={s.card__params__text}>Screen</p>
+          <p className={s.card__params__num}>{screen}</p>
         </div>
-        <div className={CardSCSS.card__params__container}>
-          <p className={CardSCSS.card__params__text}>Capacity</p>
-          <p className={CardSCSS.card__params__num}>
+        <div className={s.card__params__container}>
+          <p className={s.card__params__text}>Capacity</p>
+          <p className={s.card__params__num}>
             {`${capacity.split('G')[0]} G${capacity.split('G')[1]}`}
           </p>
         </div>
-        <div className={CardSCSS.card__params__container}>
-          <p className={CardSCSS.card__params__text}>RAM</p>
-          <p className={CardSCSS.card__params__num}>
+        <div className={s.card__params__container}>
+          <p className={s.card__params__text}>RAM</p>
+          <p className={s.card__params__num}>
             {`${ram.slice(0, 1)} ${ram.slice(1)}`}
           </p>
         </div>
       </div>
 
-      <div className={CardSCSS.card__buy}>
-        <div className={CardSCSS.card__buy__add}>
+      <div className={s.card__buy}>
+        <div className={s.card__buy__add}>
           <PrimaryButton onClick={() => save('phoneData', { id, name, price })}>
             Add to cart
           </PrimaryButton>
@@ -88,10 +89,13 @@ export const Card: React.FC<Props> = ({ phone }) => {
 
         <button
           type="button"
-          className={CardSCSS.card__buy__heart}
-          onClick={() => save('favouritePhone', phone)}
+          className={s.card__buy__heart}
+          onClick={() => save('favoritePhone', phone)}
         >
-          <img src={heart} alt="heart icon" className={CardSCSS.card__icon} />
+          <svg className={s.heartIcon}>
+            <use href={`${icons}#icon-Favourites-Heart-Like`} />
+            {/* <use href={`${icons}#icon-Favourites-Filled-Heart-Like`} /> */}
+          </svg>
         </button>
       </div>
     </section>

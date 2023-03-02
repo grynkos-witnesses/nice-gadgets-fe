@@ -38,7 +38,7 @@ export const CartPage: React.FC = () => {
             grid__item--tablet--1-12
             grid__item--desktop--17-24"
           >
-            <Checkout />
+            <Checkout total={1234} itemsNum={3} />
           </div>
         </div>
       </div>

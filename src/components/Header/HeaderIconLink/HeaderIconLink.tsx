@@ -17,7 +17,7 @@ export const HeaderIconLink: FC<Props> = ({ path, iconId }) => {
       className={({ isActive }) => cn(`${s.header__iconLink}`, { [s.active]: isActive })}
     >
       <svg className={s.header__iconLinkIcon}>
-        <use href={`${icons}#${iconId}`}></use>
+        <use href={`${icons}#${iconId}`} />
       </svg>
     </NavLink>
   );
