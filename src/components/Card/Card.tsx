@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import { Phone } from '../../types/Phone';
 import CardSCSS from './Card.module.scss';
 import heart from '../../icons/heart_icon.svg';
@@ -22,6 +21,10 @@ export const Card: React.FC<Props> = ({ phone }) => {
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
     image,
   } = phone;
+
+  const save = (key: string, value: string) => {
+    localStorage.setItem(key, value);
+  };
 
   return (
     <section className={CardSCSS.card}>
@@ -57,19 +60,27 @@ export const Card: React.FC<Props> = ({ phone }) => {
 
       <div className={CardSCSS.card__buy}>
         <div className={CardSCSS.card__buy__add}>
-          <Link to="/home" className={CardSCSS.card__buy__add_link}>
+          <button
+            type="button"
+            className={CardSCSS.card__buy__add__button}
+            onClick={() => save('phoneData', JSON.stringify({ name, price }))}
+          >
             {' '}
             Add to cart
             {' '}
-          </Link>
+          </button>
         </div>
 
-        <div className={CardSCSS.card__buy__heart}>
-          <Link to="/home" className={CardSCSS.card__buy__heart__icon}>
-            <img src={heart} alt="heart icon" className={CardSCSS.card__icon} />
-          </Link>
-        </div>
+        {/* <div className={CardSCSS.card__buy__heart}> */}
+        <button
+          type="button"
+          className={CardSCSS.card__buy__heart}
+          onClick={() => save('favouritePhone', JSON.stringify(phone))}
+        >
+          <img src={heart} alt="heart icon" className={CardSCSS.card__icon} />
+        </button>
       </div>
+      {/* </div> */}
     </section>
   );
 };
