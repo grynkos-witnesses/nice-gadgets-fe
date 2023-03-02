@@ -14,8 +14,10 @@ const phones = phonesFromServer.slice(0, 3);
 
 export const CartPage: React.FC<Props> = () => {
   return (
-    <div className="cart__page">
-      <Cart phones={phones} />
+    <div className="container">
+      <div className="cart__page">
+        <Cart phones={phones} />
+      </div>
     </div>
   );
 };
