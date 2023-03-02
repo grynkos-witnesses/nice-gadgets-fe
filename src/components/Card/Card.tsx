@@ -23,7 +23,19 @@ export const Card: React.FC<Props> = ({ phone }) => {
   } = phone;
 
   const save = (key: string, value: string) => {
-    localStorage.setItem(key, value);
+    const stringStorage = localStorage.getItem(key);
+
+    let storage = [];
+
+    if (stringStorage) {
+      storage = JSON.parse(stringStorage);
+    } else {
+      localStorage.setItem(key, JSON.stringify([]));
+    }
+
+    storage.push(value);
+
+    localStorage.setItem(key, JSON.stringify(storage));
   };
 
   return (
