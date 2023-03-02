@@ -1,5 +1,6 @@
-/* eslint-disable jsx-a11y/control-has-associated-label */
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import React from 'react';
+import { Link } from 'react-router-dom';
 import cn from 'classnames';
 import styles from './Pagination.module.scss';
 import { getNumbers } from './helpers/getNumbers';
@@ -38,47 +39,59 @@ export const Pagination: React.FC<Props> = ({
   return (
     <ul className={styles.pagination}>
       <li>
-        <button
-          type="button"
+        <Link
           className={cn(
             `${styles.pagination__link} ${styles.pagination__link_prev}`,
             {
               [styles.pagination__link_disabled]: isFirstPage,
             },
           )}
+          to={
+            currentPage <= 2
+              ? './'
+              : `?page=${currentPage - 1}`
+          }
           onClick={goBack}
         >
-        </button>
+        </Link>
       </li>
 
       <li className={styles.pagination__list}>
         {pages.map((page) => (
           <div key={page}>
-            <button
-              type="button"
+            <Link
               className={cn(styles.pagination__link, {
                 [styles.pagination__link_active]: page === currentPage,
               })}
               onClick={() => changePage(page)}
+              to={
+                page === 1
+                  ? './'
+                  : `?page=${page}`
+              }
             >
               {page}
-            </button>
+            </Link>
           </div>
         ))}
       </li>
 
       <li>
-        <button
-          type="button"
+        <Link
           className={cn(
             `${styles.pagination__link} ${styles.pagination__link_next}`,
             {
               [styles.pagination__link_disabled]: isLastPage,
             },
           )}
+          to={
+            isLastPage
+              ? `?page=${currentPage}`
+              : `?page=${currentPage + 1}`
+          }
           onClick={goForward}
         >
-        </button>
+        </Link>
       </li>
     </ul>
   );
