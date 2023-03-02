@@ -5,7 +5,7 @@ import {
 } from 'react-router-dom';
 import { App } from './App';
 import { NotFoundPage } from './pages/NotFoundPage/NotFoundPage';
-import { HomePage } from './pages/HomePage';
+import { HomePage } from './pages/HomePage/HomePage';
 import { PhonesPage } from './pages/PhonesPage';
 import { ProductPage } from './pages/ProductPage';
 import { CartPage } from './pages/CartPage';
@@ -25,7 +25,7 @@ ReactDOM.render(
             <Route path=":productId" element={<ProductPage />} />
           </Route>
 
-          <Route path="cart" element={<CartPage />} />
+          <Route path="cart" element={<CartPage phones={[]} />} />
         </Route>
       </Routes>
     </HashRouter>
