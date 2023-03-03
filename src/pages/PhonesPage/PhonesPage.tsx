@@ -38,7 +38,9 @@ export const PhonesPage = () => {
   return (
     <div className={s.phonesPage}>
       <div className="container">
-        <h1 className="page__title">Mobile phones</h1>
+        <h1 className={`page__title ${s.phonesPage__title}`}>Mobile phones</h1>
+
+        <p className={s.phonesPage__quantity}>{`${total} models`}</p>
 
         <Catalog phones={phones.slice(startItem, endItem)} />
 
