@@ -38,38 +38,43 @@ export const CartItem: React.FC<Props> = ({ phone }) => {
 
   return (
     <section className={CartItemSCSS.cartItem}>
-      <button type="button" className={CartItemSCSS.cartItem__close_button}>
-        <img src={close} alt="x" />
-      </button>
 
-      <img src={img} alt={name} className={CartItemSCSS.cartItem__img} />
-
-      <a href="/" className={CartItemSCSS.cartItem__title}>
-        {`${name} (iMT9G2FS/A)`}
-      </a>
-
-      <div className={CartItemSCSS.cartItem__counter}>
-        <button
-          type="button"
-          className={CartItemSCSS.cartItem__counter__button__minus}
-          onClick={() => setCounter(counter - 1)}
-          disabled={isDisabled}
-        >
-          <img src={minus} alt="-" />
+      <div className={CartItemSCSS.cartItem__container}>
+        <button type="button" className={CartItemSCSS.cartItem__close_button}>
+          <img src={close} alt="x" />
         </button>
 
-        <p className={CartItemSCSS.cartItem__counter__number}>{counter}</p>
+        <img src={img} alt={name} className={CartItemSCSS.cartItem__img} />
 
-        <button
-          type="button"
-          className={CartItemSCSS.cartItem__counter__button__plus}
-          onClick={() => setCounter(counter + 1)}
-        >
-          <img src={plus} alt="+" />
-        </button>
+        <a href="/" className={CartItemSCSS.cartItem__title}>
+          {`${name} (iMT9G2FS/A)`}
+        </a>
       </div>
 
-      <p className={CartItemSCSS.cartItem__price}>{`$${counter * price}`}</p>
+      <div className={CartItemSCSS.cartItem__container}>
+        <div className={CartItemSCSS.cartItem__counter}>
+          <button
+            type="button"
+            className={CartItemSCSS.cartItem__counter__button__minus}
+            onClick={() => setCounter(counter - 1)}
+            disabled={isDisabled}
+          >
+            <img src={minus} alt="-" />
+          </button>
+
+          <p className={CartItemSCSS.cartItem__counter__number}>{counter}</p>
+
+          <button
+            type="button"
+            className={CartItemSCSS.cartItem__counter__button__plus}
+            onClick={() => setCounter(counter + 1)}
+          >
+            <img src={plus} alt="+" />
+          </button>
+        </div>
+
+        <p className={CartItemSCSS.cartItem__price}>{`$${counter * price}`}</p>
+      </div>
     </section>
   );
 };

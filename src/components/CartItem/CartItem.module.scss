@@ -2,8 +2,9 @@
 
 .cartItem {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
   align-items: center;
+  justify-content: space-between;
   width: 100%;
   height: 160px;
 
@@ -20,6 +21,21 @@
   @include onTablet {
     height: 128px;
     padding: 24px;
+    flex-direction: row;
+  }
+
+  &__container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    min-width: 100%;
+
+    @include onTablet {
+      justify-content: space-between;
+      min-width: 220px;
+      gap: 24px;
+    }
   }
 
   &__img {
@@ -31,8 +47,6 @@
     @include onTablet {
       height: 100%;
     }
-
-    margin-bottom: 25px;
   }
 
   &__close_button {
@@ -56,10 +70,6 @@
     text-align: left;
     word-break: break-all;
     margin-bottom: 8px;
-
-    @include onLaptop {
-      max-width: 270px;
-    }
 
     transition: text-decoration 0.3s ease-in-out;
 
