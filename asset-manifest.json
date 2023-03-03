@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "./static/css/main.2b8a9e82.chunk.css",
-    "main.js": "./static/js/main.7f72f05f.chunk.js",
-    "main.js.map": "./static/js/main.7f72f05f.chunk.js.map",
+    "main.css": "./static/css/main.e76eeb01.chunk.css",
+    "main.js": "./static/js/main.4f441cbb.chunk.js",
+    "main.js.map": "./static/js/main.4f441cbb.chunk.js.map",
     "runtime-main.js": "./static/js/runtime-main.8c9895b1.js",
     "runtime-main.js.map": "./static/js/runtime-main.8c9895b1.js.map",
-    "static/js/2.3dfeb003.chunk.js": "./static/js/2.3dfeb003.chunk.js",
-    "static/js/2.3dfeb003.chunk.js.map": "./static/js/2.3dfeb003.chunk.js.map",
+    "static/js/2.10deee62.chunk.js": "./static/js/2.10deee62.chunk.js",
+    "static/js/2.10deee62.chunk.js.map": "./static/js/2.10deee62.chunk.js.map",
     "index.html": "./index.html",
-    "static/css/main.2b8a9e82.chunk.css.map": "./static/css/main.2b8a9e82.chunk.css.map",
-    "static/js/2.3dfeb003.chunk.js.LICENSE.txt": "./static/js/2.3dfeb003.chunk.js.LICENSE.txt",
+    "static/css/main.e76eeb01.chunk.css.map": "./static/css/main.e76eeb01.chunk.css.map",
+    "static/js/2.10deee62.chunk.js.LICENSE.txt": "./static/js/2.10deee62.chunk.js.LICENSE.txt",
     "static/media/Cart.6844d6e5.svg": "./static/media/Cart.6844d6e5.svg",
     "static/media/Favourites.a8c9169d.svg": "./static/media/Favourites.a8c9169d.svg",
     "static/media/Logo.3c6bd188.svg": "./static/media/Logo.3c6bd188.svg",
@@ -21,14 +21,12 @@
     "static/media/Pagination.module.scss": "./static/media/icon-Chevron-Arrow-Right.99d40db8.svg",
     "static/media/iconsSprite.1017e8b1.svg": "./static/media/iconsSprite.1017e8b1.svg",
     "static/media/iphone.7257fc38.jpg": "./static/media/iphone.7257fc38.jpg",
-    "static/media/minus_icon.4b7c4fa3.svg": "./static/media/minus_icon.4b7c4fa3.svg",
-    "static/media/notFound.f04fba93.svg": "./static/media/notFound.f04fba93.svg",
-    "static/media/plus_icon.a544912e.svg": "./static/media/plus_icon.a544912e.svg"
+    "static/media/notFound.f04fba93.svg": "./static/media/notFound.f04fba93.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.8c9895b1.js",
-    "static/js/2.3dfeb003.chunk.js",
-    "static/css/main.2b8a9e82.chunk.css",
-    "static/js/main.7f72f05f.chunk.js"
+    "static/js/2.10deee62.chunk.js",
+    "static/css/main.e76eeb01.chunk.css",
+    "static/js/main.4f441cbb.chunk.js"
   ]
 }
