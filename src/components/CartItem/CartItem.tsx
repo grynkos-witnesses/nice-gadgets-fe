@@ -38,7 +38,6 @@ export const CartItem: React.FC<Props> = ({ phone }) => {
 
   return (
     <section className={CartItemSCSS.cartItem}>
-
       <div className={CartItemSCSS.cartItem__container}>
         <button type="button" className={CartItemSCSS.cartItem__close_button}>
           <img src={close} alt="x" />
