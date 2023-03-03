@@ -3,12 +3,22 @@ import s from './IconButton.module.scss';
 
 interface Props {
   onClick: () => void;
+  disabled?: boolean;
 }
 
-export const IconButton: FC<Props> = ({ onClick, children }) => {
+export const IconButton: FC<Props> = ({
+  onClick,
+  children,
+  disabled = false,
+}) => {
   return (
-    <button type="button" className={s.card__buy__heart} onClick={onClick}>
-      {children}
+    <button
+      type="button"
+      className={s.iconBtn}
+      onClick={onClick}
+      disabled={disabled}
+    >
+      <svg className={s.iconBtn_icon}>{children}</svg>
     </button>
   );
 };

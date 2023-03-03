@@ -4,16 +4,16 @@ import CartItemSCSS from './CartItem.module.scss';
 
 import img from '../../icons/iphone.jpg';
 import close from '../../icons/close_icon.svg';
-import minus from '../../icons/minus_icon.svg';
-import plus from '../../icons/plus_icon.svg';
+import icons from '../../icons/iconsSprite.svg';
 
 import { Phone } from '../../types/Phone';
+import { IconButton } from '../IconButton/IconButton';
 
 type Props = {
-  phone: Phone;
+  product: Phone;
 };
 
-export const CartItem: React.FC<Props> = ({ phone }) => {
+export const CartItem: React.FC<Props> = ({ product }) => {
   const {
     name,
     price,
@@ -21,7 +21,7 @@ export const CartItem: React.FC<Props> = ({ phone }) => {
     // we use img instead of image variable in img src
     // until we able to fetch images from server
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  } = phone;
+  } = product;
 
   const [counter, setCounter] = useState(1);
   const [isDisabled, setIsDisabled] = useState(false);
@@ -48,7 +48,7 @@ export const CartItem: React.FC<Props> = ({ phone }) => {
   }, [counter]);
 
   return (
-    <section className={CartItemSCSS.cartItem}>
+    <article className={CartItemSCSS.cartItem}>
       <div
         className={`${CartItemSCSS.cartItem__container} ${CartItemSCSS.cartItem__container__top}`}
       >
@@ -67,29 +67,25 @@ export const CartItem: React.FC<Props> = ({ phone }) => {
         className={`${CartItemSCSS.cartItem__container} ${CartItemSCSS.cartItem__container__bottom}`}
       >
         <div className={CartItemSCSS.cartItem__counter}>
-          <button
-            type="button"
-            className={CartItemSCSS.cartItem__counter__button__minus}
+          <IconButton
             onClick={() => setCounter(counter - 1)}
             disabled={isDisabled}
           >
-            <img src={minus} alt="-" />
-          </button>
+            <use href={`${icons}#icon-Minus`} />
+          </IconButton>
 
           <p className={CartItemSCSS.cartItem__counter__number}>{counter}</p>
 
-          <button
-            type="button"
-            className={CartItemSCSS.cartItem__counter__button__plus}
+          <IconButton
             onClick={() => setCounter(counter + 1)}
             disabled={isLimit}
           >
-            <img src={plus} alt="+" />
-          </button>
+            <use href={`${icons}#icon-Plus`} />
+          </IconButton>
         </div>
 
         <p className={CartItemSCSS.cartItem__price}>{`$${counter * price}`}</p>
       </div>
-    </section>
+    </article>
   );
 };

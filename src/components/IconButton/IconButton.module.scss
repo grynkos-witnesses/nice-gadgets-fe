@@ -1,21 +1,38 @@
-&__heart {
-  height: 40px;
-  width: 40px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 19px;
+@import '../../base_styles/utils/variables';
 
-  text-decoration: none;
+.iconBtn {
+  height: 32px;
+  width: 32px;
+
   background-color: $whiteColor;
   border: 1px solid $iconsColor;
-  margin-left: 8px;
 
-  &:hover .card__icon {
-    transform: scale(1.3);
+  cursor: pointer;
+
+  transition: border-color $transitionSettings;
+
+  &:hover {
+    border-color: $primaryColor;
   }
 
-  &:active .card__icon {
+  &:disabled {
+    border-color: $elementsColor;
+
+    .iconBtn_icon {
+      fill: $iconsColor;
+    }
+  }
+
+  &_icon {
+    display: block;
+    margin: 0 auto;
+    width: 16px;
+    height: 16px;
+
+    transition: transform $transitionSettings;
+  }
+
+  &:active &_icon {
     transform: scale(0.8);
   }
 }

@@ -64,19 +64,19 @@
 
     transition: transform 0.3s ease-in-out;
 
+    cursor: pointer;
+
     &:hover {
       transform: scale(1.2);
     }
   }
 
   &__title {
-    display: inline;
     @extend %BodyTextTitle;
     color: $primaryColor;
     text-decoration: none;
     text-align: left;
-    word-break: break-all;
-    margin-bottom: 8px;
+    word-break: break-word;
 
     transition: text-decoration 0.3s ease-in-out;
 
@@ -102,38 +102,6 @@
       text-align: center;
       @extend %ButtonsText;
       color: $primaryColor;
-    }
-
-    &__button__plus {
-      display: flex;
-      height: 32px;
-      width: 32px;
-      justify-content: center;
-      align-items: center;
-      border: 1px solid $iconsColor;
-      background-color: $whiteColor;
-
-      transition: border-color 0.3s ease-in-out;
-
-      &:hover {
-        border-color: $primaryColor;
-      }
-    }
-
-    &__button__minus {
-      display: flex;
-      height: 32px;
-      width: 32px;
-      justify-content: center;
-      align-items: center;
-      border: 1px solid $elementsColor;
-      background-color: $whiteColor;
-
-      transition: border-color 0.3s ease-in-out;
-
-      &:hover {
-        border-color: $primaryColor;
-      }
     }
   }
 }

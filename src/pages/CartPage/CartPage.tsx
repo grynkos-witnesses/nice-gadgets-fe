@@ -6,9 +6,14 @@ import { BackButton } from '../../components/BackButton/BackButton';
 import { CartItem } from '../../components/CartItem';
 import { Checkout } from '../../components/Checkout/Checkout';
 
-const phones = phonesFromServer.slice(0, 3);
+const products = phonesFromServer.slice(0, 3);
 
 export const CartPage: React.FC = () => {
+  const productsTotal = products.reduce(
+    (total, product) => total + product.price,
+    0,
+  );
+
   return (
     <div className={s.cartPage}>
       <div className="container">
@@ -26,8 +31,8 @@ export const CartPage: React.FC = () => {
             grid__item--desktop--1-16"
           >
             <div className={s.cartPage__card_container}>
-              {phones.map((phone) => (
-                <CartItem phone={phone} key={phone.id} />
+              {products.map((product) => (
+                <CartItem product={product} key={product.id} />
               ))}
             </div>
           </div>
@@ -38,7 +43,7 @@ export const CartPage: React.FC = () => {
             grid__item--tablet--1-12
             grid__item--desktop--17-24"
           >
-            <Checkout total={1234} itemsNum={3} />
+            <Checkout total={productsTotal} itemsNum={products.length} />
           </div>
         </div>
       </div>
