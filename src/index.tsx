@@ -25,7 +25,7 @@ ReactDOM.render(
             <Route path=":productId" element={<ProductPage />} />
           </Route>
 
-          <Route path="cart" element={<CartPage phones={[]} />} />
+          <Route path="cart" element={<CartPage />} />
         </Route>
       </Routes>
     </HashRouter>
