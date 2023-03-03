@@ -49,7 +49,9 @@ export const CartItem: React.FC<Props> = ({ phone }) => {
 
   return (
     <section className={CartItemSCSS.cartItem}>
-      <div className={`${CartItemSCSS.cartItem__container} ${CartItemSCSS.cartItem__container__top}`}>
+      <div
+        className={`${CartItemSCSS.cartItem__container} ${CartItemSCSS.cartItem__container__top}`}
+      >
         <button type="button" className={CartItemSCSS.cartItem__close_button}>
           <img src={close} alt="x" />
         </button>
@@ -61,7 +63,9 @@ export const CartItem: React.FC<Props> = ({ phone }) => {
         </a>
       </div>
 
-      <div className={`${CartItemSCSS.cartItem__container} ${CartItemSCSS.cartItem__container__bottom}`}>
+      <div
+        className={`${CartItemSCSS.cartItem__container} ${CartItemSCSS.cartItem__container__bottom}`}
+      >
         <div className={CartItemSCSS.cartItem__counter}>
           <button
             type="button"
