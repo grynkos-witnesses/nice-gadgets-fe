@@ -25,6 +25,7 @@ export const CartItem: React.FC<Props> = ({ phone }) => {
 
   const [counter, setCounter] = useState(1);
   const [isDisabled, setIsDisabled] = useState(false);
+  const [isLimit, setIsLimit] = useState(false);
 
   useEffect(() => {
     if (counter === 1) {
@@ -36,9 +37,21 @@ export const CartItem: React.FC<Props> = ({ phone }) => {
     }
   }, [counter]);
 
+  useEffect(() => {
+    if (counter === 10) {
+      setIsLimit(true);
+    }
+
+    if (counter < 10) {
+      setIsLimit(false);
+    }
+  }, [counter]);
+
   return (
     <section className={CartItemSCSS.cartItem}>
-      <div className={CartItemSCSS.cartItem__container}>
+      <div
+        className={`${CartItemSCSS.cartItem__container} ${CartItemSCSS.cartItem__container__top}`}
+      >
         <button type="button" className={CartItemSCSS.cartItem__close_button}>
           <img src={close} alt="x" />
         </button>
@@ -50,7 +63,9 @@ export const CartItem: React.FC<Props> = ({ phone }) => {
         </a>
       </div>
 
-      <div className={CartItemSCSS.cartItem__container}>
+      <div
+        className={`${CartItemSCSS.cartItem__container} ${CartItemSCSS.cartItem__container__bottom}`}
+      >
         <div className={CartItemSCSS.cartItem__counter}>
           <button
             type="button"
@@ -67,6 +82,7 @@ export const CartItem: React.FC<Props> = ({ phone }) => {
             type="button"
             className={CartItemSCSS.cartItem__counter__button__plus}
             onClick={() => setCounter(counter + 1)}
+            disabled={isLimit}
           >
             <img src={plus} alt="+" />
           </button>
