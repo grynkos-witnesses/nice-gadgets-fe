@@ -1,3 +1,16 @@
+@import '../../base_styles';
+
 .phonesPage {
   padding: 24px 0 64px;
+
+  &__title {
+    margin-bottom: 8px;
+  }
+
+  &__quantity {
+    @extend %BodyTextTitle;
+
+    margin-bottom: 40px;
+    color: $secondaryColor;
+  }
 }
