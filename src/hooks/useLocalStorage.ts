@@ -32,6 +32,10 @@ export function useLocalStorage(): HookOutput {
         break;
 
       default:
+        if (exsistingProduct) {
+          return undefined;
+        }
+
         storage.push(value);
 
         break;
@@ -45,7 +49,7 @@ export function useLocalStorage(): HookOutput {
   function removeFromLocalStorage(key: string, removingElId: string) {
     const stringStorage = localStorage.getItem(key);
 
-    const storage = stringStorage ? JSON.parse(stringStorage) : [];
+    let storage = stringStorage ? JSON.parse(stringStorage) : [];
 
     const exsistingProduct = storage.find(
       (el: { id: string }) => el.id === removingElId,
@@ -60,13 +64,13 @@ export function useLocalStorage(): HookOutput {
         if (exsistingProduct.counter > 1) {
           exsistingProduct.counter -= 1;
         } else {
-          storage.filter((el: { id: string }) => el.id !== removingElId);
+          storage = storage.filter((el: { id: string }) => el.id !== removingElId);
         }
 
         break;
 
       default:
-        storage.filter((el: { id: string }) => el.id !== removingElId);
+        storage = storage.filter((el: { id: string }) => el.id !== removingElId);
 
         break;
     }
