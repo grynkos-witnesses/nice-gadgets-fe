@@ -72,42 +72,38 @@ export const Card: React.FC<Props> = ({ phone, isInCart, isInFavorites }) => {
 
       <div className={s.card__buy}>
         <div className={s.card__buy__add}>
-          {isInCart
-            ? (
-              <PrimaryButton onClick={() => removeFromLocalStorage('cart', id)}>
-                Added
-              </PrimaryButton>
-            )
-            : (
-              <PrimaryButton onClick={() => handleAddtoCartClick('cart')}>
-                Add to cart
-              </PrimaryButton>
-            )}
+          {isInCart ? (
+            <PrimaryButton onClick={() => removeFromLocalStorage('cart', id)}>
+              Added
+            </PrimaryButton>
+          ) : (
+            <PrimaryButton onClick={() => handleAddtoCartClick('cart')}>
+              Add to cart
+            </PrimaryButton>
+          )}
         </div>
 
-        {isInFavorites
-          ? (
-            <button
-              type="button"
-              className={s.card__buy__heart}
-              onClick={() => removeFromLocalStorage('favorites', id)}
-            >
-              <svg className={s.heartIcon}>
-                <use href={`${icons}#icon-Favourites-Filled-Heart-Like`} />
-              </svg>
-            </button>
-          )
-          : (
-            <button
-              type="button"
-              className={s.card__buy__heart}
-              onClick={() => handleAddtoCartClick('favorites')}
-            >
-              <svg className={s.heartIcon}>
-                <use href={`${icons}#icon-Favourites-Heart-Like`} />
-              </svg>
-            </button>
-          )}
+        {isInFavorites ? (
+          <button
+            type="button"
+            className={s.card__buy__heart}
+            onClick={() => removeFromLocalStorage('favorites', id)}
+          >
+            <svg className={s.heartIcon}>
+              <use href={`${icons}#icon-Favourites-Filled-Heart-Like`} />
+            </svg>
+          </button>
+        ) : (
+          <button
+            type="button"
+            className={s.card__buy__heart}
+            onClick={() => handleAddtoCartClick('favorites')}
+          >
+            <svg className={s.heartIcon}>
+              <use href={`${icons}#icon-Favourites-Heart-Like`} />
+            </svg>
+          </button>
+        )}
       </div>
     </section>
   );

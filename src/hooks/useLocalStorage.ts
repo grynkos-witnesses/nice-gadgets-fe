@@ -64,13 +64,17 @@ export function useLocalStorage(): HookOutput {
         if (exsistingProduct.counter > 1) {
           exsistingProduct.counter -= 1;
         } else {
-          storage = storage.filter((el: { id: string }) => el.id !== removingElId);
+          storage = storage.filter(
+            (el: { id: string }) => el.id !== removingElId,
+          );
         }
 
         break;
 
       default:
-        storage = storage.filter((el: { id: string }) => el.id !== removingElId);
+        storage = storage.filter(
+          (el: { id: string }) => el.id !== removingElId,
+        );
 
         break;
     }
