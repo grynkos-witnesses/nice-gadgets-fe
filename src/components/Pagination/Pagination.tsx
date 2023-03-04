@@ -10,14 +10,12 @@ type Props = {
   total: number;
   perPage: number;
   currentPage: number;
-  changePage: (newPage: number | string) => void;
 };
 
 export const Pagination: React.FC<Props> = ({
   total,
   perPage,
   currentPage,
-  changePage,
 }) => {
   const firstPage = 1;
   const lastPage = Math.ceil(total / perPage);
@@ -35,18 +33,6 @@ export const Pagination: React.FC<Props> = ({
     pageReplacement,
   );
 
-  const goBack = () => {
-    if (!isFirstPage) {
-      changePage(currentPage - 1);
-    }
-  };
-
-  const goForward = () => {
-    if (!isLastPage) {
-      changePage(currentPage + 1);
-    }
-  };
-
   return (
     <ul className={styles.pagination}>
       <li>
@@ -57,8 +43,7 @@ export const Pagination: React.FC<Props> = ({
               [styles.pagination__link_disabled]: isFirstPage,
             },
           )}
-          to={currentPage <= 2 ? '' : `?page=${currentPage - 1}`}
-          onClick={goBack}
+          to={isFirstPage ? `?page=${currentPage}` : `?page=${currentPage - 1}`}
         >
         </Link>
       </li>
@@ -73,8 +58,7 @@ export const Pagination: React.FC<Props> = ({
                 className={cn(styles.pagination__link, {
                   [styles.pagination__link_active]: page === currentPage,
                 })}
-                onClick={() => changePage(page)}
-                to={page === 1 ? '' : `?page=${page}`}
+                to={`?page=${page}`}
               >
                 {page}
               </Link>
@@ -92,7 +76,6 @@ export const Pagination: React.FC<Props> = ({
             },
           )}
           to={isLastPage ? `?page=${currentPage}` : `?page=${currentPage + 1}`}
-          onClick={goForward}
         >
         </Link>
       </li>
