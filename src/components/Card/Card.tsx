@@ -14,14 +14,7 @@ type LocalPhone = Pick<Phone, 'id' | 'name' | 'price'>;
 
 export const Card: React.FC<Props> = ({ phone }) => {
   const {
-    id,
-    name,
-    fullPrice,
-    price,
-    screen,
-    capacity,
-    ram,
-    image,
+    id, name, fullPrice, price, screen, capacity, ram, image,
   } = phone;
 
   const save = (key: string, value: LocalPhone | Phone) => {

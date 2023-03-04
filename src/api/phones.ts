@@ -4,8 +4,9 @@ import axios from 'axios';
 axios.defaults.baseURL = 'https://secret-meadow-92340.herokuapp.com/';
 
 export function getPhones(page: number, perPage: number) {
-  return axios.get(`/phones?page=${page}&perPage=${perPage}`)
-    .then(res => res.data);
+  return axios
+    .get(`/phones?page=${page}&perPage=${perPage}`)
+    .then((res) => res.data);
 }
 
 // export function getAll(): Promise<Phone[]> {
