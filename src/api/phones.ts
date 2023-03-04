@@ -10,11 +10,13 @@ export function getPhones(page: number, perPage: number) {
 }
 
 // export function getAll(): Promise<Phone[]> {
-//   return axios.get('/phones')
+//   return axios
+//     .get('/phones')
 //     .then(res => res.data);
 // }
 
-// export async function getOne(phoneId: string): Promise<Phone> {
-//   return axios.get(`/phones/${phoneId}`)
+// export function getOne(phoneId: string): Promise<Phone> {
+//   return axios
+//     .get(`/phones/${phoneId}`)
 //     .then(res => res.data);
 // }
