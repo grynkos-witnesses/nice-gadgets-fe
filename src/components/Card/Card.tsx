@@ -31,7 +31,7 @@ export const Card: React.FC<Props> = ({ phone, isInCart, isInFavorites }) => {
 
   const [, , addToLocalStorage, removeFromLocalStorage] = useLocalStorage();
 
-  const handleAddtoCartClick = () => addToLocalStorage('cart', {
+  const handleAddtoCartClick = (where: string) => addToLocalStorage(where, {
     id,
     name,
     price,
@@ -72,8 +72,12 @@ export const Card: React.FC<Props> = ({ phone, isInCart, isInFavorites }) => {
 
       <div className={s.card__buy}>
         <div className={s.card__buy__add}>
-          {!isInCart && (
-            <PrimaryButton onClick={handleAddtoCartClick}>
+          {isInCart ? (
+            <PrimaryButton onClick={() => removeFromLocalStorage('cart', id)}>
+              Added
+            </PrimaryButton>
+          ) : (
+            <PrimaryButton onClick={() => handleAddtoCartClick('cart')}>
               Add to cart
             </PrimaryButton>
           )}
