@@ -32,7 +32,7 @@ export function useLocalStorage(): HookOutput {
         break;
 
       default:
-        if (exsistingProduct.counter === 1) {
+        if (exsistingProduct) {
           return undefined;
         }
 
