@@ -21,7 +21,7 @@ export const Header: React.FC = () => {
               <HeaderNavLink path="/" text="Home" />
             </li>
             <li className={s.header__navItem}>
-              <HeaderNavLink path="/phones" text="Phones" />
+              <HeaderNavLink path="/phones?page=1&perPage=8" text="Phones" />
             </li>
             <li className={s.header__navItem}>
               <HeaderNavLink path="/tablets" text="Tablets" />
