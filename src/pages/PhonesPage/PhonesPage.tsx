@@ -3,7 +3,7 @@
 import React, { useEffect, useState } from 'react';
 
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
-import { useNavigate, useSearchParams } from 'react-router-dom';
+import { useSearchParams } from 'react-router-dom';
 import s from './PhonesPage.module.scss';
 import { Catalog } from '../../components/Catalog';
 import { Pagination } from '../../components/Pagination';
@@ -17,7 +17,6 @@ export const PhonesPage = () => {
   const [total, setTotal] = useState(0);
 
   const [searchParams] = useSearchParams();
-  const navigate = useNavigate();
 
   const perPage = Number(searchParams.get('perPage')) || 8;
   const currentPage = Number(searchParams.get('page')) || 1;
@@ -33,10 +32,6 @@ export const PhonesPage = () => {
     } catch (err) {
       console.error(err);
       Notify.failure('Something went wrong. Try again later');
-
-      setTimeout(() => {
-        navigate(-1);
-      }, 1000);
     } finally {
       setIsLoading(false);
     }
