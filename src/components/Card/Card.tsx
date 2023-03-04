@@ -5,37 +5,27 @@ import { Phone } from '../../types/Phone';
 import s from './Card.module.scss';
 import icons from '../../icons/iconsSprite.svg';
 import { PrimaryButton } from '../PrimaryButton/PrimaryButton';
+import { useLocalStorage } from '../../hooks/useLocalStorage';
 
 interface Props {
   phone: Phone;
+  isInCart: boolean;
+  isInFavorites: boolean;
 }
 
-type LocalPhone = Pick<Phone, 'id' | 'name' | 'price'>;
-
-export const Card: React.FC<Props> = ({ phone }) => {
+export const Card: React.FC<Props> = ({ phone, isInCart, isInFavorites }) => {
   const {
     id, name, fullPrice, price, screen, capacity, ram, image,
   } = phone;
 
-  const save = (key: string, value: LocalPhone | Phone) => {
-    const stringStorage = localStorage.getItem(key);
+  const [, , addToLocalStorage, removeFromLocalStorage] = useLocalStorage();
 
-    let storage = [];
-
-    if (stringStorage) {
-      storage = JSON.parse(stringStorage);
-    } else {
-      localStorage.setItem(key, JSON.stringify([]));
-    }
-
-    if (storage.some((elem: { id: string }) => elem.id === value.id)) {
-      return;
-    }
-
-    storage.push(value);
-
-    localStorage.setItem(key, JSON.stringify(storage));
-  };
+  const handleAddtoCartClick = (where: string) => addToLocalStorage(where, {
+    id,
+    name,
+    price,
+    counter: 1,
+  });
 
   return (
     <section className={s.card}>
@@ -71,21 +61,38 @@ export const Card: React.FC<Props> = ({ phone }) => {
 
       <div className={s.card__buy}>
         <div className={s.card__buy__add}>
-          <PrimaryButton onClick={() => save('phoneData', { id, name, price })}>
-            Add to cart
-          </PrimaryButton>
+          {isInCart ? (
+            <PrimaryButton onClick={() => removeFromLocalStorage('cart', id)}>
+              Added
+            </PrimaryButton>
+          ) : (
+            <PrimaryButton onClick={() => handleAddtoCartClick('cart')}>
+              Add to cart
+            </PrimaryButton>
+          )}
         </div>
 
-        <button
-          type="button"
-          className={s.card__buy__heart}
-          onClick={() => save('favoritePhone', phone)}
-        >
-          <svg className={s.heartIcon}>
-            <use href={`${icons}#icon-Favourites-Heart-Like`} />
-            {/* <use href={`${icons}#icon-Favourites-Filled-Heart-Like`} /> */}
-          </svg>
-        </button>
+        {isInFavorites ? (
+          <button
+            type="button"
+            className={s.card__buy__heart}
+            onClick={() => removeFromLocalStorage('favorites', id)}
+          >
+            <svg className={s.heartIcon}>
+              <use href={`${icons}#icon-Favourites-Filled-Heart-Like`} />
+            </svg>
+          </button>
+        ) : (
+          <button
+            type="button"
+            className={s.card__buy__heart}
+            onClick={() => handleAddtoCartClick('favorites')}
+          >
+            <svg className={s.heartIcon}>
+              <use href={`${icons}#icon-Favourites-Heart-Like`} />
+            </svg>
+          </button>
+        )}
       </div>
     </section>
   );
