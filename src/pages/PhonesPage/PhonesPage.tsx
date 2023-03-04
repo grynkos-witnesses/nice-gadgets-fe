@@ -4,9 +4,7 @@ import s from './PhonesPage.module.scss';
 import { Catalog } from '../../components/Catalog';
 import { Pagination } from '../../components/Pagination';
 import { Phone } from '../../types/Phone';
-import { getRange } from '../../components/Pagination/helpers/getRange';
-
-import phonesFromServer from '../../mock_data/api/phones.json';
+import { getPhones } from '../../api/phones';
 
 export const PhonesPage = () => {
   const [phones, setPhones] = useState<Phone[]>([]);
@@ -14,26 +12,26 @@ export const PhonesPage = () => {
   const [perPage] = useState(8);
   const [currentPage, setCurrentPage] = useState(1);
 
-  const loadGoods = () => {
-    const allPhones = phonesFromServer;
+  const loadGoods = async () => {
+    try {
+      const goods = await getPhones(currentPage, perPage);
 
-    setPhones(allPhones);
-    setTotal(allPhones.length);
+      setPhones(goods.data);
+      setTotal(goods.total);
+    } catch (err) {
+      throw new Error(`${err}`);
+    }
   };
 
   useEffect(() => {
     loadGoods();
-  }, []);
+  }, [currentPage, perPage]);
 
   const changePage = (newPage: number | string) => {
     if (typeof newPage === 'number') {
       setCurrentPage(newPage);
     }
   };
-
-  // next line and corresponding helper func should be deleted
-  // after we are able to fetch phones from server
-  const [startItem, endItem] = getRange(total, perPage, currentPage);
 
   return (
     <div className={s.phonesPage}>
@@ -42,7 +40,7 @@ export const PhonesPage = () => {
 
         <p className={s.phonesPage__quantity}>{`${total} models`}</p>
 
-        <Catalog phones={phones.slice(startItem, endItem)} />
+        <Catalog phones={phones} />
 
         <Pagination
           total={total}

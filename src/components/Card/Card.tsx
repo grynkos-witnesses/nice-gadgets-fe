@@ -4,7 +4,6 @@ import React from 'react';
 import { Phone } from '../../types/Phone';
 import s from './Card.module.scss';
 import icons from '../../icons/iconsSprite.svg';
-import imageTest from '../../icons/iphone.jpg';
 import { PrimaryButton } from '../PrimaryButton/PrimaryButton';
 
 interface Props {
@@ -22,9 +21,6 @@ export const Card: React.FC<Props> = ({ phone }) => {
     screen,
     capacity,
     ram,
-    // we use imageTest instead of image variable in img src
-    // until we able to fetch images from server
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     image,
   } = phone;
 
@@ -50,7 +46,7 @@ export const Card: React.FC<Props> = ({ phone }) => {
 
   return (
     <section className={s.card}>
-      <img src={imageTest} alt={name} className={s.card__img} />
+      <img src={image} alt={name} className={s.card__img} />
 
       <h2 className={s.card__name}>{`${name} (iMT9G2FS/A)`}</h2>
 
