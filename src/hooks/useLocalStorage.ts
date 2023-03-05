@@ -1,17 +1,15 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable consistent-return */
 import { useEffect, useState } from 'react';
+import { CartPhone } from '../types/CartPhone';
 import { Phone } from '../types/Phone';
 
-interface CartPhone {
-  id: string;
-  name: string;
-  price: number;
-  counter: number;
-}
-
 type LocalAddFunc = (key: string, value: CartPhone | Phone) => void;
-type LocalRemoveFunc = (key: string, removingElId: string) => void;
+type LocalRemoveFunc = (
+  key: string,
+  removingElId: string,
+  clearCompletely: boolean,
+) => void;
 type HookOutput = [CartPhone[], Phone[], LocalAddFunc, LocalRemoveFunc];
 
 export function useLocalStorage(): HookOutput {
@@ -76,7 +74,11 @@ export function useLocalStorage(): HookOutput {
     window.dispatchEvent(event);
   }
 
-  function removeFromLocalStorage(key: string, removingElId: string) {
+  function removeFromLocalStorage(
+    key: string,
+    removingElId: string,
+    clearCompletely = false,
+  ) {
     const stringStorage = localStorage.getItem(key);
 
     let storage = stringStorage ? JSON.parse(stringStorage) : [];
@@ -87,6 +89,10 @@ export function useLocalStorage(): HookOutput {
 
     if (!exsistingProduct) {
       return;
+    }
+
+    if (clearCompletely) {
+      storage = storage.filter((el: { id: string }) => el.id !== removingElId);
     }
 
     switch (key) {
