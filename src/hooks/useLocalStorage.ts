@@ -1,3 +1,6 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
+/* eslint-disable consistent-return */
+import { useEffect, useState } from 'react';
 import { Phone } from '../types/Phone';
 
 interface CartPhone {
@@ -12,6 +15,28 @@ type LocalRemoveFunc = (key: string, removingElId: string) => void;
 type HookOutput = [CartPhone[], Phone[], LocalAddFunc, LocalRemoveFunc];
 
 export function useLocalStorage(): HookOutput {
+  const cartJSON = localStorage.getItem('cart') || '[]';
+  const favoritesJSON = localStorage.getItem('favorites') || '[]';
+
+  const [cart, setCart] = useState(JSON.parse(cartJSON));
+  const [favorites, setFavorites] = useState(JSON.parse(favoritesJSON));
+
+  useEffect(() => {
+    const handleStorage = (event: any) => {
+      if (event.key === 'cart') {
+        setCart(event.body);
+      }
+
+      if (event.key === 'favorites') {
+        setFavorites(event.body);
+      }
+    };
+
+    window.addEventListener('storage', handleStorage);
+
+    return () => window.removeEventListener('storage', handleStorage);
+  }, []);
+
   function addToLocalStorage(key: string, value: CartPhone | Phone) {
     const stringStorage = localStorage.getItem(key);
 
@@ -43,7 +68,12 @@ export function useLocalStorage(): HookOutput {
 
     localStorage.setItem(key, JSON.stringify(storage));
 
-    return undefined;
+    const event: any = new Event('storage');
+
+    event.key = key;
+    event.body = storage;
+
+    window.dispatchEvent(event);
   }
 
   function removeFromLocalStorage(key: string, removingElId: string) {
@@ -80,13 +110,14 @@ export function useLocalStorage(): HookOutput {
     }
 
     localStorage.setItem(key, JSON.stringify(storage));
+
+    const event: any = new Event('storage');
+
+    event.key = key;
+    event.body = storage;
+
+    window.dispatchEvent(event);
   }
-
-  const cartJSON = localStorage.getItem('cart') || '[]';
-  const favoritesJSON = localStorage.getItem('favorites') || '[]';
-
-  const cart: CartPhone[] = JSON.parse(cartJSON);
-  const favorites: Phone[] = JSON.parse(favoritesJSON);
 
   return [cart, favorites, addToLocalStorage, removeFromLocalStorage];
 }

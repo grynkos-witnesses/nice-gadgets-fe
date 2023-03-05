@@ -8,7 +8,7 @@ export function getPhones(
   perPage: number,
 ): Promise<PhonesResponse> {
   return axios
-    .get(`/products/phones?page=${page}&perPage=${perPage}`)
+    .get(`/products?page=${page}&perPage=${perPage}`)
     .then((res) => res.data);
 }
 
