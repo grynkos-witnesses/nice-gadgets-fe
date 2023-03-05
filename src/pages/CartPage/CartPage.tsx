@@ -1,18 +1,20 @@
 /* eslint-disable jsx-a11y/control-has-associated-label */
 import React from 'react';
 import s from './CartPage.module.scss';
-import phonesFromServer from '../../mock_data/api/phones.json';
 import { BackButton } from '../../components/BackButton/BackButton';
 import { CartItem } from '../../components/CartItem';
 import { Checkout } from '../../components/Checkout/Checkout';
-
-const products = phonesFromServer.slice(0, 3);
+import { useLocalStorage } from '../../hooks/useLocalStorage';
 
 export const CartPage: React.FC = () => {
-  const productsTotal = products.reduce(
-    (total, product) => total + product.price,
+  const [cart] = useLocalStorage();
+
+  const productsTotal = cart.reduce(
+    (total, product) => total + product.price * product.counter,
     0,
   );
+
+  const itemsNum = cart.reduce((total, prduct) => total + prduct.counter, 0);
 
   return (
     <div className={s.cartPage}>
@@ -31,7 +33,7 @@ export const CartPage: React.FC = () => {
             grid__item--desktop--1-16"
           >
             <div className={s.cartPage__card_container}>
-              {products.map((product) => (
+              {cart.map((product) => (
                 <CartItem product={product} key={product.id} />
               ))}
             </div>
@@ -43,7 +45,7 @@ export const CartPage: React.FC = () => {
             grid__item--tablet--1-12
             grid__item--desktop--17-24"
           >
-            <Checkout total={productsTotal} itemsNum={products.length} />
+            <Checkout total={productsTotal} itemsNum={itemsNum} />
           </div>
         </div>
       </div>

@@ -24,6 +24,7 @@ export const Card: React.FC<Props> = ({ phone, isInCart, isInFavorites }) => {
     id,
     name,
     price,
+    image,
     counter: 1,
   });
 
@@ -62,7 +63,9 @@ export const Card: React.FC<Props> = ({ phone, isInCart, isInFavorites }) => {
       <div className={s.card__buy}>
         <div className={s.card__buy__add}>
           {isInCart ? (
-            <PrimaryButton onClick={() => removeFromLocalStorage('cart', id)}>
+            <PrimaryButton
+              onClick={() => removeFromLocalStorage('cart', id, true)}
+            >
               Added
             </PrimaryButton>
           ) : (
@@ -76,7 +79,7 @@ export const Card: React.FC<Props> = ({ phone, isInCart, isInFavorites }) => {
           <button
             type="button"
             className={s.card__buy__heart}
-            onClick={() => removeFromLocalStorage('favorites', id)}
+            onClick={() => removeFromLocalStorage('favorites', id, true)}
           >
             <svg className={s.heartIcon}>
               <use href={`${icons}#icon-Favourites-Filled-Heart-Like`} />
