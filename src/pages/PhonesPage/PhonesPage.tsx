@@ -6,7 +6,6 @@ import { Notify } from 'notiflix/build/notiflix-notify-aio';
 import { useSearchParams } from 'react-router-dom';
 import s from './PhonesPage.module.scss';
 import { Catalog } from '../../components/Catalog';
-import { Pagination } from '../../components/Pagination';
 import { Loader } from '../../components/Loader/Loader';
 import { Phone } from '../../types/Phone';
 import { getPhones } from '../../api/phones';
@@ -49,15 +48,10 @@ export const PhonesPage = () => {
         {isLoading ? (
           <Loader />
         ) : (
-          <>
-            <Catalog products={phones} productsQuantity={total} />
-
-            <Pagination
-              total={total}
-              perPage={perPage}
-              currentPage={currentPage}
-            />
-          </>
+          <Catalog
+            products={phones}
+            productsQuantity={total}
+          />
         )}
       </div>
     </div>
