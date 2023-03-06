@@ -1,9 +1,7 @@
 import React from 'react';
 import { useLocalStorage } from '../../hooks/useLocalStorage';
 import { Phone } from '../../types/Phone';
-import { QuantityIndicator } from './QuantityIndicator/QuantityIndicator';
 import { Card } from '../Card';
-import { Pagination } from '../Pagination';
 import CatalogSCSS from './Catalog.module.scss';
 
 type Props = {
@@ -33,8 +31,6 @@ export const Catalog: React.FC<Props> = ({ products }) => {
           );
         })}
       </div>
-
-      {productsQuantity > 0 && <Pagination total={productsQuantity} />}
     </>
   );
 };
