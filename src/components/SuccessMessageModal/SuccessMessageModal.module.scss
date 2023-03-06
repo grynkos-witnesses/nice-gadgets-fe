@@ -1,0 +1,35 @@
+@import '../../base_styles';
+
+.modal {
+  position: fixed;
+  z-index: 1;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 64px;
+
+  top: 30%;
+  left: 25%;
+
+  width: 50%;
+  height: 35%;
+
+  padding: 16px;
+
+  @include onLaptop {
+    padding: 32px;
+  }
+
+  border: 1px solid $elementsColor;
+
+  background-color: $whiteColor;
+
+  text-align: center;
+}
+
+.text {
+  color: $primaryColor;
+  @extend %H3Text;
+}
