@@ -1,0 +1,30 @@
+@import '../../base_styles/utils/extends';
+@import '../../base_styles/utils/mixins';
+@import '../../base_styles/utils/variables';
+
+.pageSection {
+  &:not(:last-child) {
+    margin-bottom: 57px;
+
+    @include onTablet {
+      margin-bottom: 64px;
+    }
+
+    @include onTablet {
+      margin-bottom: 80px;
+    }
+  }
+
+  &__title {
+    @extend %H2MobileText;
+
+    margin-bottom: 24px;
+
+    color: $primaryColor;
+
+    @include onTablet {
+      font-size: 48px;
+      line-height: 56px;
+    }
+  }
+}
