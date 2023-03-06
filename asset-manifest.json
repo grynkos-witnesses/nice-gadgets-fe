@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "./static/css/main.e7851e8a.chunk.css",
-    "main.js": "./static/js/main.8fb287cf.chunk.js",
-    "main.js.map": "./static/js/main.8fb287cf.chunk.js.map",
+    "main.css": "./static/css/main.038e4d67.chunk.css",
+    "main.js": "./static/js/main.cba37832.chunk.js",
+    "main.js.map": "./static/js/main.cba37832.chunk.js.map",
     "runtime-main.js": "./static/js/runtime-main.8c9895b1.js",
     "runtime-main.js.map": "./static/js/runtime-main.8c9895b1.js.map",
-    "static/js/2.74ae48f4.chunk.js": "./static/js/2.74ae48f4.chunk.js",
-    "static/js/2.74ae48f4.chunk.js.map": "./static/js/2.74ae48f4.chunk.js.map",
+    "static/js/2.43363071.chunk.js": "./static/js/2.43363071.chunk.js",
+    "static/js/2.43363071.chunk.js.map": "./static/js/2.43363071.chunk.js.map",
     "index.html": "./index.html",
-    "static/css/main.e7851e8a.chunk.css.map": "./static/css/main.e7851e8a.chunk.css.map",
-    "static/js/2.74ae48f4.chunk.js.LICENSE.txt": "./static/js/2.74ae48f4.chunk.js.LICENSE.txt",
+    "static/css/main.038e4d67.chunk.css.map": "./static/css/main.038e4d67.chunk.css.map",
+    "static/js/2.43363071.chunk.js.LICENSE.txt": "./static/js/2.43363071.chunk.js.LICENSE.txt",
     "static/media/Cart.6844d6e5.svg": "./static/media/Cart.6844d6e5.svg",
     "static/media/Favourites.a8c9169d.svg": "./static/media/Favourites.a8c9169d.svg",
     "static/media/Logo.3c6bd188.svg": "./static/media/Logo.3c6bd188.svg",
@@ -19,6 +19,9 @@
     "static/media/banner-phones.b4eeda8b.png": "./static/media/banner-phones.b4eeda8b.png",
     "static/media/banner-tablets.a962057c.png": "./static/media/banner-tablets.a962057c.png",
     "static/media/Footer.module.scss": "./static/media/button.51e4d850.svg",
+    "static/media/category-accessories.05d41563.png": "./static/media/category-accessories.05d41563.png",
+    "static/media/category-phones.f907b73b.png": "./static/media/category-phones.f907b73b.png",
+    "static/media/category-tablets.0f37e8bd.png": "./static/media/category-tablets.0f37e8bd.png",
     "static/media/close_icon.6e7f15f7.svg": "./static/media/close_icon.6e7f15f7.svg",
     "static/media/cross.f9e13926.svg": "./static/media/cross.f9e13926.svg",
     "static/media/Pagination.module.scss": "./static/media/icon-Chevron-Arrow-Right.99d40db8.svg",
@@ -28,8 +31,8 @@
   },
   "entrypoints": [
     "static/js/runtime-main.8c9895b1.js",
-    "static/js/2.74ae48f4.chunk.js",
-    "static/css/main.e7851e8a.chunk.css",
-    "static/js/main.8fb287cf.chunk.js"
+    "static/js/2.43363071.chunk.js",
+    "static/css/main.038e4d67.chunk.css",
+    "static/js/main.cba37832.chunk.js"
   ]
 }
