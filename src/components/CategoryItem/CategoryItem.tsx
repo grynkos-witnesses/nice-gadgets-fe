@@ -4,11 +4,11 @@ import { Link } from 'react-router-dom';
 import s from './CategoryItem.module.scss';
 
 type Props = {
-  categoryImage: string,
-  categoryImageAlt: string,
-  categoryLink: string,
-  categoryTitle: string,
-  categoryCount: string,
+  categoryImage: string;
+  categoryImageAlt: string;
+  categoryLink: string;
+  categoryTitle: string;
+  categoryCount: string;
 };
 
 export const CategoryItem: React.FC<Props> = ({
@@ -20,9 +20,7 @@ export const CategoryItem: React.FC<Props> = ({
 }) => {
   return (
     <div className={s.category}>
-      <Link
-        to={categoryLink}
-      >
+      <Link to={categoryLink}>
         <img
           src={categoryImage}
           alt={categoryImageAlt}
@@ -31,17 +29,12 @@ export const CategoryItem: React.FC<Props> = ({
       </Link>
 
       <h4 className={s.category__title}>
-        <Link
-          to={categoryLink}
-          className={s.category__link}
-        >
+        <Link to={categoryLink} className={s.category__link}>
           {categoryTitle}
         </Link>
       </h4>
 
-      <p className={s.category__count}>
-        {categoryCount}
-      </p>
+      <p className={s.category__count}>{categoryCount}</p>
     </div>
   );
 };
