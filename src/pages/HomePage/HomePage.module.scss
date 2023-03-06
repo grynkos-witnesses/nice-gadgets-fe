@@ -1,6 +1,28 @@
 @import '../../base_styles/';
 
 .homePage {
+  padding: 24px 0 64px;
+
+  @include onTablet {
+    padding: 32px 0 64px;
+  }
+
+  @include onLaptop {
+    padding: 56px 0 80px;
+  }
+
+  &__title {
+    margin-bottom: 24px;
+
+    @include onTablet {
+      margin-bottom: 32px;
+    }
+
+    @include onLaptop {
+      margin-bottom: 56px;
+    }
+  }
+
   &__mainSlider {
     width: auto;
     max-width: 1200px;
@@ -14,22 +36,16 @@
       margin-bottom: 90px;
     }
   }
-}
 
-.title {
-  @extend %H1MobileText;
+  &__section:not(:last-child) {
+    margin-bottom: 57px;
 
-  padding: 24px 16px;
+    @include onTablet {
+      margin-bottom: 64px;
+    }
 
-  @include onTablet {
-    font-size: 48px;
-    line-height: 56px;
-    padding: 32px 24px;
+    @include onTablet {
+      margin-bottom: 80px;
+    }
   }
-
-  @include onLaptop {
-    padding: 56px 32px;
-  }
-
-  color: $primaryColor;
 }
