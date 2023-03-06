@@ -1,5 +1,19 @@
-@import '../../base_styles/utils/mixins';
+@import '../../base_styles/';
 
-.homePage {
-  padding: 24px 0 64px;
+.title {
+  @extend %H1MobileText;
+
+  padding: 24px 16px;
+
+  @include onTablet {
+    font-size: 48px;
+    line-height: 56px;
+    padding: 32px 24px;
+  }
+
+  @include onLaptop {
+    padding: 56px 32px;
+  }
+
+  color: $primaryColor;
 }
