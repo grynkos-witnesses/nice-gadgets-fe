@@ -1,12 +1,14 @@
 /* eslint-disable jsx-a11y/control-has-associated-label */
-import React from 'react';
+import React, { useState } from 'react';
 import s from './CartPage.module.scss';
 import { BackButton } from '../../components/BackButton/BackButton';
 import { CartItem } from '../../components/CartItem';
 import { Checkout } from '../../components/Checkout/Checkout';
 import { useLocalStorage } from '../../hooks/useLocalStorage';
+import { SuccessMessageModal } from '../../components/SuccessMessageModal/SuccessMessageModal';
 
 export const CartPage: React.FC = () => {
+  const [isModalTriggered, setIsModalTriggered] = useState(false);
   const [cart] = useLocalStorage();
 
   const productsTotal = cart.reduce(
@@ -45,7 +47,12 @@ export const CartPage: React.FC = () => {
             grid__item--tablet--1-12
             grid__item--desktop--17-24"
           >
-            <Checkout total={productsTotal} itemsNum={itemsNum} />
+            <Checkout
+              total={productsTotal}
+              itemsNum={itemsNum}
+              setTrigger={setIsModalTriggered}
+            />
+            {isModalTriggered && <SuccessMessageModal />}
           </div>
         </div>
       </div>
