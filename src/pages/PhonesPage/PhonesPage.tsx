@@ -3,22 +3,19 @@
 import React, { useEffect, useState } from 'react';
 
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
-import { useSearchParams } from 'react-router-dom';
 import s from './PhonesPage.module.scss';
 import { Catalog } from '../../components/Catalog';
 import { Loader } from '../../components/Loader/Loader';
 import { Phone } from '../../types/Phone';
 import { getPhones } from '../../api/phones';
+import { usePageInfo } from '../../hooks/usePageInfo';
 
 export const PhonesPage = () => {
   const [phones, setPhones] = useState<Phone[]>([]);
   const [isLoading, setIsLoading] = useState(false);
   const [total, setTotal] = useState(0);
 
-  const [searchParams] = useSearchParams();
-
-  const perPage = Number(searchParams.get('perPage')) || 8;
-  const currentPage = Number(searchParams.get('page')) || 1;
+  const [currentPage, perPage] = usePageInfo();
 
   const loadGoods = async () => {
     setIsLoading(true);
