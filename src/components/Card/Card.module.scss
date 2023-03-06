@@ -10,10 +10,6 @@
   padding: 32px;
   border: 1px solid $elementsColor;
 
-  @include onTablet {
-    height: 506px;
-  }
-
   @include onLaptop {
     width: 230px;
   }
@@ -42,6 +38,8 @@
 
     color: $primaryColor;
     margin-bottom: 8px;
+
+    flex-grow: 1;
   }
 
   &__price {
