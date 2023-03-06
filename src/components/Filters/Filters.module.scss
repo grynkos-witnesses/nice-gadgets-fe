@@ -1,0 +1,16 @@
+@import '../../base_styles';
+
+.filters {
+  &__filter {
+    margin-bottom: 24px;
+  }
+
+  &__title {
+    @extend %BodyText;
+    // font-family: 'Mont-Regular';
+
+    padding-bottom: 4px;
+
+    color: $secondaryColor;
+  }
+}
