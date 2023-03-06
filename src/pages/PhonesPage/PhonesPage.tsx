@@ -48,10 +48,7 @@ export const PhonesPage = () => {
         {isLoading ? (
           <Loader />
         ) : (
-          <Catalog
-            products={phones}
-            productsQuantity={total}
-          />
+          <Catalog products={phones} productsQuantity={total} />
         )}
       </div>
     </div>
