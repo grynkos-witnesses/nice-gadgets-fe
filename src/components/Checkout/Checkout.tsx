@@ -26,7 +26,7 @@ export const Checkout: FC<Props> = ({
       cart.map((elem) => removeFromStorage('cart', elem.id, true));
 
       window.location.replace(
-        'http://localhost:3000/#/phones?page=1&perPage=8',
+        'https://grynkos-witnesses.github.io/nice-gadgets-fe/#/phones?page=1&perPage=8',
       );
     }, 2500);
   };
