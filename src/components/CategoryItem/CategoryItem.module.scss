@@ -1,0 +1,45 @@
+@import '../../base_styles/';
+
+.category {
+  &__image {
+    display: block;
+    width: 100%;
+    min-width: 288px;
+    height: auto;
+    margin: 0 auto 24px;
+
+    @include onTablet {
+      min-width: 184px;
+    }
+
+    @include onDesktop {
+      min-width: 368px;
+    }
+
+    transition: transform $transitionSettings;
+
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+
+  &__title {
+    margin-bottom: 4px;
+  }
+
+  &__link {
+    @extend %H4Text;
+    color: $primaryColor;
+
+    transition: text-decoration $transitionSettings;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  &__count {
+    @extend %ButtonsText;
+    color: $secondaryColor;
+  }
+}
