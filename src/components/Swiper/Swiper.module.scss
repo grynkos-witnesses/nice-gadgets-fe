@@ -1,0 +1,40 @@
+@import '../../base_styles/';
+
+.swiper {
+  @include onTablet {
+    max-width: 1200px;
+    padding: 0 75px;
+  }
+
+  @include onLaptop {
+    padding: 0 80px;
+  }
+
+  &__image {
+    height: 320px;
+    object-fit: cover;
+
+    @include onTablet {
+      height: 190px;
+    }
+
+    @include onLaptop {
+      height: 400px;
+    }
+  }
+
+  &__mainBanner {
+    content: url('../../mock_data/img/mainBanner-mobile.png');
+    object-position: top;
+
+    @include onTablet {
+      content: url('../../mock_data/img/mainBanner-tablet.png');
+      object-position: top;
+    }
+
+    @include onLaptop {
+      content: url('../../mock_data/img/mainBanner-desktop.png');
+      object-position: center;
+    }
+  }
+}
