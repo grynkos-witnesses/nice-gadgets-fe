@@ -1,5 +1,21 @@
 @import '../../base_styles/';
 
+.homePage {
+  &__mainSlider {
+    width: auto;
+    max-width: 1200px;
+    margin: 0 auto 66px;
+
+    @include onTablet {
+      margin: 0 auto 74px;
+    }
+
+    @include onLaptop {
+      margin-bottom: 90px;
+    }
+  }
+}
+
 .title {
   @extend %H1MobileText;
 

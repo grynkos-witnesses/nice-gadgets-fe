@@ -20,7 +20,7 @@
       -ms-transform: translate(0, -50%);
       transform: translate(0, -50%);
 
-      transition: border-color 0.3s ease-in-out;
+      transition: border-color $transitionSettings;
 
       color: transparent;
       outline: none;
@@ -68,7 +68,7 @@
 
   &-dot {
     background: $elementsColor;
-    transition: opacity 0.3s ease-in-out, background 0.3s ease-in-out;
+    transition: opacity $transitionSettings, background $transitionSettings;
 
     &:hover {
       background: $primaryColor;

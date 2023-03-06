@@ -1,18 +1,13 @@
 @import '../../base_styles/';
 
 .swiper {
-  margin-bottom: 66px;
-
   @include onTablet {
     max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 65px;
-    margin-bottom: 74px;
+    padding: 0 75px;
   }
 
   @include onLaptop {
-    padding: 0 86px;
-    margin-bottom: 90px;
+    padding: 0 80px;
   }
 
   &__image {
@@ -20,6 +15,7 @@
     object-fit: cover;
 
     @include onTablet {
+      content: url('../../mock_data/img/category-phones.png');
       height: 190px;
     }
 
