@@ -11,13 +11,11 @@ type Props = {
   productsQuantity: number;
 };
 
-export const Catalog: React.FC<Props> = ({ products, productsQuantity }) => {
+export const Catalog: React.FC<Props> = ({ products }) => {
   const [cart, favorites] = useLocalStorage();
 
   return (
     <>
-      <QuantityIndicator quantity={productsQuantity} />
-
       <div className={CatalogSCSS.catalog}>
         {products.map((product) => {
           const isInCart = Boolean(cart.find((el) => el.id === product.id));
