@@ -1,0 +1,32 @@
+@import '../../base_styles';
+
+.select {
+  display: block;
+  width: 100%;
+  padding: 12px;
+
+  background-image: url('./icons/icon-Chevron-Arrow-Down.svg');
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  border: 1px solid #b4bdc4;
+  appearance: none;
+
+  @extend %BodyTextTitle;
+
+  color: #313237;
+
+  cursor: pointer;
+
+  &:hover {
+    border-color: #89939a;
+  }
+
+  &__option {
+    color: #89939a;
+
+    // &:hover {
+    //   background-color: transparent;
+    //   color: #313237;
+    // }
+  }
+}
