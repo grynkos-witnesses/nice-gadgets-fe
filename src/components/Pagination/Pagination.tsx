@@ -9,16 +9,12 @@ import { getSearchWith } from '../../helpers/getSearchWith';
 
 type Props = {
   total: number;
-  perPage: number;
-  currentPage: number;
 };
 
-export const Pagination: React.FC<Props> = ({
-  total,
-  perPage,
-  currentPage,
-}) => {
+export const Pagination: React.FC<Props> = ({ total }) => {
   const [searchParams] = useSearchParams();
+  const perPage = Number(searchParams.get('perPage')) || 8;
+  const currentPage = Number(searchParams.get('page')) || 1;
 
   const firstPage = 1;
   const lastPage = Math.ceil(total / perPage);
