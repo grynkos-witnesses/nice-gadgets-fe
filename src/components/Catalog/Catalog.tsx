@@ -6,7 +6,6 @@ import CatalogSCSS from './Catalog.module.scss';
 
 type Props = {
   products: Phone[];
-  productsQuantity: number;
 };
 
 export const Catalog: React.FC<Props> = ({ products }) => {

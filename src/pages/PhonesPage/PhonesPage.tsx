@@ -50,7 +50,7 @@ export const PhonesPage = () => {
           <>
             <QuantityIndicator quantity={total} />
 
-            <Catalog products={phones} productsQuantity={total} />
+            <Catalog products={phones} />
 
             {total > 0 && <Pagination total={total} />}
           </>
