@@ -1,4 +1,5 @@
 import React from 'react';
+import { Categories } from '../../components/Categories';
 import { PageSection } from '../../components/PageSection/PageSection';
 import { Swiper } from '../../components/Swiper';
 
@@ -25,7 +26,9 @@ export const HomePage = () => {
         </div>
 
         <div className={s.homePage__section}>
-          <PageSection sectionTitle="Shop by category">Categories</PageSection>
+          <PageSection sectionTitle="Shop by category">
+            <Categories />
+          </PageSection>
         </div>
         <div className={s.homePage__section}>
           <PageSection sectionTitle="Hot prices">HOT PRISES SLIDER</PageSection>

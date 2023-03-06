@@ -5,7 +5,7 @@ import Tablets from '../../mock_data/img/category-tablets.png';
 import Accessories from '../../mock_data/img/category-accessories.png';
 
 import { CategoryItem } from '../CategoryItem';
-import phonesCount from '../../mock_data/api/phones.json';
+// import phonesCount from '../../mock_data/api/phones.json';
 
 import s from './Categories.module.scss';
 
@@ -17,7 +17,7 @@ export const Categories: React.FC = () => {
         categoryImageAlt="Phones"
         categoryLink="/phones"
         categoryTitle="Phones"
-        categoryCount={`${phonesCount.length} phones`}
+        categoryCount={`${95} phones`}
       />
 
       <CategoryItem
@@ -25,7 +25,7 @@ export const Categories: React.FC = () => {
         categoryImageAlt="Tablets"
         categoryLink="/tablets"
         categoryTitle="Tablets"
-        categoryCount={`${phonesCount.length} tablets`}
+        categoryCount={`${95} tablets`}
       />
 
       <CategoryItem
@@ -33,7 +33,7 @@ export const Categories: React.FC = () => {
         categoryImageAlt="Accessories"
         categoryLink="/accessories"
         categoryTitle="Accessories"
-        categoryCount={`${phonesCount.length} accessories`}
+        categoryCount={`${95} accessories`}
       />
     </div>
   );
