@@ -50,9 +50,7 @@ export const PhonesPage = () => {
           <Loader />
         ) : (
           <>
-            <p className={s.phonesPage__quantity}>{`${total} models`}</p>
-
-            <Catalog phones={phones} />
+            <Catalog products={phones} productsQuantity={total} />
 
             <Pagination
               total={total}

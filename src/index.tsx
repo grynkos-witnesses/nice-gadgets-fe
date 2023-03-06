@@ -9,6 +9,7 @@ import { HomePage } from './pages/HomePage/HomePage';
 import { PhonesPage } from './pages/PhonesPage/PhonesPage';
 import { ProductPage } from './pages/ProductPage/ProductPage';
 import { CartPage } from './pages/CartPage/CartPage';
+import { FavoritesPage } from './pages/FavoritesPage/FavoritesPage';
 
 ReactDOM.render(
   <React.StrictMode>
@@ -26,6 +27,7 @@ ReactDOM.render(
           </Route>
 
           <Route path="cart" element={<CartPage />} />
+          <Route path="favorites" element={<FavoritesPage />} />
         </Route>
       </Routes>
     </HashRouter>

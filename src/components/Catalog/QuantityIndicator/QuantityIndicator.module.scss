@@ -1,0 +1,9 @@
+@import '../../../base_styles/utils/extends';
+@import '../../../base_styles/utils/_variables.scss';
+
+.quantityIndicator {
+  @extend %BodyTextTitle;
+
+  margin-bottom: 40px;
+  color: $secondaryColor;
+}
