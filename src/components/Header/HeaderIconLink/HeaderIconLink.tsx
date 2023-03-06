@@ -18,7 +18,9 @@ export const HeaderIconLink: FC<Props> = ({ path, iconId, amount }) => {
       to={path}
       className={({ isActive }) => cn(`${s.header__iconLink}`, { [s.active]: isActive })}
     >
-      {(amount && amount > 0) && <span className={s.header__counter}>{amount}</span>}
+      {Boolean(amount) && (
+        <span className={s.header__counter}>{amount}</span>
+      )}
       <svg className={s.header__iconLinkIcon}>
         <use href={`${icons}#${iconId}`} />
       </svg>
