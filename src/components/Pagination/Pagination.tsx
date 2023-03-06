@@ -1,10 +1,11 @@
+/* eslint-disable no-console */
 /* eslint-disable react/no-array-index-key */
-/* eslint-disable jsx-a11y/anchor-is-valid */
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useSearchParams } from 'react-router-dom';
 import cn from 'classnames';
 import styles from './Pagination.module.scss';
-import { getPages } from './helpers/getPages';
+import { getPages } from '../../helpers/getPages';
+import { getSearchWith } from '../../helpers/getSearchWith';
 
 type Props = {
   total: number;
@@ -17,6 +18,8 @@ export const Pagination: React.FC<Props> = ({
   perPage,
   currentPage,
 }) => {
+  const [searchParams] = useSearchParams();
+
   const firstPage = 1;
   const lastPage = Math.ceil(total / perPage);
   const isFirstPage = currentPage === 1;
@@ -43,7 +46,13 @@ export const Pagination: React.FC<Props> = ({
               [styles.pagination__link_disabled]: isFirstPage,
             },
           )}
-          to={isFirstPage ? `?page=${currentPage}` : `?page=${currentPage - 1}`}
+          to={{
+            search: getSearchWith(searchParams, {
+              page: isFirstPage
+                ? currentPage.toString()
+                : (currentPage - 1).toString(),
+            }),
+          }}
         >
         </Link>
       </li>
@@ -58,7 +67,11 @@ export const Pagination: React.FC<Props> = ({
                 className={cn(styles.pagination__link, {
                   [styles.pagination__link_active]: page === currentPage,
                 })}
-                to={`?page=${page}`}
+                to={{
+                  search: getSearchWith(searchParams, {
+                    page: typeof page === 'number' ? page.toString() : null,
+                  }),
+                }}
               >
                 {page}
               </Link>
@@ -69,13 +82,20 @@ export const Pagination: React.FC<Props> = ({
 
       <li>
         <Link
+          type="button"
           className={cn(
             `${styles.pagination__link} ${styles.pagination__link_next}`,
             {
               [styles.pagination__link_disabled]: isLastPage,
             },
           )}
-          to={isLastPage ? `?page=${currentPage}` : `?page=${currentPage + 1}`}
+          to={{
+            search: getSearchWith(searchParams, {
+              page: isLastPage
+                ? currentPage.toString()
+                : (currentPage + 1).toString(),
+            }),
+          }}
         >
         </Link>
       </li>
