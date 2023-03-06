@@ -8,23 +8,20 @@ import { PrimaryButton } from '../PrimaryButton/PrimaryButton';
 import { useLocalStorage } from '../../hooks/useLocalStorage';
 
 interface Props {
-  phone: Phone;
+  product: Phone;
   isInCart: boolean;
   isInFavorites: boolean;
 }
 
-export const Card: React.FC<Props> = ({ phone, isInCart, isInFavorites }) => {
+export const Card: React.FC<Props> = ({ product, isInCart, isInFavorites }) => {
   const {
     id, name, fullPrice, price, screen, capacity, ram, image,
-  } = phone;
+  } = product;
 
   const [, , addToLocalStorage, removeFromLocalStorage] = useLocalStorage();
 
   const handleAddtoCartClick = (where: string) => addToLocalStorage(where, {
-    id,
-    name,
-    price,
-    image,
+    ...product,
     counter: 1,
   });
 
