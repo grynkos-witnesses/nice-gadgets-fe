@@ -15,12 +15,26 @@
     object-fit: cover;
 
     @include onTablet {
-      content: url('../../mock_data/img/category-phones.png');
       height: 190px;
     }
 
     @include onLaptop {
       height: 400px;
+    }
+  }
+
+  &__mainBanner {
+    content: url('../../mock_data/img/mainBanner-mobile.png');
+    object-position: top;
+
+    @include onTablet {
+    content: url('../../mock_data/img/mainBanner-tablet.png');
+    object-position: top;
+    }
+
+    @include onLaptop {
+    content: url('../../mock_data/img/mainBanner-desktop.png');
+    object-position: center;
     }
   }
 }

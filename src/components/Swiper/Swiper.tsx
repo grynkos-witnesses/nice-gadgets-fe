@@ -5,6 +5,7 @@ import s from './Swiper.module.scss';
 import '../../base_styles/utils/_grid.scss';
 import './Slider.scss';
 
+import mainBanner from '../../mock_data/img/mainBanner-mobile.png';
 import banner1 from '../../mock_data/img/banner-phones.png';
 import banner2 from '../../mock_data/img/banner-tablets.png';
 import banner3 from '../../mock_data/img/banner-accessories.png';
@@ -42,6 +43,8 @@ export const Swiper = () => {
   return (
     <div className={s.swiper}>
       <Slider {...settings}>
+        <img className={`${s.swiper__image} ${s.swiper__mainBanner}`} src={mainBanner} alt="Slider main banner" />
+
         <img className={s.swiper__image} src={banner1} alt="Slider banner 1" />
 
         <img className={s.swiper__image} src={banner2} alt="Slider banner 2" />
