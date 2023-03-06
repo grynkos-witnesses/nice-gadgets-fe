@@ -43,7 +43,11 @@ export const Swiper = () => {
   return (
     <div className={s.swiper}>
       <Slider {...settings}>
-        <img className={`${s.swiper__image} ${s.swiper__mainBanner}`} src={mainBanner} alt="Slider main banner" />
+        <img
+          className={`${s.swiper__image} ${s.swiper__mainBanner}`}
+          src={mainBanner}
+          alt="Slider main banner"
+        />
 
         <img className={s.swiper__image} src={banner1} alt="Slider banner 1" />
 

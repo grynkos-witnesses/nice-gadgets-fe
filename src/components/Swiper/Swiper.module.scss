@@ -28,13 +28,13 @@
     object-position: top;
 
     @include onTablet {
-    content: url('../../mock_data/img/mainBanner-tablet.png');
-    object-position: top;
+      content: url('../../mock_data/img/mainBanner-tablet.png');
+      object-position: top;
     }
 
     @include onLaptop {
-    content: url('../../mock_data/img/mainBanner-desktop.png');
-    object-position: center;
+      content: url('../../mock_data/img/mainBanner-desktop.png');
+      object-position: center;
     }
   }
 }
