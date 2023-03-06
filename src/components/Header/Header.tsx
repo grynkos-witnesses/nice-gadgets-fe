@@ -12,7 +12,10 @@ export const Header: React.FC = () => {
   const { pathname } = useLocation();
   const [cart, favorites] = useLocalStorage();
 
-  const cartItemsNum = cart.reduce((total, prduct) => total + prduct.counter, 0);
+  const cartItemsNum = cart.reduce(
+    (total, prduct) => total + prduct.counter,
+    0,
+  );
   const favoriteItemsNum = favorites.length;
 
   return (
@@ -46,7 +49,11 @@ export const Header: React.FC = () => {
             />
           </li>
           <li className={s.header__iconLinksItem}>
-            <HeaderIconLink path="/cart" iconId="icon-Shopping-bag-Cart" amount={cartItemsNum} />
+            <HeaderIconLink
+              path="/cart"
+              iconId="icon-Shopping-bag-Cart"
+              amount={cartItemsNum}
+            />
           </li>
           <li className={`${s.header__iconLinksItem} ${s.menuLinkItem}`}>
             <HeaderIconLink path={`${pathname}#menu`} iconId="icon-Menu" />
