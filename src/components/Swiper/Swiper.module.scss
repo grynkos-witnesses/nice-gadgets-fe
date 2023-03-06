@@ -1,31 +1,30 @@
 @import '../../base_styles/';
 
 .swiper {
-    margin-bottom: 66px;
+  margin-bottom: 66px;
+
+  @include onTablet {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 65px;
+    margin-bottom: 74px;
+  }
+
+  @include onLaptop {
+    padding: 0 86px;
+    margin-bottom: 90px;
+  }
+
+  &__image {
+    height: 320px;
+    object-fit: cover;
 
     @include onTablet {
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 0 65px;
-        margin-bottom: 74px;
+      height: 190px;
     }
-  
+
     @include onLaptop {
-        padding: 0 86px;
-        margin-bottom: 90px;
+      height: 400px;
     }
-    
-
-    &__image {
-        height: 320px;
-        object-fit: cover;
-
-        @include onTablet {
-            height: 190px;
-        }
-    
-        @include onLaptop {
-            height: 400px;
-        }
-    }
+  }
 }
