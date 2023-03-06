@@ -43,7 +43,7 @@ export const Filters = () => {
 
         <div
           className="
-            grid__item--mobile--1-4
+            grid__item--mobile--3-4
             grid__item--tablet--5-7
             grid__item--desktop--5-7"
         >
