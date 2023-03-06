@@ -9,6 +9,8 @@ import { Loader } from '../../components/Loader/Loader';
 import { Phone } from '../../types/Phone';
 import { getPhones } from '../../api/phones';
 import { usePageInfo } from '../../hooks/usePageInfo';
+import { QuantityIndicator } from '../../components/Catalog/QuantityIndicator/QuantityIndicator';
+import { Pagination } from '../../components/Pagination';
 
 export const PhonesPage = () => {
   const [phones, setPhones] = useState<Phone[]>([]);
@@ -45,7 +47,13 @@ export const PhonesPage = () => {
         {isLoading ? (
           <Loader />
         ) : (
-          <Catalog products={phones} productsQuantity={total} />
+          <>
+            <QuantityIndicator quantity={total} />
+
+            <Catalog products={phones} productsQuantity={total} />
+
+            {total > 0 && <Pagination total={total} />}
+          </>
         )}
       </div>
     </div>
