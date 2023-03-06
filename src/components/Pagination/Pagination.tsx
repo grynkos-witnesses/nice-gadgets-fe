@@ -11,9 +11,7 @@ type Props = {
   total: number;
 };
 
-export const Pagination: React.FC<Props> = ({
-  total,
-}) => {
+export const Pagination: React.FC<Props> = ({ total }) => {
   const [searchParams] = useSearchParams();
   const perPage = Number(searchParams.get('perPage')) || 8;
   const currentPage = Number(searchParams.get('page')) || 1;

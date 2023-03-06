@@ -11,10 +11,7 @@ type Props = {
   productsQuantity: number;
 };
 
-export const Catalog: React.FC<Props> = ({
-  products,
-  productsQuantity,
-}) => {
+export const Catalog: React.FC<Props> = ({ products, productsQuantity }) => {
   const [cart, favorites] = useLocalStorage();
 
   return (
@@ -39,9 +36,7 @@ export const Catalog: React.FC<Props> = ({
         })}
       </div>
 
-      {productsQuantity > 0 && (
-        <Pagination total={productsQuantity} />
-      )}
+      {productsQuantity > 0 && <Pagination total={productsQuantity} />}
     </>
   );
 };
