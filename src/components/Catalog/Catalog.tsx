@@ -1,9 +1,7 @@
 import React from 'react';
 import { useLocalStorage } from '../../hooks/useLocalStorage';
 import { Phone } from '../../types/Phone';
-import { QuantityIndicator } from './QuantityIndicator/QuantityIndicator';
 import { Card } from '../Card';
-import { Pagination } from '../Pagination';
 import CatalogSCSS from './Catalog.module.scss';
 
 type Props = {
@@ -11,13 +9,11 @@ type Props = {
   productsQuantity: number;
 };
 
-export const Catalog: React.FC<Props> = ({ products, productsQuantity }) => {
+export const Catalog: React.FC<Props> = ({ products }) => {
   const [cart, favorites] = useLocalStorage();
 
   return (
     <>
-      <QuantityIndicator quantity={productsQuantity} />
-
       <div className={CatalogSCSS.catalog}>
         {products.map((product) => {
           const isInCart = Boolean(cart.find((el) => el.id === product.id));
@@ -35,8 +31,6 @@ export const Catalog: React.FC<Props> = ({ products, productsQuantity }) => {
           );
         })}
       </div>
-
-      {productsQuantity > 0 && <Pagination total={productsQuantity} />}
     </>
   );
 };
