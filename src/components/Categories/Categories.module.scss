@@ -1,0 +1,14 @@
+@import '../../base_styles/';
+
+.categories {
+    &__container {
+        display: flex;
+        flex-direction: column;
+        gap: 32px;
+
+        @include onTablet {
+            flex-direction: row;
+            gap: 16px;
+        }
+    }
+}

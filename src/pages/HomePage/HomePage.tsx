@@ -1,6 +1,7 @@
 import React from 'react';
 import { PageSection } from '../../components/PageSection/PageSection';
 import { Swiper } from '../../components/Swiper';
+
 import s from './HomePage.module.scss';
 
 export const HomePage = () => {
