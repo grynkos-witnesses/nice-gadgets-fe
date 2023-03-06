@@ -1,31 +1,35 @@
 {
   "files": {
-    "main.css": "./static/css/main.1bd15ec8.chunk.css",
-    "main.js": "./static/js/main.c307035d.chunk.js",
-    "main.js.map": "./static/js/main.c307035d.chunk.js.map",
+    "main.css": "./static/css/main.8fa1e1ff.chunk.css",
+    "main.js": "./static/js/main.9abeb4a5.chunk.js",
+    "main.js.map": "./static/js/main.9abeb4a5.chunk.js.map",
     "runtime-main.js": "./static/js/runtime-main.8c9895b1.js",
     "runtime-main.js.map": "./static/js/runtime-main.8c9895b1.js.map",
-    "static/js/2.b7bc9d46.chunk.js": "./static/js/2.b7bc9d46.chunk.js",
-    "static/js/2.b7bc9d46.chunk.js.map": "./static/js/2.b7bc9d46.chunk.js.map",
+    "static/js/2.0f22ad6f.chunk.js": "./static/js/2.0f22ad6f.chunk.js",
+    "static/js/2.0f22ad6f.chunk.js.map": "./static/js/2.0f22ad6f.chunk.js.map",
     "index.html": "./index.html",
-    "static/css/main.1bd15ec8.chunk.css.map": "./static/css/main.1bd15ec8.chunk.css.map",
-    "static/js/2.b7bc9d46.chunk.js.LICENSE.txt": "./static/js/2.b7bc9d46.chunk.js.LICENSE.txt",
+    "static/css/main.8fa1e1ff.chunk.css.map": "./static/css/main.8fa1e1ff.chunk.css.map",
+    "static/js/2.0f22ad6f.chunk.js.LICENSE.txt": "./static/js/2.0f22ad6f.chunk.js.LICENSE.txt",
     "static/media/Cart.6844d6e5.svg": "./static/media/Cart.6844d6e5.svg",
     "static/media/Favourites.a8c9169d.svg": "./static/media/Favourites.a8c9169d.svg",
     "static/media/Logo.3c6bd188.svg": "./static/media/Logo.3c6bd188.svg",
-    "static/media/App.scss": "./static/media/Mont-Regular.1d26d89f.otf",
+    "static/media/Slider.scss": "./static/media/prev_icon.6b099a50.svg",
     "static/media/back_icon.e7e86408.svg": "./static/media/back_icon.e7e86408.svg",
+    "static/media/banner-accessories.bdd2e0fc.png": "./static/media/banner-accessories.bdd2e0fc.png",
+    "static/media/banner-phones.b4eeda8b.png": "./static/media/banner-phones.b4eeda8b.png",
+    "static/media/banner-tablets.a962057c.png": "./static/media/banner-tablets.a962057c.png",
     "static/media/Footer.module.scss": "./static/media/button.51e4d850.svg",
     "static/media/close_icon.6e7f15f7.svg": "./static/media/close_icon.6e7f15f7.svg",
     "static/media/cross.f9e13926.svg": "./static/media/cross.f9e13926.svg",
     "static/media/Pagination.module.scss": "./static/media/icon-Chevron-Arrow-Right.99d40db8.svg",
     "static/media/iconsSprite.1017e8b1.svg": "./static/media/iconsSprite.1017e8b1.svg",
+    "static/media/Swiper.module.scss": "./static/media/mainBanner-tablet.4cf4c1b6.png",
     "static/media/notFound.f04fba93.svg": "./static/media/notFound.f04fba93.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.8c9895b1.js",
-    "static/js/2.b7bc9d46.chunk.js",
-    "static/css/main.1bd15ec8.chunk.css",
-    "static/js/main.c307035d.chunk.js"
+    "static/js/2.0f22ad6f.chunk.js",
+    "static/css/main.8fa1e1ff.chunk.css",
+    "static/js/main.9abeb4a5.chunk.js"
   ]
 }
