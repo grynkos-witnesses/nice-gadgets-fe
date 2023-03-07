@@ -20,4 +20,16 @@
   @include onDesktop {
     grid-template-columns: repeat(4, 1fr);
   }
+
+  &__item {
+    width: 288px;
+
+    @include onLaptop {
+      width: 230px;
+    }
+  
+    @include onDesktop {
+      width: 272px;
+    }
+  }
 }
