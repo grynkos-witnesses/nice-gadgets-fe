@@ -21,7 +21,6 @@ export const FavoritesPage: FC = () => {
 
             <Catalog
               products={favoritesItems}
-              productsQuantity={favoritesItems.length}
             />
           </>
         ) : (

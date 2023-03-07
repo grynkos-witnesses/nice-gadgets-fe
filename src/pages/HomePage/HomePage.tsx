@@ -1,5 +1,6 @@
 import React from 'react';
 import { Categories } from '../../components/Categories';
+import { Gallery } from '../../components/Gallery/Gallery';
 import { PageSection } from '../../components/PageSection/PageSection';
 import { Swiper } from '../../components/Swiper';
 
@@ -33,6 +34,7 @@ export const HomePage = () => {
         <div className={s.homePage__section}>
           <PageSection sectionTitle="Hot prices">HOT PRISES SLIDER</PageSection>
         </div>
+        <Gallery images={[]} />
       </div>
     </div>
   );
