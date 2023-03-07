@@ -53,7 +53,7 @@ export const PhonesPage = () => {
 
             <Filters />
 
-            <Catalog products={phones} productsQuantity={total} />
+            <Catalog products={phones} />
 
             {total > 0 && <Pagination total={total} />}
           </>
