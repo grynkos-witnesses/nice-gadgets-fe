@@ -16,10 +16,7 @@ type Props = {
 
 export const CartItem: React.FC<Props> = ({ product }) => {
   const {
-    name,
-    price,
-    image,
-    counter,
+    name, price, image, counter,
   } = product;
 
   const [isDisabled, setIsDisabled] = useState(false);

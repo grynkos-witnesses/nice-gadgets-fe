@@ -19,9 +19,7 @@ export const FavoritesPage: FC = () => {
           <>
             <QuantityIndicator quantity={favoritesItems.length} />
 
-            <Catalog
-              products={favoritesItems}
-            />
+            <Catalog products={favoritesItems} />
           </>
         ) : (
           <div className={s.container}>
