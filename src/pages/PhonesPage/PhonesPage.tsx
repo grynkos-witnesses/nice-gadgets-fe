@@ -11,7 +11,7 @@ import { usePageInfo } from '../../hooks/usePageInfo';
 import { QuantityIndicator } from '../../components/Catalog/QuantityIndicator/QuantityIndicator';
 import { Pagination } from '../../components/Pagination';
 import s from './PhonesPage.module.scss';
-import { Filters } from '../../components/Filters/Filters';
+import { SelectorsPanel } from '../../components/SelectorsPanel/SelectorsPanel';
 
 export const PhonesPage = () => {
   const [phones, setPhones] = useState<Phone[]>([]);
@@ -51,7 +51,7 @@ export const PhonesPage = () => {
           <>
             <QuantityIndicator quantity={total} />
 
-            <Filters />
+            <SelectorsPanel />
 
             <Catalog products={phones} />
 
