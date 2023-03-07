@@ -18,6 +18,8 @@
   &:disabled {
     border-color: $elementsColor;
 
+    cursor: auto;
+
     .iconBtn_icon {
       fill: $iconsColor;
     }
@@ -28,6 +30,8 @@
     margin: 0 auto;
     width: 16px;
     height: 16px;
+
+    fill: $primaryColor;
 
     transition: transform $transitionSettings;
   }

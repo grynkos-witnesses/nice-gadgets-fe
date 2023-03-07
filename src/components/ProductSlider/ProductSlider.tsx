@@ -1,16 +1,16 @@
-/* eslint-disable no-debugger */
 import React, { FC, useEffect, useState } from 'react';
 
+import { Notify } from 'notiflix';
 import { Phone } from '../../types/Phone';
 import { Card } from '../Card';
 
-import prevIcon from '../../icons/prev_icon.svg';
-import nextIcon from '../../icons/next_icon.svg';
+import icons from '../../icons/iconsSprite.svg';
 import s from './ProductSlider.module.scss';
 import { useLocalStorage } from '../../hooks/useLocalStorage';
+import { IconButton } from '../IconButton/IconButton';
 
 interface Props {
-  fetchProducts: () => Promise<Phone[]>
+  fetchProducts: () => Promise<Phone[]>;
 }
 
 export const ProductSlider: FC<Props> = ({ fetchProducts }) => {
@@ -25,7 +25,14 @@ export const ProductSlider: FC<Props> = ({ fetchProducts }) => {
   };
 
   const windowWidth = window.innerWidth;
-  const maxTranslate = (cards.length * stepSize);
+  const viewport = document.querySelector(`.${s.slider__content}`);
+  let viewportWidth = 0;
+
+  if (viewport) {
+    viewportWidth = parseFloat(getComputedStyle(viewport).width) || 0;
+  }
+
+  const maxTranslate = cards.length * stepSize - viewportWidth;
 
   useEffect(() => {
     if (windowWidth >= 1200) {
@@ -41,27 +48,29 @@ export const ProductSlider: FC<Props> = ({ fetchProducts }) => {
     }
   }, []);
 
-  const getCards = async () => {
-    const loadedCards = await fetchProducts();
+  const getProdducts = async () => {
+    try {
+      const loadedCards = await fetchProducts();
 
-    if (loadedCards) {
       setCards(loadedCards);
+    } catch (error) {
+      Notify.failure('Cant load data');
     }
   };
 
   useEffect(() => {
-    getCards();
+    getProdducts();
   }, []);
-
-  if (cards.length) {
-    debugger;
-  }
 
   const goBack = () => {
     setTranslate((prev) => {
-      return ((prev + stepSize) <= 0)
-        ? (prev + stepSize)
-        : 0;
+      return prev + stepSize <= 0 ? prev + stepSize : 0;
+    });
+  };
+
+  const goNext = () => {
+    setTranslate((prev) => {
+      return prev - stepSize > -maxTranslate ? prev - stepSize : -maxTranslate;
     });
   };
 
@@ -69,29 +78,13 @@ export const ProductSlider: FC<Props> = ({ fetchProducts }) => {
     <section className={s.slider}>
       <div className={s.scroll}>
         <div className={s.scroll__container}>
-          <button
-            type="button"
-            className={s.scroll__button}
-            onClick={() => {
-              if (translate < 0) {
-                goBack();
-              }
-            }}
-          >
-            <img src={prevIcon} alt="arrow" className={s.scroll__image} />
-          </button>
+          <IconButton disabled={translate === 0} onClick={goBack}>
+            <use href={`${icons}#icon-Chevron-Arrow-Left`} />
+          </IconButton>
 
-          <button
-            type="button"
-            className={s.scroll__button}
-            onClick={() => {
-              if (translate < maxTranslate) {
-                setTranslate((prev) => prev - stepSize);
-              }
-            }}
-          >
-            <img src={nextIcon} alt="arrow" className={s.scroll__image} />
-          </button>
+          <IconButton disabled={translate <= -maxTranslate} onClick={goNext}>
+            <use href={`${icons}#icon-Chevron-Arrow-Right`} />
+          </IconButton>
         </div>
       </div>
 
