@@ -1,45 +1,48 @@
-import React, { useEffect, useState } from 'react';
+/* eslint-disable no-debugger */
+import React, { FC, useEffect, useState } from 'react';
 
 import { Phone } from '../../types/Phone';
 import { Card } from '../Card';
-
-import { getNewestProducts } from '../../api/phones';
 
 import prevIcon from '../../icons/prev_icon.svg';
 import nextIcon from '../../icons/next_icon.svg';
 import s from './ProductSlider.module.scss';
 import { useLocalStorage } from '../../hooks/useLocalStorage';
 
-export const ProductSlider: React.FC = () => {
+interface Props {
+  fetchProducts: () => Promise<Phone[]>
+}
+
+export const ProductSlider: FC<Props> = ({ fetchProducts }) => {
   const [cards, setCards] = useState<Phone[]>([]);
-  const [position, setPosition] = useState(0);
-  const [cardWidth, setCardWidth] = useState(0);
-  const [cardCount, setCardCount] = useState(0);
+  const [translate, setTranslate] = useState(0);
+  const [stepSize, setStepSize] = useState(0);
   const [cart, favorites] = useLocalStorage();
 
   const styles = {
-    transform: `translate(${position}px)`,
-    transition: 'transform 0.5s',
+    transform: `translateX(${translate}px)`,
+    transition: 'transform 0.3s ease-in-out',
   };
 
   const windowWidth = window.innerWidth;
+  const maxTranslate = (cards.length * stepSize);
 
   useEffect(() => {
     if (windowWidth >= 1200) {
-      setCardWidth(272 + 16);
+      setStepSize(272 + 16);
     }
 
     if (windowWidth < 1200) {
-      setCardWidth(237 + 16);
+      setStepSize(237 + 16);
     }
 
     if (windowWidth < 640) {
-      setCardWidth(212 + 16);
+      setStepSize(212 + 16);
     }
   }, []);
 
   const getCards = async () => {
-    const loadedCards = await getNewestProducts();
+    const loadedCards = await fetchProducts();
 
     if (loadedCards) {
       setCards(loadedCards);
@@ -50,6 +53,18 @@ export const ProductSlider: React.FC = () => {
     getCards();
   }, []);
 
+  if (cards.length) {
+    debugger;
+  }
+
+  const goBack = () => {
+    setTranslate((prev) => {
+      return ((prev + stepSize) <= 0)
+        ? (prev + stepSize)
+        : 0;
+    });
+  };
+
   return (
     <section className={s.slider}>
       <div className={s.scroll}>
@@ -58,9 +73,8 @@ export const ProductSlider: React.FC = () => {
             type="button"
             className={s.scroll__button}
             onClick={() => {
-              if (cardCount > 0) {
-                setPosition((prev) => prev + cardWidth);
-                setCardCount((prev) => prev - 1);
+              if (translate < 0) {
+                goBack();
               }
             }}
           >
@@ -71,9 +85,8 @@ export const ProductSlider: React.FC = () => {
             type="button"
             className={s.scroll__button}
             onClick={() => {
-              if (cardCount < 6) {
-                setPosition((prev) => prev - cardWidth);
-                setCardCount((prev) => prev + 1);
+              if (translate < maxTranslate) {
+                setTranslate((prev) => prev - stepSize);
               }
             }}
           >
