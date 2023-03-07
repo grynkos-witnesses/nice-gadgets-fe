@@ -4,7 +4,7 @@ import Slider from 'react-slick';
 import s from './Gallery.module.scss';
 
 interface Props {
-  images: string[]
+  images: string[];
 }
 
 export const Gallery: FC<Props> = () => {
