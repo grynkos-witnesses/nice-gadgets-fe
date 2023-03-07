@@ -2,6 +2,7 @@ import React from 'react';
 import { Categories } from '../../components/Categories';
 import { Gallery } from '../../components/Gallery/Gallery';
 import { PageSection } from '../../components/PageSection/PageSection';
+import { ProductSlider } from '../../components/ProductSlider';
 import { Swiper } from '../../components/Swiper';
 
 import s from './HomePage.module.scss';
@@ -22,7 +23,7 @@ export const HomePage = () => {
       <div className="container">
         <div className={s.homePage__section}>
           <PageSection sectionTitle="Brand new models">
-            NEW MODELS SLIDER
+            <ProductSlider />
           </PageSection>
         </div>
 

@@ -1,0 +1,64 @@
+@import '../../base_styles/';
+
+.slider {
+  &__container {
+    overflow: hidden;
+  }
+
+  &__content {
+    display: flex;
+    gap: 16px;
+  }
+
+  &__item {
+    flex-basis: 212px;
+    flex-shrink: 0;
+
+    @include onTablet {
+      flex-basis: 237px;
+    }
+
+    @include onLaptop {
+      flex-basis: 272px;
+    }
+  }
+}
+
+.scroll {
+  position: relative;
+
+  &__container {
+    display: flex;
+    gap: 16px;
+
+    position: absolute;
+    right: 0;
+    top: -60px;
+
+    @include onTablet {
+      right: 0;
+      top: -65px;
+    }
+
+    @include onLaptop {
+      right: 16px;
+      top: -65px;
+    }
+  }
+
+  &__button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: right;
+    height: 32px;
+    width: 32px;
+    border: 1px solid $iconsColor;
+
+    transition: border-color $transitionSettings;
+
+    &:hover {
+      border-color: $primaryColor;
+    }
+  }
+}

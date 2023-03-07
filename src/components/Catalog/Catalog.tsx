@@ -21,12 +21,13 @@ export const Catalog: React.FC<Props> = ({ products }) => {
           );
 
           return (
-            <Card
-              product={product}
-              key={product.id}
-              isInCart={isInCart}
-              isInFavorites={isInFavorites}
-            />
+            <div key={product.id} className={CatalogSCSS.catalog__item}>
+              <Card
+                product={product}
+                isInCart={isInCart}
+                isInFavorites={isInFavorites}
+              />
+            </div>
           );
         })}
       </div>

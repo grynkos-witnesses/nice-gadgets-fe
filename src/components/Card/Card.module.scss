@@ -6,16 +6,14 @@
   flex-direction: column;
   background-color: $whiteColor;
 
-  width: 288px;
   padding: 32px;
+  height: 100%;
   border: 1px solid $elementsColor;
 
-  @include onLaptop {
-    width: 230px;
-  }
+  transition: border-color $transitionSettings;
 
-  @include onDesktop {
-    width: 272px;
+  &:hover {
+    border-color: $primaryColor;
   }
 
   &__icon {
