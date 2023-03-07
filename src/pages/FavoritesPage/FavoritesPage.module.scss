@@ -5,3 +5,11 @@
     margin-bottom: 8px;
   }
 }
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  height: 50vh;
+}

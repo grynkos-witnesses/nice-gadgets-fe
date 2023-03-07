@@ -1,11 +1,14 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable jsx-a11y/control-has-associated-label */
 import React, { useState } from 'react';
 import s from './CartPage.module.scss';
+import emptyCart from '../../icons/emptyCart.svg';
 import { BackButton } from '../../components/BackButton/BackButton';
 import { CartItem } from '../../components/CartItem';
 import { Checkout } from '../../components/Checkout/Checkout';
 import { useLocalStorage } from '../../hooks/useLocalStorage';
 import { SuccessMessageModal } from '../../components/SuccessMessageModal/SuccessMessageModal';
+import { EmptyMessage } from '../../components/EmptyMessage/EmptyMessage';
 
 export const CartPage: React.FC = () => {
   const [isModalTriggered, setIsModalTriggered] = useState(false);
@@ -41,19 +44,30 @@ export const CartPage: React.FC = () => {
             </div>
           </div>
 
-          <div
-            className="
-            grid__item--mobile--1-4
-            grid__item--tablet--1-12
-            grid__item--desktop--17-24"
-          >
-            <Checkout
-              total={productsTotal}
-              itemsNum={itemsNum}
-              setTrigger={setIsModalTriggered}
-            />
-            {isModalTriggered && <SuccessMessageModal />}
-          </div>
+          {itemsNum ? (
+            <div
+              className="
+              grid__item--mobile--1-4
+              grid__item--tablet--1-12
+              grid__item--desktop--17-24"
+            >
+              <Checkout
+                total={productsTotal}
+                itemsNum={itemsNum}
+                setTrigger={setIsModalTriggered}
+              />
+              {isModalTriggered && <SuccessMessageModal />}
+            </div>
+          ) : (
+            <div
+              className="
+              grid__item--mobile--1-4
+              grid__item--tablet--1-12
+              grid__item--desktop--8-15"
+            >
+              <EmptyMessage svg={emptyCart} btnText="Buy" />
+            </div>
+          )}
         </div>
       </div>
     </div>
