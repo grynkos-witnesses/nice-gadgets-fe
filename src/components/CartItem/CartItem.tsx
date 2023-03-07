@@ -20,9 +20,6 @@ export const CartItem: React.FC<Props> = ({ product }) => {
     price,
     image,
     counter,
-    // we use img instead of image variable in img src
-    // until we able to fetch images from server
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
   } = product;
 
   const [isDisabled, setIsDisabled] = useState(false);
