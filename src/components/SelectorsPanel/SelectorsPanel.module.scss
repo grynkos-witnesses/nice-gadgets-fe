@@ -1,15 +1,14 @@
 @import '../../base_styles';
 
-.filters {
-  &__filter {
+.selectorsPanel {
+  &__selector {
     margin-bottom: 24px;
   }
 
   &__title {
-    @extend %BodyText;
-    // font-family: 'Mont-Regular';
-
     padding-bottom: 4px;
+
+    @extend %BodyText;
 
     color: $secondaryColor;
   }

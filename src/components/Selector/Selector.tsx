@@ -1,7 +1,7 @@
 import React from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { getSearchWith } from '../../helpers/getSearchWith';
-import s from './Select.module.scss';
+import s from './Selector.module.scss';
 
 type Props = {
   options: string[][];
@@ -17,14 +17,17 @@ export const Select: React.FC<Props> = ({
   const [searchParams, setSearchParams] = useSearchParams();
 
   const updateSearchParams = (value: string) => {
-    const newParams = getSearchWith(searchParams, { [parameter]: value });
+    const newParams = getSearchWith(searchParams, {
+      [parameter]: value,
+      page: '1',
+    });
 
     setSearchParams(newParams);
   };
 
   return (
     <select
-      className={s.select}
+      className={s.selector}
       defaultValue={defaultValue}
       onChange={(event) => updateSearchParams(event.target.value)}
     >
@@ -34,7 +37,7 @@ export const Select: React.FC<Props> = ({
         return (
           <option
             key={optionValue}
-            className={s.select__option}
+            className={s.selector__option}
             value={optionValue}
           >
             {optionName}

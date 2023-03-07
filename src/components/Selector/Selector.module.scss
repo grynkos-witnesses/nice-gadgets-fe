@@ -1,18 +1,17 @@
 @import '../../base_styles';
 
-.select {
+.selector {
   display: block;
   width: 100%;
   padding: 12px;
+
+  @extend %BodyTextTitle;
 
   background-image: url('./icons/icon-Chevron-Arrow-Down.svg');
   background-repeat: no-repeat;
   background-position: right 10px center;
   border: 1px solid #b4bdc4;
   appearance: none;
-
-  @extend %BodyTextTitle;
-
   color: #313237;
 
   cursor: pointer;

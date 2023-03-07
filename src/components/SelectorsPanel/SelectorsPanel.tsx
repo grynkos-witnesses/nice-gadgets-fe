@@ -1,9 +1,9 @@
 import React from 'react';
 import { usePageInfo } from '../../hooks/usePageInfo';
-import { Select } from '../Select/Select';
-import s from './Filters.module.scss';
+import { Select } from '../Selector/Selector';
+import s from './SelectorsPanel.module.scss';
 
-export const Filters = () => {
+export const SelectorsPanel = () => {
   const [, perPage, sortBy] = usePageInfo();
 
   const sortByOptions = [
@@ -22,7 +22,7 @@ export const Filters = () => {
   ];
 
   return (
-    <div className={s.filters}>
+    <div className={s.selectorsPanel}>
       <div className="grid">
         <div
           className="
@@ -30,8 +30,8 @@ export const Filters = () => {
             grid__item--tablet--1-4
             grid__item--desktop--1-4"
         >
-          <div className={s.filters__filter}>
-            <div className={s.filters__title}>Sort by</div>
+          <div className={s.selectorsPanel__selector}>
+            <div className={s.selectorsPanel__title}>Sort by</div>
 
             <Select
               options={sortByOptions}
@@ -47,8 +47,8 @@ export const Filters = () => {
             grid__item--tablet--5-7
             grid__item--desktop--5-7"
         >
-          <div className={s.filters__filter}>
-            <div className={s.filters__title}>Items on page</div>
+          <div className={s.selectorsPanel__selector}>
+            <div className={s.selectorsPanel__title}>Items on page</div>
 
             <Select
               options={perPageOptions}
