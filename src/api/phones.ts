@@ -21,13 +21,9 @@ export function getPhones(
 // }
 
 export function getNewestProducts(): Promise<Phone[]> {
-  return axios
-    .get('/products/new')
-    .then(res => res.data);
+  return axios.get('/products/new').then((res) => res.data);
 }
 
 export function getDiscountProducts(): Promise<Phone[]> {
-  return axios
-    .get('/products/discount')
-    .then(res => res.data);
+  return axios.get('/products/discount').then((res) => res.data);
 }

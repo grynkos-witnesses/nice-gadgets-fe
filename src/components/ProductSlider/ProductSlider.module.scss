@@ -1,52 +1,52 @@
 @import '../../base_styles/';
 
 .slider {
-    &__container {
-        overflow: hidden;
+  &__container {
+    overflow: hidden;
+  }
+
+  &__content {
+    display: flex;
+    gap: 16px;
+  }
+
+  &__item {
+    flex-basis: 212px;
+    flex-shrink: 0;
+
+    @include onTablet {
+      flex-basis: 237px;
     }
 
-    &__content {
-        display: flex;
-        gap: 16px;
+    @include onLaptop {
+      flex-basis: 272px;
     }
-
-    &__item {
-        flex-basis: 212px;
-        flex-shrink: 0;
-
-        @include onTablet {
-            flex-basis: 237px;
-        }
-
-        @include onLaptop {
-            flex-basis: 272px;
-        }
-    }
+  }
 }
 
 .scroll {
-    position: relative;
+  position: relative;
 
-    &__container {
-        display: flex;
-        gap: 16px;
+  &__container {
+    display: flex;
+    gap: 16px;
 
-        position: absolute;
-        right: 0;
-        top: -60px;
+    position: absolute;
+    right: 0;
+    top: -60px;
 
-        @include onTablet {
-            right: 0;
-            top: -65px;
-        }
-
-        @include onLaptop {
-            right: 16px;
-            top: -65px;
-        }
+    @include onTablet {
+      right: 0;
+      top: -65px;
     }
 
-    &__button {
+    @include onLaptop {
+      right: 16px;
+      top: -65px;
+    }
+  }
+
+  &__button {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -58,7 +58,7 @@
     transition: border-color $transitionSettings;
 
     &:hover {
-        border-color: $primaryColor;
+      border-color: $primaryColor;
     }
-    }
+  }
 }

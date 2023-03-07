@@ -84,7 +84,7 @@ export const ProductSlider: React.FC = () => {
 
       <div className={s.slider__container}>
         <div className={s.slider__content} style={styles}>
-          {cards.map(card => {
+          {cards.map((card) => {
             const isInCart = Boolean(cart.find((el) => el.id === card.id));
             const isInFavorites = Boolean(
               favorites.find((el) => el.id === card.id),
@@ -92,7 +92,11 @@ export const ProductSlider: React.FC = () => {
 
             return (
               <div key={card.id} className={s.slider__item}>
-                <Card product={card} isInCart={isInCart} isInFavorites={isInFavorites} />
+                <Card
+                  product={card}
+                  isInCart={isInCart}
+                  isInFavorites={isInFavorites}
+                />
               </div>
             );
           })}

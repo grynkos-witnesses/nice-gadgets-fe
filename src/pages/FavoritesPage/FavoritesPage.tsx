@@ -19,13 +19,9 @@ export const FavoritesPage: FC = () => {
           <>
             <QuantityIndicator quantity={favoritesItems.length} />
 
-<<<<<<< HEAD
-            <Catalog products={favoritesItems} />
-=======
             <Catalog
               products={favoritesItems}
             />
->>>>>>> 712d0a9 (Product slider)
           </>
         ) : (
           <div className={s.container}>
