@@ -51,6 +51,8 @@ export const PhonesPage = () => {
           <>
             <QuantityIndicator quantity={total} />
 
+            <Filters />
+
             <Catalog products={phones} />
 
             {total > 0 && <Pagination total={total} />}
