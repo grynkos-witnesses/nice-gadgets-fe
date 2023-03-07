@@ -6,6 +6,7 @@ import s from './Card.module.scss';
 import icons from '../../icons/iconsSprite.svg';
 import { PrimaryButton } from '../PrimaryButton/PrimaryButton';
 import { useLocalStorage } from '../../hooks/useLocalStorage';
+import { ActiveButton } from '../ActiveButton/ActiveButton';
 
 interface Props {
   product: Phone;
@@ -60,11 +61,11 @@ export const Card: React.FC<Props> = ({ product, isInCart, isInFavorites }) => {
       <div className={s.card__buy}>
         <div className={s.card__buy__add}>
           {isInCart ? (
-            <PrimaryButton
+            <ActiveButton
               onClick={() => removeFromLocalStorage('cart', id, true)}
             >
               Added
-            </PrimaryButton>
+            </ActiveButton>
           ) : (
             <PrimaryButton onClick={() => handleAddtoCartClick('cart')}>
               Add to cart
