@@ -51,6 +51,32 @@
   @include onTablet {
     display: none;
   }
+
+  &__counter {
+    user-select: none;
+    position: absolute;
+    background: $redColor;
+    width: 1.1rem;
+    height: 1.1rem;
+
+    z-index: 1;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    top: 0.8rem;
+    right: 4.8rem;
+
+    border-radius: 50%;
+    border: 2px solid $whiteColor;
+
+    font-family: 'Mont-Regular';
+
+    font-size: 0.6rem;
+
+    color: $whiteColor;
+  }
 }
 
 .navigation {
@@ -81,6 +107,7 @@
   }
 
   &_footer {
+    position: relative;
     display: inline-block;
 
     width: 50%;
