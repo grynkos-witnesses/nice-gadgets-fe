@@ -62,6 +62,7 @@ export const Card: React.FC<Props> = ({ product, isInCart, isInFavorites }) => {
           {isInCart ? (
             <PrimaryButton
               onClick={() => removeFromLocalStorage('cart', id, true)}
+              id={id}
             >
               Added
             </PrimaryButton>
