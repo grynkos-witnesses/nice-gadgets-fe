@@ -29,4 +29,4 @@ $ npm start
 ```
 
 ## DEMO
-* [Demo link](https://grynkos-witnesses.github.io/nice-gadgets-fe/)
+* [Demo link](https://nice-gadgets.herokuapp.com/)
