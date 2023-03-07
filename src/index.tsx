@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import {
-  HashRouter, Routes, Route, Navigate,
+  Routes, Route, Navigate, BrowserRouter,
 } from 'react-router-dom';
 import { App } from './App';
 import { NotFoundPage } from './pages/NotFoundPage/NotFoundPage';
@@ -13,7 +13,7 @@ import { FavoritesPage } from './pages/FavoritesPage/FavoritesPage';
 
 ReactDOM.render(
   <React.StrictMode>
-    <HashRouter>
+    <BrowserRouter>
       <Routes>
         <Route path="/" element={<App />}>
           <Route path="*" element={<NotFoundPage />} />
@@ -30,7 +30,7 @@ ReactDOM.render(
           <Route path="favorites" element={<FavoritesPage />} />
         </Route>
       </Routes>
-    </HashRouter>
+    </BrowserRouter>
   </React.StrictMode>,
   document.getElementById('root'),
 );
