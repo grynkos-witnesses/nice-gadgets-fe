@@ -1,0 +1,84 @@
+@import '../../base_styles/index.scss';
+// @import '../../base_styles/utils/extends';
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  &__inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+
+    @include onTablet {
+      flex-direction: row;
+    }
+  }
+}
+
+.illustration {
+  height: 40%;
+  width: 40%;
+
+  margin-bottom: 20px;
+
+  @include onTablet {
+    height: 50%;
+    width: 50%;
+  }
+
+  @include onDesktop {
+    height: 60%;
+    width: 60%;
+  }
+}
+
+.text {
+  font-family: 'Mont-Bold';
+  @extend %H3Text;
+}
+
+.btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  margin: 20px;
+
+  width: 40%;
+  height: 40px;
+
+  @include onTablet {
+    width: 40%;
+    height: 50px;
+  }
+
+  @include onDesktop {
+    width: 50%;
+  }
+
+  text-decoration: none;
+  text-align: center;
+  font-family: 'Mont-Regular';
+  color: $whiteColor;
+
+  background-color: $primaryColor;
+  border: 1px solid transparent;
+
+  transition: all 0.3s ease-in-out;
+
+  &:hover {
+    box-shadow: 0px 3px 13px 0px #17203166;
+  }
+
+  &:active {
+    background-color: $whiteColor;
+
+    color: $greenColor;
+
+    border: 1px solid $elementsColor;
+  }
+}
