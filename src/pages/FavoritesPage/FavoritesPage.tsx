@@ -1,5 +1,6 @@
 import React, { FC } from 'react';
 import { Catalog } from '../../components/Catalog';
+import { QuantityIndicator } from '../../components/Catalog/QuantityIndicator/QuantityIndicator';
 import { useLocalStorage } from '../../hooks/useLocalStorage';
 
 import s from './FavoritesPage.module.scss';
@@ -12,10 +13,8 @@ export const FavoritesPage: FC = () => {
       <div className="container">
         <h1 className={`page__title ${s.favoritesPage__title}`}>Favorites</h1>
 
-        <Catalog
-          products={favoritesItems}
-          productsQuantity={favoritesItems.length}
-        />
+        <QuantityIndicator quantity={favoritesItems.length} />
+        <Catalog products={favoritesItems} />
       </div>
     </div>
   );
