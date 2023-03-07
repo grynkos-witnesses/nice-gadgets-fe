@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "./static/css/main.32dd0a52.chunk.css",
-    "main.js": "./static/js/main.82d62cbd.chunk.js",
-    "main.js.map": "./static/js/main.82d62cbd.chunk.js.map",
+    "main.css": "./static/css/main.516f151e.chunk.css",
+    "main.js": "./static/js/main.f697a37a.chunk.js",
+    "main.js.map": "./static/js/main.f697a37a.chunk.js.map",
     "runtime-main.js": "./static/js/runtime-main.5979c3dd.js",
     "runtime-main.js.map": "./static/js/runtime-main.5979c3dd.js.map",
-    "static/js/2.df437da0.chunk.js": "./static/js/2.df437da0.chunk.js",
-    "static/js/2.df437da0.chunk.js.map": "./static/js/2.df437da0.chunk.js.map",
+    "static/js/2.f109e8ce.chunk.js": "./static/js/2.f109e8ce.chunk.js",
+    "static/js/2.f109e8ce.chunk.js.map": "./static/js/2.f109e8ce.chunk.js.map",
     "index.html": "./index.html",
-    "static/css/main.32dd0a52.chunk.css.map": "./static/css/main.32dd0a52.chunk.css.map",
-    "static/js/2.df437da0.chunk.js.LICENSE.txt": "./static/js/2.df437da0.chunk.js.LICENSE.txt",
+    "static/css/main.516f151e.chunk.css.map": "./static/css/main.516f151e.chunk.css.map",
+    "static/js/2.f109e8ce.chunk.js.LICENSE.txt": "./static/js/2.f109e8ce.chunk.js.LICENSE.txt",
     "static/media/Cart.6844d6e5.svg": "./static/media/Cart.6844d6e5.svg",
     "static/media/Favourites.a8c9169d.svg": "./static/media/Favourites.a8c9169d.svg",
     "static/media/Logo.3c6bd188.svg": "./static/media/Logo.3c6bd188.svg",
@@ -24,6 +24,8 @@
     "static/media/category-tablets.0f37e8bd.png": "./static/media/category-tablets.0f37e8bd.png",
     "static/media/close_icon.6e7f15f7.svg": "./static/media/close_icon.6e7f15f7.svg",
     "static/media/cross.f9e13926.svg": "./static/media/cross.f9e13926.svg",
+    "static/media/emptyBox.d8a9dceb.svg": "./static/media/emptyBox.d8a9dceb.svg",
+    "static/media/emptyCart.ce2ab5b8.svg": "./static/media/emptyCart.ce2ab5b8.svg",
     "static/media/Select.module.scss": "./static/media/icon-Chevron-Arrow-Down.f4b5643a.svg",
     "static/media/Pagination.module.scss": "./static/media/icon-Chevron-Arrow-Right.99d40db8.svg",
     "static/media/iconsSprite.1017e8b1.svg": "./static/media/iconsSprite.1017e8b1.svg",
@@ -32,8 +34,8 @@
   },
   "entrypoints": [
     "static/js/runtime-main.5979c3dd.js",
-    "static/js/2.df437da0.chunk.js",
-    "static/css/main.32dd0a52.chunk.css",
-    "static/js/main.82d62cbd.chunk.js"
+    "static/js/2.f109e8ce.chunk.js",
+    "static/css/main.516f151e.chunk.css",
+    "static/js/main.f697a37a.chunk.js"
   ]
 }
