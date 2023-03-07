@@ -1,7 +1,7 @@
 @import '../../base_styles/utils/extends';
 @import '../../base_styles/utils/variables';
 
-.primaryBtn {
+.activeBtn {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -13,10 +13,10 @@
 
   @extend %ButtonsText;
 
-  color: $whiteColor;
-  background-color: $primaryColor;
+  color: $greenColor;
+  background-color: $whiteColor;
 
-  border: none;
+  border: 1px solid $elementsColor;
 
   transition: box-shadow $transitionSettings;
 
@@ -27,10 +27,9 @@
   }
 
   &:active {
-    background-color: $whiteColor;
+    color: $whiteColor;
+    background-color: $primaryColor;
 
-    color: $greenColor;
-
-    border: 1px solid $elementsColor;
+    border: none;
   }
 }
