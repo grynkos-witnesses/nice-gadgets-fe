@@ -1,4 +1,7 @@
 import React, { FC } from 'react';
+import { getRecomendedProducts } from '../../api/phones';
+import { PageSection } from '../../components/PageSection/PageSection';
+import { ProductSlider } from '../../components/ProductSlider';
 
 import s from './ProductPage.module.scss';
 
@@ -82,18 +85,9 @@ export const ProductPage: FC = () => {
           </div>
         </div>
 
-        <section className={s.productPage__section}>
-          <p>5. Recommended block</p>
-          <p>more content</p>
-          <p>more content</p>
-          <p>more content</p>
-          <p>more content</p>
-          <p>more content</p>
-          <p>more content</p>
-          <p>more content</p>
-          <p>more content</p>
-          <p>more content</p>
-        </section>
+        <PageSection sectionTitle="You may also like">
+          <ProductSlider fetchProducts={getRecomendedProducts} />
+        </PageSection>
       </div>
     </div>
   );
