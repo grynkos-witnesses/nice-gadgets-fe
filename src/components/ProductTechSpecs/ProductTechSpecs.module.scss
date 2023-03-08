@@ -1,6 +1,15 @@
-@import '../../base_styles';
+@import '../../base_styles/utils/variables';
 
-.productTechspecs {
+.productSpechsItem {
   display: flex;
   justify-content: space-between;
+  gap: 15px;
+
+  &:not(:last-child) {
+		margin-bottom: 8px;
+	}
+
+	&__value {
+		color: $primaryColor;
+	}
 }

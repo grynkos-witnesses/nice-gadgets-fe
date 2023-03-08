@@ -31,7 +31,7 @@ export const ProductTechSpecs: FC<Props> = ({ specs }) => {
   const specsCopy: { [index: string]: string | string[] } = specs;
 
   return (
-    <div className={s.productTechspecs}>
+    <div>
       <ul>
         {specsKeys.map((key) => {
           const specTitle = specsLabels[key] || 'unknown';
@@ -41,10 +41,17 @@ export const ProductTechSpecs: FC<Props> = ({ specs }) => {
             : specsCopy[key];
 
           return (
-            <li key={key}>
+            <li
+              key={key}
+              className={s.productSpechsItem}
+            >
               <h3>{specTitle}</h3>
 
-              <span>{specValue}</span>
+              <span
+                className={s.productSpechsItem__value}
+              >
+                {specValue}
+              </span>
             </li>
           );
         })}
