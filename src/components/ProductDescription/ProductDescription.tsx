@@ -9,7 +9,7 @@ interface Props {
 export const ProductDescription: FC<Props> = ({ sectionTitle, children }) => {
   return (
     <section className={s.productDescription}>
-      <h1 className={s.productDescription__title}>{sectionTitle}</h1>
+      <h2 className={s.productDescription__title}>{sectionTitle}</h2>
 
       {children}
     </section>

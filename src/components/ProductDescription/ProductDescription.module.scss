@@ -2,14 +2,12 @@
 
 .productDescription {
   &__title {
-
     @extend %H3MobileText;
-    
 
     padding-bottom: 16px;
     margin-bottom: 32px;
 
-    border-bottom: 1px solid #E2E6E9;
+    border-bottom: 1px solid #e2e6e9;
 
     color: $primaryColor;
 
