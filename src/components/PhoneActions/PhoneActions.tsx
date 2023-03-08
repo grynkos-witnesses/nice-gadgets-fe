@@ -34,6 +34,12 @@ export const PhoneActions: React.FC<Props> = memo(
       gold: s.btn_gold,
       silver: s.btn_silver,
       spaceGray: s.btn_spaceGray,
+      black: s.btn_black,
+      green: s.btn_green,
+      yellow: s.btn_yellow,
+      white: s.btn_white,
+      purple: s.btn_purple,
+      red: s.btn_red,
     };
 
     let color: string;
@@ -48,6 +54,9 @@ export const PhoneActions: React.FC<Props> = memo(
         </div>
         <div className={s.container__colors}>
           {phone?.colorsAvailable.map((col) => {
+            let btnBorder: string;
+            const phoneColor = phone.color;
+
             switch (col) {
               case 'midnightgreen':
                 color = colors.midnightGreen;
@@ -65,12 +74,42 @@ export const PhoneActions: React.FC<Props> = memo(
                 color = colors.gold;
                 break;
 
+              case 'black':
+                color = colors.black;
+                break;
+
+              case 'green':
+                color = colors.green;
+                break;
+
+              case 'yellow':
+                color = colors.yellow;
+                break;
+
+              case 'white':
+                color = colors.white;
+                break;
+
+              case 'purple':
+                color = colors.purple;
+                break;
+
+              case 'red':
+                color = colors.red;
+                break;
+
               default:
                 break;
             }
 
+            if (phoneColor === col) {
+              btnBorder = `${s.btn} ${s.activeColor}`;
+            } else {
+              btnBorder = s.btn;
+            }
+
             return (
-              <div key={phone.id} className={s.btn}>
+              <div key={phone.id} className={btnBorder}>
                 <button type="button" className={color} />
               </div>
             );
@@ -79,11 +118,22 @@ export const PhoneActions: React.FC<Props> = memo(
         <div className={s.container__capacity}>
           <h3 className={s.subHeading}>Select capacity</h3>
           <div className={s.container__btns}>
-            {phone?.capacityAvailable.map((cap) => (
-              <button key={phone.id} type="button" className={s.btn__capacity}>
-                {cap}
-              </button>
-            ))}
+            {phone?.capacityAvailable.map((cap) => {
+              let btnClass = s.btn__capacity;
+              const capcity = phone.capacity;
+
+              if (capcity === cap) {
+                btnClass = `${s.btn__capacity} ${s.activeCapacity}`;
+              } else {
+                btnClass = s.btn__capacity;
+              }
+
+              return (
+                <button key={phone.id} type="button" className={btnClass}>
+                  {cap}
+                </button>
+              );
+            })}
           </div>
         </div>
         <div className={s.container__price}>

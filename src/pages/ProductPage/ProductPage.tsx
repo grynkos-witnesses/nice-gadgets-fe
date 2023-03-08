@@ -3,6 +3,7 @@ import React, { FC, useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { getOne, getRecomendedProducts } from '../../api/phones';
 import { PageSection } from '../../components/PageSection/PageSection';
+import { PhoneActions } from '../../components/PhoneActions/PhoneActions';
 import { ProductAbout } from '../../components/ProductAbout/ProductAbout';
 import { ProductDescription } from '../../components/ProductDescription/ProductDescription';
 import { ProductSlider } from '../../components/ProductSlider';

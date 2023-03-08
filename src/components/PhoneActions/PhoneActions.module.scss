@@ -140,6 +140,72 @@
     background-color: #5f7170;
   }
 
+  &_black {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background-color: #1a1a00;
+  }
+
+  &_green {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background-color: #66ffc2;
+  }
+
+  &_yellow {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background-color: #ffff80;
+  }
+
+  &_white {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background-color: $whiteColor;
+  }
+
+  &_purple {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background-color: #ccb3ff;
+  }
+
+  &_red {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background-color: #e63900;
+  }
+
   &_gold {
     position: absolute;
     top: 50%;
@@ -199,4 +265,14 @@
   font-family: 'Mont-Regular';
   font-size: 12px;
   color: $secondaryColor;
+}
+
+.activeColor {
+  border: 1px solid $primaryColor;
+}
+
+.activeCapacity {
+  background-color: $primaryColor;
+  color: $whiteColor;
+  border: 1px solid transparent;
 }
