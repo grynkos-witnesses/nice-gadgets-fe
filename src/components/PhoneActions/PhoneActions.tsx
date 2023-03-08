@@ -1,3 +1,4 @@
+/* eslint-disable no-debugger */
 /* eslint-disable jsx-a11y/control-has-associated-label */
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import React, { memo } from 'react';
@@ -9,7 +10,7 @@ import { PrimaryButton } from '../PrimaryButton/PrimaryButton';
 import s from './PhoneActions.module.scss';
 
 interface Props {
-  phone: FullPhone | null;
+  phone: FullPhone;
   isInCart: boolean;
   isInFavorites: boolean;
 }
@@ -25,7 +26,14 @@ export const PhoneActions: React.FC<Props> = memo(
     }
 
     const handleAddtoCartClick = (where: string) => addToLocalStorage(where, {
-      ...product,
+      id: phone.id,
+      itemId: phone.id,
+      name: phone.name,
+      price: phone.priceDiscount,
+      fullPrice: phone.priceRegular,
+      image: phone.images[0],
+      capacity: phone.capacity,
+      ram: phone.ram,
       counter: 1,
     });
 
@@ -43,6 +51,8 @@ export const PhoneActions: React.FC<Props> = memo(
     };
 
     let color: string;
+
+    // debugger;
 
     return (
       <div className={s.container}>

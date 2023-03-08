@@ -65,11 +65,13 @@ export const ProductPage: FC = () => {
             grid__item--desktop--14-24"
           >
             <section className={s.productPage__section}>
-              <PhoneActions
-                phone={product}
-                isInCart={isInCart}
-                isInFavorites={isInFavorites}
-              />
+              {product && (
+                <PhoneActions
+                  phone={product}
+                  isInCart={isInCart}
+                  isInFavorites={isInFavorites}
+                />
+              )}
             </section>
           </div>
 

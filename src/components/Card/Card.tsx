@@ -2,12 +2,12 @@
 /* eslint-disable no-debugger */
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Phone } from '../../types/Phone';
 import s from './Card.module.scss';
 import icons from '../../icons/iconsSprite.svg';
 import { PrimaryButton } from '../PrimaryButton/PrimaryButton';
 import { useLocalStorage } from '../../hooks/useLocalStorage';
 import { ActiveButton } from '../ActiveButton/ActiveButton';
+import { Phone } from '../../types/Phone';
 
 interface Props {
   product: Phone;
@@ -25,6 +25,7 @@ export const Card: React.FC<Props> = ({ product, isInCart, isInFavorites }) => {
 
   const handleAddtoCartClick = (where: string) => addToLocalStorage(where, {
     ...product,
+    id: itemId,
     counter: 1,
   });
 

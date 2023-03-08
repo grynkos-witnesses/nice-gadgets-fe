@@ -7,8 +7,9 @@ import close from '../../icons/close_icon.svg';
 import icons from '../../icons/iconsSprite.svg';
 
 import { IconButton } from '../IconButton/IconButton';
-import { CartPhone } from '../../types/CartPhone';
 import { useLocalStorage } from '../../hooks/useLocalStorage';
+// import { PhoneInLocalStorage } from '../../types/PhoneInLocalStorage';
+import { CartPhone } from '../../types/CartPhone';
 
 type Props = {
   product: CartPhone;
