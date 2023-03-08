@@ -16,7 +16,9 @@ export const Catalog: React.FC<Props> = ({ products }) => {
     <>
       <div className={CatalogSCSS.catalog}>
         {products.map((product) => {
-          const isInCart = Boolean(cart.find((el) => el.id === product.phoneId));
+          const isInCart = Boolean(
+            cart.find((el) => el.id === product.phoneId),
+          );
           const isInFavorites = Boolean(
             favorites.find((el) => el.id === product.phoneId),
           );
