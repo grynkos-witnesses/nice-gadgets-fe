@@ -15,7 +15,7 @@ export function getPhones(
     .then((res) => res.data);
 }
 
-export function getOne(phoneId: string): Promise<FullPhone[]> {
+export function getOne(phoneId: string): Promise<FullPhone> {
   return axios.get(`/products/${phoneId}`).then((res) => res.data);
 }
 

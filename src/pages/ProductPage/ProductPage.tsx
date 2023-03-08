@@ -16,7 +16,7 @@ export const ProductPage: FC = () => {
   const loadProduct = async () => {
     const data = await getOne(`${productId}`);
 
-    return data[0];
+    return data;
   };
 
   useEffect(() => {
