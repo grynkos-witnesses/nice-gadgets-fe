@@ -17,16 +17,5 @@
     @include onDesktop {
       margin-bottom: 80px;
     }
-
-    // The below styles are temporary and should be deleted in future
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 30px;
-    font-size: 26px;
-    border: 3px solid #8d8d8d;
-    border-radius: 5px;
-    background-color: rgb(233, 233, 233);
   }
 }
