@@ -36,7 +36,10 @@ export function useLocalStorage(): HookOutput {
     return () => window.removeEventListener('storage', handleStorage);
   }, []);
 
-  function addToLocalStorage(key: string, value: CartPhone | Phone | FullPhone) {
+  function addToLocalStorage(
+    key: string,
+    value: CartPhone | Phone | FullPhone,
+  ) {
     const stringStorage = localStorage.getItem(key);
 
     const storage = stringStorage ? JSON.parse(stringStorage) : [];

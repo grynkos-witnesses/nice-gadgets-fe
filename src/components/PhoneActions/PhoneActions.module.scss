@@ -17,7 +17,7 @@
 
   &__btns {
     display: flex;
-    align-items: center; 
+    align-items: center;
 
     margin-bottom: 32px;
 
@@ -88,7 +88,7 @@
   &__capacity {
     margin-right: 8px;
     margin-bottom: 24px;
-    padding: 8px;  
+    padding: 8px;
     color: $primaryColor;
     background-color: $whiteColor;
     border: 1px solid $elementsColor;
@@ -101,34 +101,33 @@
       background-color: $primaryColor;
       color: $whiteColor;
       border: 1px solid transparent;
-
     }
   }
 
   &__buy__heart {
-      height: 40px;
-      width: 40px;
+    height: 40px;
+    width: 40px;
 
-      background-color: $whiteColor;
-      border: 1px solid $iconsColor;
+    background-color: $whiteColor;
+    border: 1px solid $iconsColor;
 
-      cursor: pointer;
+    cursor: pointer;
 
-      .heartIcon {
-        width: 15px;
-        height: 13px;
+    .heartIcon {
+      width: 15px;
+      height: 13px;
 
-        transition: transform $transitionSettings;
-      }
-
-      &:hover .heartIcon {
-        transform: scale(1.3);
-      }
-
-      &:active .heartIcon {
-        transform: scale(0.8);
-      }
+      transition: transform $transitionSettings;
     }
+
+    &:hover .heartIcon {
+      transform: scale(1.3);
+    }
+
+    &:active .heartIcon {
+      transform: scale(0.8);
+    }
+  }
 
   &_mdnGreen {
     position: absolute;
@@ -138,7 +137,7 @@
     width: 28px;
     height: 28px;
     border-radius: 50%;
-    background-color: #5F7170;
+    background-color: #5f7170;
   }
 
   &_gold {
@@ -149,7 +148,7 @@
     width: 28px;
     height: 28px;
     border-radius: 50%;
-    background-color: #FCDBC1;
+    background-color: #fcdbc1;
   }
 
   &_silver {
@@ -160,7 +159,7 @@
     width: 28px;
     height: 28px;
     border-radius: 50%;
-    background-color: #F0F0F0;
+    background-color: #f0f0f0;
   }
 
   &_spaceGray {
@@ -171,7 +170,7 @@
     width: 28px;
     height: 28px;
     border-radius: 50%;
-    background-color: #4C4C4C;
+    background-color: #4c4c4c;
   }
 }
 
