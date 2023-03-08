@@ -1,6 +1,7 @@
 import axios from 'axios';
 import { PhonesResponse } from '../types/PhonesResponse';
 import { Phone } from '../types/Phone';
+import { FullPhone } from '../types/FullPhone';
 
 axios.defaults.baseURL = 'https://secret-meadow-92340.herokuapp.com/';
 
@@ -14,7 +15,7 @@ export function getPhones(
     .then((res) => res.data);
 }
 
-export function getOne(phoneId: string): Promise<Phone> {
+export function getOne(phoneId: string): Promise<FullPhone[]> {
   return axios.get(`/products/${phoneId}`).then((res) => res.data);
 }
 

@@ -4,19 +4,19 @@ import { useParams } from 'react-router-dom';
 import { getOne, getRecomendedProducts } from '../../api/phones';
 import { PageSection } from '../../components/PageSection/PageSection';
 import { ProductSlider } from '../../components/ProductSlider';
-import { Phone } from '../../types/Phone';
+import { FullPhone } from '../../types/FullPhone';
 
 import s from './ProductPage.module.scss';
 
 export const ProductPage: FC = () => {
   const { productId } = useParams();
 
-  const [product, setProduct] = useState<Phone | null>(null);
+  const [product, setProduct] = useState<FullPhone | null>(null);
 
   const loadProduct = async () => {
     const data = await getOne(`${productId}`);
 
-    return data;
+    return data[0];
   };
 
   useEffect(() => {
