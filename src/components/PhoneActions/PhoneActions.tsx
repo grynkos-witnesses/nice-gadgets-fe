@@ -43,9 +43,7 @@ export const PhoneActions: React.FC<Props> = memo(
         <div className={s.colorsAndIdContainer}>
           <h3 className={s.subHeading}>Available colors</h3>
           <h3 className={s.subHeading}>
-            {`ID: ${Math.floor(
-              100000 + Math.random() * 900000,
-            )}`}
+            {`ID: ${Math.floor(100000 + Math.random() * 900000)}`}
           </h3>
         </div>
         <div className={s.container__colors}>
