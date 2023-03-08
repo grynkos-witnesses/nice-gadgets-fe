@@ -38,6 +38,10 @@
     margin-bottom: 8px;
 
     flex-grow: 1;
+
+    &:hover {
+      text-decoration: underline;
+    }
   }
 
   &__price {

@@ -1,6 +1,7 @@
 /* eslint-disable no-console */
 /* eslint-disable no-debugger */
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { Phone } from '../../types/Phone';
 import s from './Card.module.scss';
 import icons from '../../icons/iconsSprite.svg';
@@ -16,8 +17,9 @@ interface Props {
 
 export const Card: React.FC<Props> = ({ product, isInCart, isInFavorites }) => {
   const {
-    id, name, fullPrice, price, screen, capacity, ram, image,
-  } = product;
+    id, itemId, name, fullPrice, price, screen, capacity, ram, image,
+  }
+    = product;
 
   const [, , addToLocalStorage, removeFromLocalStorage] = useLocalStorage();
 
@@ -28,9 +30,11 @@ export const Card: React.FC<Props> = ({ product, isInCart, isInFavorites }) => {
 
   return (
     <section className={s.card}>
-      <img src={image} alt={name} className={s.card__img} />
+      <Link to={`../phones/${itemId}`}>
+        <img src={image} alt={name} className={s.card__img} />
 
-      <h2 className={s.card__name}>{`${name} (iMT9G2FS/A)`}</h2>
+        <h2 className={s.card__name}>{`${name} (iMT9G2FS/A)`}</h2>
+      </Link>
 
       <div className={s.card__price}>
         <p className={s.card__price__new}>{`$${price}`}</p>

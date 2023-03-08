@@ -1,11 +1,30 @@
-import React, { FC } from 'react';
-import { getRecomendedProducts } from '../../api/phones';
+/* eslint-disable no-console */
+import React, { FC, useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
+import { getOne, getRecomendedProducts } from '../../api/phones';
 import { PageSection } from '../../components/PageSection/PageSection';
 import { ProductSlider } from '../../components/ProductSlider';
+import { FullPhone } from '../../types/FullPhone';
 
 import s from './ProductPage.module.scss';
 
 export const ProductPage: FC = () => {
+  const { productId } = useParams();
+
+  const [product, setProduct] = useState<FullPhone | null>(null);
+
+  const loadProduct = async () => {
+    const data = await getOne(`${productId}`);
+
+    return data[0];
+  };
+
+  useEffect(() => {
+    loadProduct().then((loadedProduct) => setProduct(loadedProduct));
+  }, [productId]);
+
+  console.log(product);
+
   return (
     <div className={s.productPage}>
       <div className="container">
