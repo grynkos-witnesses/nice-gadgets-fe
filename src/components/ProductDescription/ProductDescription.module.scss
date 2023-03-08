@@ -1,6 +1,8 @@
 @import '../../base_styles';
 
 .productDescription {
+  color: $secondaryColor;
+
   &__title {
     @extend %H3MobileText;
 
