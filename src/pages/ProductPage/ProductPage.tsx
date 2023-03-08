@@ -6,12 +6,15 @@ import { PageSection } from '../../components/PageSection/PageSection';
 import { ProductAbout } from '../../components/ProductAbout/ProductAbout';
 import { ProductDescription } from '../../components/ProductDescription/ProductDescription';
 import { ProductSlider } from '../../components/ProductSlider';
+import { useLocalStorage } from '../../hooks/useLocalStorage';
 import { FullPhone } from '../../types/FullPhone';
 
 import s from './ProductPage.module.scss';
 
 export const ProductPage: FC = () => {
   const { productId } = useParams();
+
+  const [cart, favorites] = useLocalStorage();
 
   const [product, setProduct] = useState<FullPhone | null>(null);
 
@@ -26,6 +29,11 @@ export const ProductPage: FC = () => {
   }, [productId]);
 
   console.log(product);
+
+  const isInCart = Boolean(cart.find((el) => el.id === product?.id));
+  const isInFavorites = Boolean(
+    favorites.find((el) => el.id === product?.id),
+  );
 
   return (
     <div className={s.productPage}>
@@ -58,14 +66,7 @@ export const ProductPage: FC = () => {
             grid__item--desktop--14-24"
           >
             <section className={s.productPage__section}>
-              <p>2. Actions block</p>
-              <p>more content</p>
-              <p>more content</p>
-              <p>more content</p>
-              <p>more content</p>
-              <p>more content</p>
-              <p>more content</p>
-              <p>more content</p>
+              <PhoneActions phone={product} isInCart={isInCart} isInFavorites={isInFavorites} />
             </section>
           </div>
 

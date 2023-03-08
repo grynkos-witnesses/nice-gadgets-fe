@@ -22,4 +22,5 @@ export interface FullPhone {
   camera: string;
   zoom: string;
   cell: string[];
+  counter: number;
 }

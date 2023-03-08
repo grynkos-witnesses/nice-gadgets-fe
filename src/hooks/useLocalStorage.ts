@@ -2,15 +2,16 @@
 /* eslint-disable consistent-return */
 import { useEffect, useState } from 'react';
 import { CartPhone } from '../types/CartPhone';
+import { FullPhone } from '../types/FullPhone';
 import { Phone } from '../types/Phone';
 
-type LocalAddFunc = (key: string, value: CartPhone | Phone) => void;
+type LocalAddFunc = (key: string, value: CartPhone | Phone | FullPhone) => void;
 type LocalRemoveFunc = (
   key: string,
   removingElId: string,
   clearCompletely: boolean,
 ) => void;
-type HookOutput = [CartPhone[], Phone[], LocalAddFunc, LocalRemoveFunc];
+type HookOutput = [Phone[], Phone[], LocalAddFunc, LocalRemoveFunc];
 
 export function useLocalStorage(): HookOutput {
   const cartJSON = localStorage.getItem('cart') || '[]';
@@ -35,7 +36,7 @@ export function useLocalStorage(): HookOutput {
     return () => window.removeEventListener('storage', handleStorage);
   }, []);
 
-  function addToLocalStorage(key: string, value: CartPhone | Phone) {
+  function addToLocalStorage(key: string, value: CartPhone | Phone | FullPhone) {
     const stringStorage = localStorage.getItem(key);
 
     const storage = stringStorage ? JSON.parse(stringStorage) : [];

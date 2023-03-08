@@ -1,3 +1,203 @@
+@import '../../base_styles/index.scss';
+
 .container {
+  width: 100%;
   display: flex;
+  flex-direction: column;
+
+  padding: 16px;
+
+  background-color: $whiteColor;
+
+  &__colors {
+    margin-bottom: 24px;
+
+    border-bottom: 1px solid $elementsColor;
+  }
+
+  &__btns {
+    display: flex;
+    align-items: center; 
+
+    margin-bottom: 32px;
+
+    border-bottom: 1px solid $elementsColor;
+  }
+
+  &__price {
+    display: flex;
+    align-items: center;
+
+    margin-bottom: 16px;
+  }
+
+  &__localBtns {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    justify-content: space-between;
+
+    margin-bottom: 32px;
+
+    height: 48px;
+  }
+
+  &__intel {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.intel {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.colorsAndIdContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.btn {
+  display: inline-block;
+  position: relative;
+
+  margin-right: 8px;
+  margin-bottom: 20px;
+
+  width: 32px;
+  height: 32px;
+
+  border-radius: 50%;
+
+  background-color: $whiteColor;
+  border: 1px solid $elementsColor;
+
+  transition: all $transitionSettings;
+
+  &:hover {
+    border: 1px solid $primaryColor;
+  }
+
+  &__cart {
+    width: 90%;
+  }
+
+  &__capacity {
+    margin-right: 8px;
+    margin-bottom: 24px;
+    padding: 8px;  
+    color: $primaryColor;
+    background-color: $whiteColor;
+    border: 1px solid $elementsColor;
+    font-family: 'Mont-Regular';
+    font-size: 14px;
+    text-align: center;
+    transition: all $transitionSettings;
+
+    &:hover {
+      background-color: $primaryColor;
+      color: $whiteColor;
+      border: 1px solid transparent;
+
+    }
+  }
+
+  &__buy__heart {
+      height: 40px;
+      width: 40px;
+
+      background-color: $whiteColor;
+      border: 1px solid $iconsColor;
+
+      cursor: pointer;
+
+      .heartIcon {
+        width: 15px;
+        height: 13px;
+
+        transition: transform $transitionSettings;
+      }
+
+      &:hover .heartIcon {
+        transform: scale(1.3);
+      }
+
+      &:active .heartIcon {
+        transform: scale(0.8);
+      }
+    }
+
+  &_mdnGreen {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background-color: #5F7170;
+  }
+
+  &_gold {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background-color: #FCDBC1;
+  }
+
+  &_silver {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background-color: #F0F0F0;
+  }
+
+  &_spaceGray {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background-color: #4C4C4C;
+  }
+}
+
+.value {
+  font-family: 'Mont-Regular';
+  font-size: 12px;
+}
+
+.heading {
+  @extend %H2Text;
+
+  margin-right: 8px;
+
+  &__discount {
+    font-family: 'Mont-Regular';
+    font-size: 22px;
+
+    color: $secondaryColor;
+    text-decoration: line-through;
+  }
+}
+
+.subHeading {
+  display: inline-block;
+  margin-bottom: 8px;
+  font-family: 'Mont-Regular';
+  font-size: 12px;
+  color: $secondaryColor;
 }
