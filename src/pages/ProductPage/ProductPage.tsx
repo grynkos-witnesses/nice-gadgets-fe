@@ -4,6 +4,7 @@ import { useParams } from 'react-router-dom';
 import { getOne, getRecomendedProducts } from '../../api/phones';
 import { Loader } from '../../components/Loader/Loader';
 import { PageSection } from '../../components/PageSection/PageSection';
+import { ProductAbout } from '../../components/ProductAbout/ProductAbout';
 import { ProductDescription } from '../../components/ProductDescription/ProductDescription';
 import { ProductSlider } from '../../components/ProductSlider';
 import { ProductTechSpecs } from '../../components/ProductTechSpecs/ProductTechSpecs';
@@ -97,20 +98,15 @@ export const ProductPage: FC = () => {
             grid__item--mobile--1-4
             grid__item--tablet--1-12
             grid__item--desktop--1-12"
-            >
-              <section className={s.productPage__section}>
-                <p>3. About block</p>
-                <p>more content</p>
-                <p>more content</p>
-                <p>more content</p>
-                <p>more content</p>
-                <p>more content</p>
-                <p>more content</p>
-                <p>more content</p>
-                <p>more content</p>
-                <p>more content</p>
-              </section>
-            </div>
+          >
+            <section className={s.productPage__section}>
+              <ProductDescription sectionTitle="About">
+                {product?.description && (
+                  <ProductAbout description={product?.description} />
+                )}
+              </ProductDescription>
+            </section>
+          </div>
 
             <div
               className="

@@ -1,0 +1,21 @@
+@import '../../base_styles';
+
+.productAbout {
+  @extend %BodyTextTitle;
+
+  &__subsection {
+    margin-bottom: 32px;
+  }
+
+  &__subtitle {
+    @extend %H3MobileText;
+
+    margin-bottom: 16px;
+
+    color: $primaryColor;
+  }
+
+  &__paragraph {
+    margin-bottom: 20px;
+  }
+}
