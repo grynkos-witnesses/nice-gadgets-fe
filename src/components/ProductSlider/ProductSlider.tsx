@@ -91,9 +91,9 @@ export const ProductSlider: FC<Props> = ({ fetchProducts }) => {
       <div className={s.slider__container}>
         <div className={s.slider__content} style={styles}>
           {cards.map((card) => {
-            const isInCart = Boolean(cart.find((el) => el.id === card.id));
+            const isInCart = Boolean(cart.find((el) => el.id === card.phoneId));
             const isInFavorites = Boolean(
-              favorites.find((el) => el.id === card.id),
+              favorites.find((el) => el.id === card.phoneId),
             );
 
             return (

@@ -2,7 +2,9 @@
 /* eslint-disable consistent-return */
 import { useEffect, useState } from 'react';
 import { CartPhone } from '../types/CartPhone';
+// import { FullPhone } from '../types/FullPhone';
 import { Phone } from '../types/Phone';
+// import { PhoneInLocalStorage } from '../types/PhoneInLocalStorage';
 
 type LocalAddFunc = (key: string, value: CartPhone | Phone) => void;
 type LocalRemoveFunc = (
