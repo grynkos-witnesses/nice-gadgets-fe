@@ -27,3 +27,7 @@ export function getNewestProducts(): Promise<Phone[]> {
 export function getDiscountProducts(): Promise<Phone[]> {
   return axios.get('/products/discount').then((res) => res.data);
 }
+
+export function getRecomendedProducts(): Promise<Phone[]> {
+  return axios.get('/products/phoneId/recomended').then((res) => res.data);
+}
