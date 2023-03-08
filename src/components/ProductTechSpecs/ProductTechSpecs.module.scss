@@ -6,10 +6,10 @@
   gap: 15px;
 
   &:not(:last-child) {
-		margin-bottom: 8px;
-	}
+    margin-bottom: 8px;
+  }
 
-	&__value {
-		color: $primaryColor;
-	}
+  &__value {
+    color: $primaryColor;
+  }
 }

@@ -41,17 +41,10 @@ export const ProductTechSpecs: FC<Props> = ({ specs }) => {
             : specsCopy[key];
 
           return (
-            <li
-              key={key}
-              className={s.productSpechsItem}
-            >
+            <li key={key} className={s.productSpechsItem}>
               <h3>{specTitle}</h3>
 
-              <span
-                className={s.productSpechsItem__value}
-              >
-                {specValue}
-              </span>
+              <span className={s.productSpechsItem__value}>{specValue}</span>
             </li>
           );
         })}
