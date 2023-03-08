@@ -41,7 +41,7 @@ export const ProductPage: FC = () => {
       // colorsAvailable,
       // color,
       // images,
-      // description,
+      description,
       screen,
       resolution,
       processor,
@@ -54,7 +54,9 @@ export const ProductPage: FC = () => {
     return (
       <div className={s.productPage}>
         <div className="container">
-          <h1 className={`page__title ${s.productPage__title}`}>Product page</h1>
+          <h1 className={`page__title ${s.productPage__title}`}>
+            Product page
+          </h1>
 
           <div className="grid">
             <div
@@ -98,15 +100,13 @@ export const ProductPage: FC = () => {
             grid__item--mobile--1-4
             grid__item--tablet--1-12
             grid__item--desktop--1-12"
-          >
-            <section className={s.productPage__section}>
-              <ProductDescription sectionTitle="About">
-                {product?.description && (
-                  <ProductAbout description={product?.description} />
-                )}
-              </ProductDescription>
-            </section>
-          </div>
+            >
+              <section className={s.productPage__section}>
+                <ProductDescription sectionTitle="About">
+                  {description && <ProductAbout description={description} />}
+                </ProductDescription>
+              </section>
+            </div>
 
             <div
               className="
@@ -117,26 +117,18 @@ export const ProductPage: FC = () => {
               <section>
                 <ProductDescription sectionTitle="TechSpecs block">
                   <ProductTechSpecs
-                    specs={
-                      {
-                        screen,
-                        resolution,
-                        processor,
-                        ram,
-                        capacity,
-                        camera,
-                        zoom,
-                        cell,
-                      }
-                    }
+                    specs={{
+                      screen,
+                      resolution,
+                      processor,
+                      ram,
+                      capacity,
+                      camera,
+                      zoom,
+                      cell,
+                    }}
                   />
                 </ProductDescription>
-                {/* <p>4. TechSpecs block</p>
-              <p>more content</p>
-              <p>more content</p>
-              <p>more content</p>
-              <p>more content</p>
-              <p>more content</p> */}
               </section>
             </div>
           </div>

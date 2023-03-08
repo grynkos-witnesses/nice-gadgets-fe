@@ -4,15 +4,15 @@ import s from './ProductTechSpecs.module.scss';
 
 interface Props {
   specs: {
-    screen?: string,
-    resolution?:string,
-    processor?:string,
-    ram?:string,
-    capacity?:string,
-    camera?:string,
-    zoom?: string,
-    cell?:string[],
-  }
+    screen?: string;
+    resolution?: string;
+    processor?: string;
+    ram?: string;
+    capacity?: string;
+    camera?: string;
+    zoom?: string;
+    cell?: string[];
+  };
 }
 
 const specsLabels: { [index: string]: string } = {
@@ -33,7 +33,7 @@ export const ProductTechSpecs: FC<Props> = ({ specs }) => {
   return (
     <div className={s.productTechspecs}>
       <ul>
-        {specsKeys.map(key => {
+        {specsKeys.map((key) => {
           const specTitle = specsLabels[key] || 'unknown';
 
           const specValue = Array.isArray(specsCopy[key])
