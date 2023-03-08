@@ -2,12 +2,14 @@
 import React, { FC, useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { getOne, getRecomendedProducts } from '../../api/phones';
+import { Loader } from '../../components/Loader/Loader';
 import { PageSection } from '../../components/PageSection/PageSection';
 import { PhoneActions } from '../../components/PhoneActions/PhoneActions';
 import { ProductAbout } from '../../components/ProductAbout/ProductAbout';
 import { ProductDescription } from '../../components/ProductDescription/ProductDescription';
 import { ProductSlider } from '../../components/ProductSlider';
 import { useLocalStorage } from '../../hooks/useLocalStorage';
+import { ProductTechSpecs } from '../../components/ProductTechSpecs/ProductTechSpecs';
 import { FullPhone } from '../../types/FullPhone';
 
 import s from './ProductPage.module.scss';
@@ -30,36 +32,60 @@ export const ProductPage: FC = () => {
   }, [productId]);
 
   console.log(product);
-
+  
   const isInCart = Boolean(cart.find((el) => el.id === product?.id));
   const isInFavorites = Boolean(favorites.find((el) => el.id === product?.id));
 
-  return (
-    <div className={s.productPage}>
-      <div className="container">
-        <h1 className={`page__title ${s.productPage__title}`}>Product page</h1>
+  if (product) {
+    const {
+      // id,
+      // namespaceId,
+      // name,
+      // capacityAvailable,
+      capacity,
+      // priceRegular,
+      // priceDiscount,
+      // colorsAvailable,
+      // color,
+      // images,
+      description,
+      screen,
+      resolution,
+      processor,
+      ram,
+      camera,
+      zoom,
+      cell,
+    } = product;
 
-        <div className="grid">
-          <div
-            className="
+    return (
+      <div className={s.productPage}>
+        <div className="container">
+          <h1 className={`page__title ${s.productPage__title}`}>
+            Product page
+          </h1>
+
+          <div className="grid">
+            <div
+              className="
             grid__item--mobile--1-4
             grid__item--tablet--1-7
             grid__item--desktop--1-12"
-          >
-            <section className={s.productPage__section}>
-              <p>1. Photos block</p>
-              <p>more content</p>
-              <p>more content</p>
-              <p>more content</p>
-              <p>more content</p>
-              <p>more content</p>
-              <p>more content</p>
-              <p>more content</p>
-            </section>
-          </div>
+            >
+              <section className={s.productPage__section}>
+                <p>1. Photos block</p>
+                <p>more content</p>
+                <p>more content</p>
+                <p>more content</p>
+                <p>more content</p>
+                <p>more content</p>
+                <p>more content</p>
+                <p>more content</p>
+              </section>
+            </div>
 
-          <div
-            className="
+            <div
+              className="
             grid__item--mobile--1-4
             grid__item--tablet--8-12
             grid__item--desktop--14-24"
@@ -75,42 +101,51 @@ export const ProductPage: FC = () => {
             </section>
           </div>
 
-          <div
-            className="
+            <div
+              className="
             grid__item--mobile--1-4
             grid__item--tablet--1-12
             grid__item--desktop--1-12"
-          >
-            <section className={s.productPage__section}>
-              <ProductDescription sectionTitle="About">
-                {product?.description && (
-                  <ProductAbout description={product?.description} />
-                )}
-              </ProductDescription>
-            </section>
-          </div>
+            >
+              <section className={s.productPage__section}>
+                <ProductDescription sectionTitle="About">
+                  {description && <ProductAbout description={description} />}
+                </ProductDescription>
+              </section>
+            </div>
 
-          <div
-            className="
+            <div
+              className="
             grid__item--mobile--1-4
             grid__item--tablet--1-12
             grid__item--desktop--14-24"
-          >
-            <section className={s.productPage__section}>
-              <p>4. TechSpecs block</p>
-              <p>more content</p>
-              <p>more content</p>
-              <p>more content</p>
-              <p>more content</p>
-              <p>more content</p>
-            </section>
+            >
+              <section>
+                <ProductDescription sectionTitle="TechSpecs block">
+                  <ProductTechSpecs
+                    specs={{
+                      screen,
+                      resolution,
+                      processor,
+                      ram,
+                      capacity,
+                      camera,
+                      zoom,
+                      cell,
+                    }}
+                  />
+                </ProductDescription>
+              </section>
+            </div>
           </div>
-        </div>
 
-        <PageSection sectionTitle="You may also like">
-          <ProductSlider fetchProducts={getRecomendedProducts} />
-        </PageSection>
+          <PageSection sectionTitle="You may also like">
+            <ProductSlider fetchProducts={getRecomendedProducts} />
+          </PageSection>
+        </div>
       </div>
-    </div>
-  );
+    );
+  }
+
+  return <Loader />;
 };
