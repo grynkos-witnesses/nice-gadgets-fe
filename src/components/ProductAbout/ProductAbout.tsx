@@ -15,7 +15,7 @@ export const ProductAbout: FC<Props> = ({ description }) => {
         <div className={s.productAbout__subsection} key={uuidv4()}>
           <h3 className={s.productAbout__subtitle}>{detail.title}</h3>
 
-          {detail.text.map(paragraph => (
+          {detail.text.map((paragraph) => (
             <p className={s.productAbout__paragraph} key={uuidv4()}>
               {paragraph}
             </p>

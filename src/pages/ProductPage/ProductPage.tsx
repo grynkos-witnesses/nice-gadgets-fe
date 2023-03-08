@@ -77,7 +77,9 @@ export const ProductPage: FC = () => {
           >
             <section className={s.productPage__section}>
               <ProductDescription sectionTitle="About">
-                {product?.description && <ProductAbout description={product?.description} />}
+                {product?.description && (
+                  <ProductAbout description={product?.description} />
+                )}
               </ProductDescription>
             </section>
           </div>
