@@ -3,6 +3,8 @@ import React, { FC, useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { getOne, getRecomendedProducts } from '../../api/phones';
 import { PageSection } from '../../components/PageSection/PageSection';
+import { ProductAbout } from '../../components/ProductAbout/ProductAbout';
+import { ProductDescription } from '../../components/ProductDescription/ProductDescription';
 import { ProductSlider } from '../../components/ProductSlider';
 import { FullPhone } from '../../types/FullPhone';
 
@@ -74,16 +76,9 @@ export const ProductPage: FC = () => {
             grid__item--desktop--1-12"
           >
             <section className={s.productPage__section}>
-              <p>3. About block</p>
-              <p>more content</p>
-              <p>more content</p>
-              <p>more content</p>
-              <p>more content</p>
-              <p>more content</p>
-              <p>more content</p>
-              <p>more content</p>
-              <p>more content</p>
-              <p>more content</p>
+              <ProductDescription sectionTitle="About">
+                {product?.description && <ProductAbout description={product?.description} />}
+              </ProductDescription>
             </section>
           </div>
 
