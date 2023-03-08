@@ -1,0 +1,21 @@
+@import '../../base_styles';
+
+.productDescription {
+  color: $secondaryColor;
+
+  &__title {
+    @extend %H3MobileText;
+
+    padding-bottom: 16px;
+    margin-bottom: 32px;
+
+    border-bottom: 1px solid #e2e6e9;
+
+    color: $primaryColor;
+
+    @include onTablet {
+      font-size: 22px;
+      line-height: 25px;
+    }
+  }
+}
