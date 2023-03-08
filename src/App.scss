@@ -8,6 +8,10 @@
   &_content {
     flex-grow: 1;
   }
+
+  &__body--with-menu {
+    overflow: hidden;
+  }
 }
 
 .page {

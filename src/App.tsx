@@ -10,6 +10,12 @@ export const App: React.FC = () => {
 
   const isMenuOpen = hash.includes('#menu');
 
+  if (isMenuOpen) {
+    document.body.classList.add('App__body--with-menu');
+  } else {
+    document.body.classList.remove('App__body--with-menu');
+  }
+
   return (
     <div className="App">
       <BurgerMenu isVisible={isMenuOpen} />
