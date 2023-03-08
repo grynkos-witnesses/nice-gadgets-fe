@@ -1,9 +1,12 @@
 @import '../../base_styles/utils/variables';
+@import '../../base_styles/utils/extends';
 
 .productSpechsItem {
   display: flex;
   justify-content: space-between;
   gap: 15px;
+
+  @extend %BodyText;
 
   &:not(:last-child) {
     margin-bottom: 8px;

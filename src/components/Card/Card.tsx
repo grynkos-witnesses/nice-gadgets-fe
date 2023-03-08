@@ -1,5 +1,3 @@
-/* eslint-disable no-console */
-/* eslint-disable no-debugger */
 import React from 'react';
 import { Link } from 'react-router-dom';
 import s from './Card.module.scss';
@@ -17,9 +15,16 @@ interface Props {
 
 export const Card: React.FC<Props> = ({ product, isInCart, isInFavorites }) => {
   const {
-    id, itemId, name, fullPrice, price, screen, capacity, ram, image,
-  }
-    = product;
+    itemId,
+    phoneId,
+    name,
+    fullPrice,
+    price,
+    screen,
+    capacity,
+    ram,
+    image,
+  } = product;
 
   const [, , addToLocalStorage, removeFromLocalStorage] = useLocalStorage();
 
@@ -67,7 +72,7 @@ export const Card: React.FC<Props> = ({ product, isInCart, isInFavorites }) => {
         <div className={s.card__buy__add}>
           {isInCart ? (
             <ActiveButton
-              onClick={() => removeFromLocalStorage('cart', id, true)}
+              onClick={() => removeFromLocalStorage('cart', phoneId, true)}
             >
               Added
             </ActiveButton>
@@ -82,7 +87,7 @@ export const Card: React.FC<Props> = ({ product, isInCart, isInFavorites }) => {
           <button
             type="button"
             className={s.card__buy__heart}
-            onClick={() => removeFromLocalStorage('favorites', id, true)}
+            onClick={() => removeFromLocalStorage('favorites', phoneId, true)}
           >
             <svg className={s.heartIcon}>
               <use href={`${icons}#icon-Favourites-Filled-Heart-Like`} />

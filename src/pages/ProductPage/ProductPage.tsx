@@ -32,7 +32,7 @@ export const ProductPage: FC = () => {
   }, [productId]);
 
   console.log(product);
-  
+
   const isInCart = Boolean(cart.find((el) => el.id === product?.id));
   const isInFavorites = Boolean(favorites.find((el) => el.id === product?.id));
 
@@ -89,17 +89,17 @@ export const ProductPage: FC = () => {
             grid__item--mobile--1-4
             grid__item--tablet--8-12
             grid__item--desktop--14-24"
-          >
-            <section className={s.productPage__section}>
-              {product && (
-                <PhoneActions
-                  phone={product}
-                  isInCart={isInCart}
-                  isInFavorites={isInFavorites}
-                />
-              )}
-            </section>
-          </div>
+            >
+              <section className={s.productPage__section}>
+                {product && (
+                  <PhoneActions
+                    phone={product}
+                    isInCart={isInCart}
+                    isInFavorites={isInFavorites}
+                  />
+                )}
+              </section>
+            </div>
 
             <div
               className="
