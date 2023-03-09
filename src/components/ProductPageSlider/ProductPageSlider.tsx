@@ -12,13 +12,7 @@ type Props = {
 export const ProductPageSlider: React.FC<Props> = ({ images, name }) => {
   const settings = {
     customPaging: (i = 0) => {
-      return (
-        <img
-          className="slick-image"
-          src={images[i]}
-          alt={name}
-        />
-      );
+      return <img className="slick-image" src={images[i]} alt={name} />;
     },
     dots: true,
     infinite: true,
@@ -32,17 +26,10 @@ export const ProductPageSlider: React.FC<Props> = ({ images, name }) => {
 
   return (
     <div className={s.slider}>
-      <Slider
-        className={s.slider__container}
-        {...settings}
-      >
+      <Slider className={s.slider__container} {...settings}>
         {images.map((image) => (
           <div className={s.slider__photoContent} key={images.indexOf(image)}>
-            <img
-              className={s.slider__photo}
-              src={image}
-              alt={name}
-            />
+            <img className={s.slider__photo} src={image} alt={name} />
           </div>
         ))}
       </Slider>

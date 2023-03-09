@@ -1,188 +1,186 @@
 @import '../../base_styles/';
 
 .slick {
-    &-image {
-      object-fit: cover;
-      object-position: top;
-  
-      border: 1px solid $iconsColor;
-  
-      padding: 7px;
-  
-      transition: 
-        border $transitionSettings,
-        opacity $transitionSettings,
-        transform $transitionSettings;
-  
-      height: 50px;
-      width: 50px;
-  
-      @include onTablet {
-        height: 60px;
-        width: 60px;
-      }
-  
-      @include onDesktop {
-        height: 70px;
-        width: 70px;
-      }
-    }
-  
-    &-image:hover {  
-      transform: scale(0.9);
-    }
-  
-    &-dotted &-slider {
-      margin-bottom: 30px;
-    }
-  
-    &-dots {
-      position: absolute;
-      top: 0;
-  
-      padding: 0;
-      margin: 0;
-  
-      list-style: none;
-  
-      text-align: center;
-    }
-  
-    &-dots li {
-      position: relative;
-      margin-bottom: 5px;
-      margin-right: 0;
-  
-      display: flex;
-      
-      @include onTablet {
-        flex-direction: column;
-      }
-  
-      padding: 0;
-  
-      cursor: pointer;
-    }
-  
-    &-dots li button {
-      font-size: 0;
-      line-height: 0;
-  
-      display: flex;
-  
-      width: 20px;
-      height: 20px;
-      padding: 5px;
-  
-      cursor: pointer;
-  
-      color: transparent;
-      border: 0;
-      outline: none;
-      background: transparent;
-    }
-  
-    &-dots li button:before {
-      font-size: 6px;
-      line-height: 20px;
-  
-      position: absolute;
-      top: 0;
-      left: 0;
-  
-      width: 20px;
-      height: 20px;
-  
-      content: '•';
-      text-align: center;
-  
-      opacity: 0.25;
-      color: $primaryColor;
-    }
-  
-    &-dots &-active &-image {
-      border-color: $primaryColor;
+  &-image {
+    object-fit: cover;
+    object-position: top;
+
+    border: 1px solid $iconsColor;
+
+    padding: 7px;
+
+    transition: border $transitionSettings, opacity $transitionSettings,
+      transform $transitionSettings;
+
+    height: 50px;
+    width: 50px;
+
+    @include onTablet {
+      height: 60px;
+      width: 60px;
     }
 
-    &-slider {
-      position: relative;
-      display: block;
-    }
-  
-    &-list {
-      position: relative;
-  
-      display: block;
-      overflow: hidden;
-  
-      margin: 0;
-      padding: 0;
-    }
-  
-    &-track {
-      position: relative;
-      top: 0;
-      left: 0;
-  
-      display: block;
-      margin-left: auto;
-      margin-right: auto;
-    }
-  
-    &-track:before,
-    &-track:after {
-      display: table;
-  
-      content: '';
-    }
-  
-    &-track:after {
-      clear: both;
-    }
-  
-    &-loading &-track {
-      visibility: hidden;
-    }
-  
-    &-slide {
-      display: none;
-      float: left;
-  
-      height: 100%;
-      min-height: 1px;
-    }
-  
-    [dir='rtl'] &-slide {
-      float: right;
-    }
-  
-    &-slide img {
-      display: block;
-    }
-  
-    &-slide &-loading img {
-      display: none;
-    }
-  
-    &-initialized &-slide {
-      display: flex;
-  
-      justify-content: center;
-    }
-  
-    &-loading &-slide {
-      visibility: hidden;
-    }
-  
-    &-vertical &-slide {
-      display: block;
-  
-      height: auto;
-  
-      border: 1px solid transparent;
-    }
-  
-    &-arrow &-hidden {
-      display: none;
+    @include onDesktop {
+      height: 70px;
+      width: 70px;
     }
   }
+
+  &-image:hover {
+    transform: scale(0.9);
+  }
+
+  &-dotted &-slider {
+    margin-bottom: 30px;
+  }
+
+  &-dots {
+    position: absolute;
+    top: 0;
+
+    padding: 0;
+    margin: 0;
+
+    list-style: none;
+
+    text-align: center;
+  }
+
+  &-dots li {
+    position: relative;
+    margin-bottom: 5px;
+    margin-right: 0;
+
+    display: flex;
+
+    @include onTablet {
+      flex-direction: column;
+    }
+
+    padding: 0;
+
+    cursor: pointer;
+  }
+
+  &-dots li button {
+    font-size: 0;
+    line-height: 0;
+
+    display: flex;
+
+    width: 20px;
+    height: 20px;
+    padding: 5px;
+
+    cursor: pointer;
+
+    color: transparent;
+    border: 0;
+    outline: none;
+    background: transparent;
+  }
+
+  &-dots li button:before {
+    font-size: 6px;
+    line-height: 20px;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 20px;
+    height: 20px;
+
+    content: '•';
+    text-align: center;
+
+    opacity: 0.25;
+    color: $primaryColor;
+  }
+
+  &-dots &-active &-image {
+    border-color: $primaryColor;
+  }
+
+  &-slider {
+    position: relative;
+    display: block;
+  }
+
+  &-list {
+    position: relative;
+
+    display: block;
+    overflow: hidden;
+
+    margin: 0;
+    padding: 0;
+  }
+
+  &-track {
+    position: relative;
+    top: 0;
+    left: 0;
+
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  &-track:before,
+  &-track:after {
+    display: table;
+
+    content: '';
+  }
+
+  &-track:after {
+    clear: both;
+  }
+
+  &-loading &-track {
+    visibility: hidden;
+  }
+
+  &-slide {
+    display: none;
+    float: left;
+
+    height: 100%;
+    min-height: 1px;
+  }
+
+  [dir='rtl'] &-slide {
+    float: right;
+  }
+
+  &-slide img {
+    display: block;
+  }
+
+  &-slide &-loading img {
+    display: none;
+  }
+
+  &-initialized &-slide {
+    display: flex;
+
+    justify-content: center;
+  }
+
+  &-loading &-slide {
+    visibility: hidden;
+  }
+
+  &-vertical &-slide {
+    display: block;
+
+    height: auto;
+
+    border: 1px solid transparent;
+  }
+
+  &-arrow &-hidden {
+    display: none;
+  }
+}
