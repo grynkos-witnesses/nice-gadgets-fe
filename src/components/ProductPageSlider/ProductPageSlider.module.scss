@@ -4,9 +4,12 @@
   margin-bottom: -16px;
 
   &__photo {
-    width: max-content;
+    display: block;
+    margin: auto;
+    max-width: 100%;
     height: 274px;
 
+    object-fit: contain;
     @include onLaptop {
       height: 442px;
     }

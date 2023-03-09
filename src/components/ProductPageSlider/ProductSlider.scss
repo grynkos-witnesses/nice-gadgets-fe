@@ -12,7 +12,7 @@
   }
 
   &-image {
-    object-fit: cover;
+    object-fit: contain;
     object-position: top;
 
     border: 1px solid $iconsColor;
@@ -22,21 +22,12 @@
     transition: border $transitionSettings, opacity $transitionSettings,
       transform $transitionSettings;
 
-    height: 50px;
-    width: 50px;
+    height: 100%;
+    width: 100%;
 
     @include onTablet {
-      height: 35px;
-      width: 35px;
       padding: 3px;
     }
-
-    @include onDesktop {
-      height: 80px;
-      width: 80px;
-      padding: 8px;
-    }
-
     &:hover {
       transform: scale(0.9);
     }
@@ -49,6 +40,8 @@
     justify-content: center;
     gap: 8px;
 
+    height: max-content;
+
     @include onTablet {
       flex-direction: column;
       justify-content: flex-start;
@@ -60,18 +53,33 @@
   }
 
   &-dots li {
-    margin: 0;
+    width: 50px;
+    height: 48px;
+
+    @include onTablet {
+      width: 35px;
+      height: 35px;
+    }
+
+    @include onLaptop {
+      width: 80px;
+      height: 80px;
+    }
   }
 
-  &-dots &-active &-image {
-    border-color: $primaryColor;
+  &-active .slick-image {
+    border: 1px solid $primaryColor;
   }
 
   &-slide {
     display: none;
-
-    height: 100%;
+    align-items: center;
+    height: 274px;
     min-height: 1px;
+
+    @include onLaptop {
+      height: 442px;
+    }
   }
 
   &-initialized &-slide {
