@@ -1,0 +1,89 @@
+@import '../../base_styles/';
+
+.gallery .slick {
+  &-slider {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+
+    @include onTablet {
+      flex-direction: row-reverse;
+    }
+  }
+
+  &-image {
+    object-fit: contain;
+    object-position: top;
+
+    border: 1px solid $iconsColor;
+
+    padding: 5px;
+
+    transition: border $transitionSettings, opacity $transitionSettings,
+      transform $transitionSettings;
+
+    height: 100%;
+    width: 100%;
+
+    @include onTablet {
+      padding: 3px;
+    }
+    &:hover {
+      transform: scale(0.9);
+    }
+  }
+
+  &-dots {
+    position: static;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+
+    height: max-content;
+
+    @include onTablet {
+      flex-direction: column;
+      justify-content: flex-start;
+    }
+
+    @include onLaptop {
+      gap: 16px;
+    }
+  }
+
+  &-dots li {
+    width: 50px;
+    height: 48px;
+
+    @include onTablet {
+      width: 35px;
+      height: 35px;
+    }
+
+    @include onLaptop {
+      width: 80px;
+      height: 80px;
+    }
+  }
+
+  &-active .slick-image {
+    border: 1px solid $primaryColor;
+  }
+
+  &-slide {
+    display: none;
+    align-items: center;
+    height: 274px;
+    min-height: 1px;
+
+    @include onLaptop {
+      height: 442px;
+    }
+  }
+
+  &-initialized &-slide {
+    display: flex;
+    justify-content: center;
+  }
+}

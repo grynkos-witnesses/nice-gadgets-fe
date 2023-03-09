@@ -1,6 +1,6 @@
 @import '../../base_styles/';
 
-.slick {
+.banner .slick {
   @include onTablet {
     &-prev,
     &-next {
