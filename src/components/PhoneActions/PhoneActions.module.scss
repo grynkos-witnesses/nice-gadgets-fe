@@ -66,12 +66,16 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+
+  margin-bottom: 8px;
 }
 
 .intel {
   display: flex;
   align-items: center;
   justify-content: space-between;
+
+  margin-bottom: 8px;
 
   &__value {
     font-family: 'Mont-Regular';
@@ -187,7 +191,4 @@
     background-color: $primaryColor;
     border-color: transparent;
   }
-}
-
-.capacityBtn {
 }
