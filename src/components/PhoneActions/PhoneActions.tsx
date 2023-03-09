@@ -1,7 +1,7 @@
-/* eslint-disable no-debugger */
-/* eslint-disable jsx-a11y/control-has-associated-label */
-import React, { memo } from 'react';
+/* eslint-disable no-plusplus */
+import React, { memo, useEffect, useState } from 'react';
 import cn from 'classnames';
+import { Link } from 'react-router-dom';
 import { useLocalStorage } from '../../hooks/useLocalStorage';
 import { FullPhone } from '../../types/FullPhone';
 import icons from '../../icons/iconsSprite.svg';
@@ -16,6 +16,11 @@ interface Props {
 export const PhoneActions: React.FC<Props> = memo(({ phone }) => {
   const [cart, favorites, addToLocalStorage, removeFromLocalStorage]
     = useLocalStorage();
+  const [phoneCapacity, setPhoneCapacity] = useState<string[]>([]);
+
+  useEffect(() => {
+    setPhoneCapacity(phone.capacityAvailable);
+  }, [phone]);
   const isInCart = Boolean(cart.find((el) => el.id === phone.id));
   const isInFavorites = Boolean(favorites.find((el) => el.id === phone.id));
 
@@ -34,6 +39,7 @@ export const PhoneActions: React.FC<Props> = memo(({ phone }) => {
   const colors: { [index: string]: string } = {
     midnightgreen: '#5f7170',
     gold: '#fcdbc1',
+    rosegold: '#fdddd7',
     silver: '#f0f0f0',
     spacegray: '#4c4c4c',
     black: '#1a1a00',
@@ -43,6 +49,30 @@ export const PhoneActions: React.FC<Props> = memo(({ phone }) => {
     purple: '#ccb3ff',
     red: '#e63900',
   };
+
+  function changeCapacity(id: string, newCapacity: string) {
+    const splittedId = id.split('-');
+
+    for (let i = 0; i < splittedId.length; i++) {
+      if (splittedId[i].includes('gb')) {
+        splittedId[i] = newCapacity.toLowerCase();
+      }
+    }
+
+    return splittedId.join('-');
+  }
+
+  function changeColor(id: string, newColor: string) {
+    const splittedId = id.split('-');
+
+    for (let i = 0; i < splittedId.length; i++) {
+      if (colors[splittedId[i]]) {
+        splittedId[i] = newColor;
+      }
+    }
+
+    return splittedId.join('-');
+  }
 
   return (
     <div className={s.container}>
@@ -58,9 +88,9 @@ export const PhoneActions: React.FC<Props> = memo(({ phone }) => {
           const isCurrColor = col === phone.color;
 
           return (
-            <button
+            <Link
               key={col}
-              type="button"
+              to={`/phones/${changeColor(phone.id, col)}`}
               className={cn({
                 [s.colorBtn]: true,
                 [s.colorBtn__active]: isCurrColor,
@@ -70,18 +100,27 @@ export const PhoneActions: React.FC<Props> = memo(({ phone }) => {
                 className={s.colorBtn__background}
                 style={{ backgroundColor: hexBGColor }}
               />
-            </button>
+            </Link>
           );
         })}
       </div>
       <div className={s.container__capacity}>
         <h3 className={s.subHeading}>Select capacity</h3>
         <div className={s.container__btns}>
-          {phone?.capacityAvailable.map((cap) => {
+          {phoneCapacity.map((cap) => {
+            const isCurrCapacity = cap === phone.capacity;
+
             return (
-              <button key={phone.id} type="button" className={s.capacityBtn}>
+              <Link
+                key={phone.id}
+                to={`/phones/${changeCapacity(phone.id, cap)}`}
+                className={cn({
+                  [s.capacityBtn]: true,
+                  [s.capacityBtn__active]: isCurrCapacity,
+                })}
+              >
                 {cap}
-              </button>
+              </Link>
             );
           })}
         </div>
@@ -129,19 +168,19 @@ export const PhoneActions: React.FC<Props> = memo(({ phone }) => {
       <ul className={s.container__intel}>
         <li className={s.intel}>
           <span className={s.subHeading}>Screen</span>
-          <span className={s.value}>{phone?.screen}</span>
+          <span className={s.intel__value}>{phone?.screen}</span>
         </li>
         <li className={s.intel}>
           <span className={s.subHeading}>Resolution</span>
-          <span className={s.value}>{phone?.resolution}</span>
+          <span className={s.intel__value}>{phone?.resolution}</span>
         </li>
         <li className={s.intel}>
           <span className={s.subHeading}>Processor</span>
-          <span className={s.value}>{phone?.processor}</span>
+          <span className={s.intel__value}>{phone?.processor}</span>
         </li>
         <li className={s.intel}>
           <span className={s.subHeading}>RAM</span>
-          <span className={s.value}>{phone?.ram}</span>
+          <span className={s.intel__value}>{phone?.ram}</span>
         </li>
       </ul>
     </div>
