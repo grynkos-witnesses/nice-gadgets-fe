@@ -52,28 +52,24 @@ The project is structured as follows:
 │   │   ├── Component1/
 │   │   │   ├── Component1.tsx
 │   │   │   ├── Component1.module.css
-│   │   │   ├── Component1.scss
 │   │   │   └── ...
 │   │   ├── Component2/
 │   │   │   ├── Component2.tsx
 │   │   │   ├── Component2.module.css
-│   │   │   ├── Component2.scss
 │   │   │   └── ...
 │   │   └── ...
 │   ├── pages/
 │   │   ├── Page1/
 │   │   │   ├── Page1.tsx
 │   │   │   ├── Page1.module.css
-│   │   │   ├── Page1.scss
 │   │   │   └── ...
 │   │   ├── Page2/
 │   │   │   ├── Page2.tsx
 │   │   │   ├── Page2.module.css
-│   │   │   ├── Page2.scss
 │   │   │   └── ...
 │   │   └── ...
-│   ├── styles/
-│   │   ├── global.css
+│   ├── base_styles/
+│   │   ├── index.scss
 │   │   └── ...
 │   ├── App.tsx
 │   ├── index.tsx
