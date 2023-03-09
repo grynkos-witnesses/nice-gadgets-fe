@@ -4,6 +4,7 @@ import { PhoneActions } from '../PhoneActions/PhoneActions';
 import { ProductAbout } from '../ProductAbout/ProductAbout';
 import { ProductDescription } from '../ProductDescription/ProductDescription';
 import { ProductTechSpecs } from '../ProductTechSpecs/ProductTechSpecs';
+import { ProductPageSlider } from '../ProductPageSlider';
 
 import s from './ProductInfo.module.scss';
 
@@ -22,7 +23,7 @@ export const ProductInfo: FC<Props> = ({ product }) => {
     // priceDiscount,
     // colorsAvailable,
     // color,
-    // images,
+    images,
     description,
     screen,
     resolution,
@@ -44,16 +45,7 @@ export const ProductInfo: FC<Props> = ({ product }) => {
             grid__item--tablet--1-7
             grid__item--desktop--1-12"
         >
-          <section>
-            <p>1. Photos block</p>
-            <p>more content</p>
-            <p>more content</p>
-            <p>more content</p>
-            <p>more content</p>
-            <p>more content</p>
-            <p>more content</p>
-            <p>more content</p>
-          </section>
+          <ProductPageSlider images={images} name={name} />
         </div>
 
         <div
