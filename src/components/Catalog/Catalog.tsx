@@ -17,10 +17,10 @@ export const Catalog: React.FC<Props> = ({ products }) => {
       <div className={CatalogSCSS.catalog}>
         {products.map((product) => {
           const isInCart = Boolean(
-            cart.find((el) => el.id === product.phoneId),
+            cart.find((el) => el.id === product.id),
           );
           const isInFavorites = Boolean(
-            favorites.find((el) => el.id === product.phoneId),
+            favorites.find((el) => el.id === product.id),
           );
 
           return (

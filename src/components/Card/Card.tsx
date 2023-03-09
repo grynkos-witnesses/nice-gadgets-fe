@@ -15,8 +15,8 @@ interface Props {
 
 export const Card: React.FC<Props> = ({ product, isInCart, isInFavorites }) => {
   const {
+    id,
     itemId,
-    phoneId,
     name,
     fullPrice,
     price,
@@ -30,7 +30,7 @@ export const Card: React.FC<Props> = ({ product, isInCart, isInFavorites }) => {
 
   const handleAddtoCartClick = (where: string) => addToLocalStorage(where, {
     ...product,
-    id: itemId,
+    id,
     counter: 1,
   });
 
@@ -72,7 +72,7 @@ export const Card: React.FC<Props> = ({ product, isInCart, isInFavorites }) => {
         <div className={s.card__buy__add}>
           {isInCart ? (
             <ActiveButton
-              onClick={() => removeFromLocalStorage('cart', phoneId, true)}
+              onClick={() => removeFromLocalStorage('cart', id, true)}
             >
               Added
             </ActiveButton>
@@ -87,7 +87,7 @@ export const Card: React.FC<Props> = ({ product, isInCart, isInFavorites }) => {
           <button
             type="button"
             className={s.card__buy__heart}
-            onClick={() => removeFromLocalStorage('favorites', phoneId, true)}
+            onClick={() => removeFromLocalStorage('favorites', id, true)}
           >
             <svg className={s.heartIcon}>
               <use href={`${icons}#icon-Favourites-Filled-Heart-Like`} />
