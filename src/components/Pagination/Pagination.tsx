@@ -1,12 +1,12 @@
-/* eslint-disable no-console */
-/* eslint-disable react/no-array-index-key */
 import React from 'react';
+
+import { v4 as uuidv4 } from 'uuid';
 import { Link, useSearchParams } from 'react-router-dom';
 import cn from 'classnames';
 import styles from './Pagination.module.scss';
 import { getPages } from '../../helpers/getPages';
 import { getSearchWith } from '../../helpers/getSearchWith';
-import { usePageInfo } from '../../hooks/usePageInfo';
+import { useSearchParamsWithDefaults } from '../../hooks/useSearchParamsWithDefaults';
 
 type Props = {
   total: number;
@@ -14,7 +14,7 @@ type Props = {
 
 export const Pagination: React.FC<Props> = ({ total }) => {
   const [searchParams] = useSearchParams();
-  const [currentPage, perPage] = usePageInfo();
+  const [currentPage, perPage] = useSearchParamsWithDefaults();
 
   const firstPage = 1;
   const lastPage = Math.ceil(total / perPage);
@@ -54,8 +54,8 @@ export const Pagination: React.FC<Props> = ({ total }) => {
       </li>
 
       <li className={styles.pagination__list}>
-        {pages.map((page, index) => (
-          <div key={index}>
+        {pages.map((page) => (
+          <div key={uuidv4()}>
             {page === pageReplacement ? (
               <span>{pageReplacement}</span>
             ) : (
