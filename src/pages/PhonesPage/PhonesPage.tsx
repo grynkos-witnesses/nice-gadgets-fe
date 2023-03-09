@@ -11,6 +11,8 @@ import { Loader } from '../../components/Loader/Loader';
 import { QuantityIndicator } from '../../components/Catalog/QuantityIndicator/QuantityIndicator';
 import { Pagination } from '../../components/Pagination';
 import { SelectorsPanel } from '../../components/SelectorsPanel/SelectorsPanel';
+import { Breadcrumbs } from '../../components/Breadcrumbs/Breadcrumbs';
+
 import s from './PhonesPage.module.scss';
 
 export const PhonesPage = () => {
@@ -43,6 +45,8 @@ export const PhonesPage = () => {
   return (
     <div className={s.phonesPage}>
       <div className="container">
+        <Breadcrumbs location={['/', '/phones']} />
+
         <h1 className={`page__title ${s.phonesPage__title}`}>Mobile phones</h1>
 
         {isLoading ? (
