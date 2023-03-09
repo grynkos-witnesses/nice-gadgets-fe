@@ -5,7 +5,7 @@ import React, { useEffect, useState } from 'react';
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
 import { Phone } from '../../types/Phone';
 import { getPhones } from '../../api/phones';
-import { useSearchParamsWithDefaults } from '../../hooks/useSearchParamsWithDefaults';
+import { usePreparedSearchParams } from '../../hooks/usePreparedSearchParams';
 import { Catalog } from '../../components/Catalog';
 import { Loader } from '../../components/Loader/Loader';
 import { QuantityIndicator } from '../../components/Catalog/QuantityIndicator/QuantityIndicator';
@@ -18,7 +18,7 @@ export const PhonesPage = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [total, setTotal] = useState(0);
 
-  const [currentPage, perPage, sortBy] = useSearchParamsWithDefaults();
+  const [currentPage, perPage, sortBy] = usePreparedSearchParams();
 
   const loadGoods = async () => {
     setIsLoading(true);

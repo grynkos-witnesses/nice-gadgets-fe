@@ -2,7 +2,7 @@ import { useSearchParams } from 'react-router-dom';
 
 type HookOutput = [number, number, string];
 
-export function useSearchParamsWithDefaults(): HookOutput {
+export function usePreparedSearchParams(): HookOutput {
   const [searchParams] = useSearchParams();
 
   const currentPage = Number(searchParams.get('page')) || 1;

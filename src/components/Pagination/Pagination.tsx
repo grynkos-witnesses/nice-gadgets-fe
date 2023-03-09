@@ -6,7 +6,7 @@ import cn from 'classnames';
 import styles from './Pagination.module.scss';
 import { getPages } from '../../helpers/getPages';
 import { getSearchWith } from '../../helpers/getSearchWith';
-import { useSearchParamsWithDefaults } from '../../hooks/useSearchParamsWithDefaults';
+import { usePreparedSearchParams } from '../../hooks/usePreparedSearchParams';
 
 type Props = {
   total: number;
@@ -14,7 +14,7 @@ type Props = {
 
 export const Pagination: React.FC<Props> = ({ total }) => {
   const [searchParams] = useSearchParams();
-  const [currentPage, perPage] = useSearchParamsWithDefaults();
+  const [currentPage, perPage] = usePreparedSearchParams();
 
   const firstPage = 1;
   const lastPage = Math.ceil(total / perPage);
