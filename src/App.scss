@@ -5,6 +5,12 @@
   flex-direction: column;
   min-height: 100vh;
 
+  &__header {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+  }
+
   &_content {
     flex-grow: 1;
   }

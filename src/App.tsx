@@ -18,8 +18,10 @@ export const App: React.FC = () => {
 
   return (
     <div className="App">
-      <BurgerMenu isVisible={isMenuOpen} />
-      <Header />
+      <div className="App__header">
+        <BurgerMenu isVisible={isMenuOpen} />
+        <Header />
+      </div>
       <main className="App_content">
         <Outlet />
       </main>

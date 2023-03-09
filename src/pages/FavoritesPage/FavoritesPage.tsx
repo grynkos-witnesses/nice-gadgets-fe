@@ -6,6 +6,7 @@ import emptyBox from '../../icons/emptyBox.svg';
 import { useLocalStorage } from '../../hooks/useLocalStorage';
 
 import s from './FavoritesPage.module.scss';
+import { Breadcrumbs } from '../../components/Breadcrumbs/Breadcrumbs';
 
 export const FavoritesPage: FC = () => {
   const [, favoritesItems] = useLocalStorage();
@@ -13,6 +14,7 @@ export const FavoritesPage: FC = () => {
   return (
     <div className={s.favoritesPage}>
       <div className="container">
+        <Breadcrumbs location={['/', '/Favorites']} />
         <h1 className={`page__title ${s.favoritesPage__title}`}>Favorites</h1>
 
         {favoritesItems.length ? (
