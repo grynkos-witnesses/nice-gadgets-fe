@@ -1,6 +1,7 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import React, { useEffect, useState } from 'react';
 
+import { Link } from 'react-router-dom';
 import CartItemSCSS from './CartItem.module.scss';
 
 import close from '../../icons/close_icon.svg';
@@ -17,7 +18,7 @@ type Props = {
 
 export const CartItem: React.FC<Props> = ({ product }) => {
   const {
-    name, price, image, counter,
+    id, name, price, image, counter,
   } = product;
 
   const [isDisabled, setIsDisabled] = useState(false);
@@ -59,9 +60,9 @@ export const CartItem: React.FC<Props> = ({ product }) => {
 
         <img src={image} alt={name} className={CartItemSCSS.cartItem__img} />
 
-        <a href="/" className={CartItemSCSS.cartItem__title}>
+        <Link to={`/phones/${id}`} className={CartItemSCSS.cartItem__title}>
           {name}
-        </a>
+        </Link>
       </div>
 
       <div

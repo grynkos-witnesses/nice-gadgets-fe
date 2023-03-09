@@ -1,0 +1,55 @@
+@import '../../base_styles';
+
+.breadcrumbs {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  margin-bottom: 25px;
+
+  @include onTablet {
+    margin-bottom: 44px;
+  }
+
+  &__link {
+    position: relative;
+    margin-right: 32px;
+
+    @extend %BodyText;
+    color: $primaryColor;
+
+    &:last-child {
+      color: $secondaryColor;
+      pointer-events: none;
+
+      @media (max-width: 400px) {
+        max-width: 200px;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+      }
+    }
+
+    &:not(:last-child) {
+      &::after {
+        content: '';
+
+        position: absolute;
+        margin: auto;
+        top: 0;
+        right: -25px;
+        bottom: 0;
+        width: 16px;
+        height: 16px;
+
+        cursor: auto;
+        background: url('./icons/chevron-arrow-right.svg');
+      }
+    }
+  }
+
+  &__home_img {
+    height: 14px;
+    width: 14px;
+  }
+}
