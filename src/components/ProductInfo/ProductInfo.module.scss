@@ -1,0 +1,19 @@
+@import '../../base_styles';
+
+.productInfo {
+  &__grid {
+    row-gap: 56px;
+
+    @include onTablet {
+      row-gap: 64px;
+    }
+
+    @include onDesktop {
+      row-gap: 80px;
+    }
+  }
+
+  &__title {
+    margin-bottom: 40px;
+  }
+}

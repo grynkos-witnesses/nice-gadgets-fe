@@ -36,7 +36,7 @@ export const Card: React.FC<Props> = ({ product, isInCart, isInFavorites }) => {
 
   return (
     <section className={s.card}>
-      <Link to={`../phones/${itemId}`}>
+      <Link to={{ pathname: `/phones/${itemId}` }}>
         <img src={image} alt={name} className={s.card__img} />
 
         <h2 className={s.card__name}>{`${name} (iMT9G2FS/A)`}</h2>

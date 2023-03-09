@@ -3,27 +3,11 @@
 .productPage {
   padding: 25px 0 56px;
 
-  @include onTablet {
-    margin-bottom: 64px;
-  }
-
-  @include onDesktop {
-    margin-bottom: 80px;
-  }
-
-  &__title {
-    margin-bottom: 40px;
-  }
-
-  &__section {
+  &__product {
     margin-bottom: 56px;
 
     @include onTablet {
       margin-bottom: 64px;
-    }
-
-    @include onDesktop {
-      margin-bottom: 80px;
     }
   }
 }
