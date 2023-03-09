@@ -1,10 +1,11 @@
 import React from 'react';
 import Slider from 'react-slick';
 
-import s from './ProductPageSlider.module.scss';
-import './ProductSlider.scss';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
+
+import s from './ProductPageSlider.module.scss';
+import './ProductSlider.scss';
 
 type Props = {
   images: string[];
