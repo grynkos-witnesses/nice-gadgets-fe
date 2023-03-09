@@ -1,19 +1,21 @@
 {
   "files": {
-    "main.css": "./static/css/main.21c31e95.chunk.css",
-    "main.js": "./static/js/main.16c3b307.chunk.js",
-    "main.js.map": "./static/js/main.16c3b307.chunk.js.map",
+    "main.css": "./static/css/main.7ff6bb57.chunk.css",
+    "main.js": "./static/js/main.3aa4a064.chunk.js",
+    "main.js.map": "./static/js/main.3aa4a064.chunk.js.map",
     "runtime-main.js": "./static/js/runtime-main.5979c3dd.js",
     "runtime-main.js.map": "./static/js/runtime-main.5979c3dd.js.map",
-    "static/js/2.821008a6.chunk.js": "./static/js/2.821008a6.chunk.js",
-    "static/js/2.821008a6.chunk.js.map": "./static/js/2.821008a6.chunk.js.map",
+    "static/css/2.645f46e8.chunk.css": "./static/css/2.645f46e8.chunk.css",
+    "static/js/2.2e6ee1c6.chunk.js": "./static/js/2.2e6ee1c6.chunk.js",
+    "static/js/2.2e6ee1c6.chunk.js.map": "./static/js/2.2e6ee1c6.chunk.js.map",
     "index.html": "./index.html",
-    "static/css/main.21c31e95.chunk.css.map": "./static/css/main.21c31e95.chunk.css.map",
-    "static/js/2.821008a6.chunk.js.LICENSE.txt": "./static/js/2.821008a6.chunk.js.LICENSE.txt",
+    "static/css/2.645f46e8.chunk.css.map": "./static/css/2.645f46e8.chunk.css.map",
+    "static/css/main.7ff6bb57.chunk.css.map": "./static/css/main.7ff6bb57.chunk.css.map",
+    "static/js/2.2e6ee1c6.chunk.js.LICENSE.txt": "./static/js/2.2e6ee1c6.chunk.js.LICENSE.txt",
     "static/media/Cart.6844d6e5.svg": "./static/media/Cart.6844d6e5.svg",
     "static/media/Favourites.a8c9169d.svg": "./static/media/Favourites.a8c9169d.svg",
     "static/media/Logo.3c6bd188.svg": "./static/media/Logo.3c6bd188.svg",
-    "static/media/Slider.scss": "./static/media/prev_icon.6b099a50.svg",
+    "static/media/ProductSlider.scss": "./static/media/Mont-Regular.1d26d89f.otf",
     "static/media/back_icon.e7e86408.svg": "./static/media/back_icon.e7e86408.svg",
     "static/media/banner-accessories.bdd2e0fc.png": "./static/media/banner-accessories.bdd2e0fc.png",
     "static/media/banner-phones.b4eeda8b.png": "./static/media/banner-phones.b4eeda8b.png",
@@ -32,12 +34,15 @@
     "static/media/Pagination.module.scss": "./static/media/icon-Chevron-Arrow-Right.99d40db8.svg",
     "static/media/iconsSprite.b12df891.svg": "./static/media/iconsSprite.b12df891.svg",
     "static/media/Swiper.module.scss": "./static/media/mainBanner-tablet.4cf4c1b6.png",
-    "static/media/notFound.f04fba93.svg": "./static/media/notFound.f04fba93.svg"
+    "static/media/Slider.scss": "./static/media/prev_icon.6b099a50.svg",
+    "static/media/notFound.f04fba93.svg": "./static/media/notFound.f04fba93.svg",
+    "static/media/slick-theme.css": "./static/media/slick.c94f7671.ttf"
   },
   "entrypoints": [
     "static/js/runtime-main.5979c3dd.js",
-    "static/js/2.821008a6.chunk.js",
-    "static/css/main.21c31e95.chunk.css",
-    "static/js/main.16c3b307.chunk.js"
+    "static/css/2.645f46e8.chunk.css",
+    "static/js/2.2e6ee1c6.chunk.js",
+    "static/css/main.7ff6bb57.chunk.css",
+    "static/js/main.3aa4a064.chunk.js"
   ]
 }
