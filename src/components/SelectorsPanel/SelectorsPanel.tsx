@@ -1,10 +1,10 @@
 import React from 'react';
-import { usePageInfo } from '../../hooks/usePageInfo';
+import { usePreparedSearchParams } from '../../hooks/usePreparedSearchParams';
 import { Select } from '../Selector/Selector';
 import s from './SelectorsPanel.module.scss';
 
 export const SelectorsPanel = () => {
-  const [, perPage, sortBy] = usePageInfo();
+  const [, perPage, sortBy] = usePreparedSearchParams();
 
   const sortByOptions = [
     ['newest', 'Newest'],
