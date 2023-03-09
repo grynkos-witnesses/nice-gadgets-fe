@@ -1,6 +1,16 @@
 @import '../../base_styles/';
 
-.slick {
+.gallery .slick {
+  &-slider {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+
+    @include onTablet {
+      flex-direction: row-reverse;
+    }
+  }
+
   &-image {
     object-fit: cover;
     object-position: top;
@@ -33,6 +43,7 @@
   }
 
   &-dots {
+    position: static;
     display: flex !important;
     align-items: center;
     justify-content: center;
@@ -40,6 +51,7 @@
 
     @include onTablet {
       flex-direction: column;
+      justify-content: flex-start;
     }
 
     @include onLaptop {
@@ -55,13 +67,8 @@
     border-color: $primaryColor;
   }
 
-  &-list {
-    margin-bottom: 24px;
-  }
-
   &-slide {
     display: none;
-    float: left;
 
     height: 100%;
     min-height: 1px;
@@ -70,9 +77,5 @@
   &-initialized &-slide {
     display: flex;
     justify-content: center;
-
-    @include onTablet {
-      justify-content: right;
-    }
   }
 }

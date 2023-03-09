@@ -1,6 +1,8 @@
 @import '../../base_styles/';
 
 .slider {
+  margin-bottom: -16px;
+
   &__photo {
     width: max-content;
     height: 274px;

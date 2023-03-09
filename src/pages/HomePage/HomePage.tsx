@@ -16,7 +16,7 @@ export const HomePage = () => {
         </h1>
       </div>
 
-      <div className={s.homePage__mainSlider}>
+      <div className={`${s.homePage__mainSlider}`}>
         <Swiper />
       </div>
 

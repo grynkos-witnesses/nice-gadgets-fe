@@ -25,14 +25,16 @@ export const ProductPageSlider: React.FC<Props> = ({ images, name }) => {
   };
 
   return (
-    <div className={s.slider}>
-      <Slider className={s.slider__container} {...settings}>
-        {images.map((image) => (
-          <div className={s.slider__photoContent} key={images.indexOf(image)}>
-            <img className={s.slider__photo} src={image} alt={name} />
-          </div>
-        ))}
-      </Slider>
+    <div className="gallery">
+      <div className={s.slider}>
+        <Slider className={s.slider__container} {...settings}>
+          {images.map((image) => (
+            <div className={s.slider__photoContent} key={images.indexOf(image)}>
+              <img className={s.slider__photo} src={image} alt={name} />
+            </div>
+          ))}
+        </Slider>
+      </div>
     </div>
   );
 };
