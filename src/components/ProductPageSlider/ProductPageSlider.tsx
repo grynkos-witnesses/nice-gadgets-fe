@@ -1,11 +1,51 @@
 import React from 'react';
+import Slider from 'react-slick';
 
 import s from './ProductPageSlider.module.scss';
+import './Slider.scss';
 
-export const ImagesSlider: React.FC = () => {
+type Props = {
+  images: string[];
+  name: string;
+};
+
+export const ProductPageSlider: React.FC<Props> = ({ images, name }) => {
+  const settings = {
+    customPaging: (i = 0) => {
+      return (
+        <img
+          className="slick-image"
+          src={images[i]}
+          alt={name}
+        />
+      );
+    },
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    adaptiveHeight: true,
+    arrows: false,
+    draggable: true,
+  };
+
   return (
     <div className={s.slider}>
-      <div className={s.slider__mainPhoto}>{1}</div>
+      <Slider
+        className={s.slider__container}
+        {...settings}
+      >
+        {images.map((image) => (
+          <div className={s.slider__photoContent} key={images.indexOf(image)}>
+            <img
+              className={s.slider__photo}
+              src={image}
+              alt={name}
+            />
+          </div>
+        ))}
+      </Slider>
     </div>
   );
 };
