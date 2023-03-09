@@ -1,5 +1,5 @@
 /* eslint-disable no-plusplus */
-import React, { memo, useEffect, useState } from 'react';
+import React from 'react';
 import cn from 'classnames';
 import { Link } from 'react-router-dom';
 import { useLocalStorage } from '../../hooks/useLocalStorage';
@@ -13,14 +13,10 @@ interface Props {
   phone: FullPhone;
 }
 
-export const PhoneActions: React.FC<Props> = memo(({ phone }) => {
+export const PhoneActions: React.FC<Props> = ({ phone }) => {
   const [cart, favorites, addToLocalStorage, removeFromLocalStorage]
     = useLocalStorage();
-  const [phoneCapacity, setPhoneCapacity] = useState<string[]>([]);
 
-  useEffect(() => {
-    setPhoneCapacity(phone.capacityAvailable);
-  }, [phone]);
   const isInCart = Boolean(cart.find((el) => el.id === phone.id));
   const isInFavorites = Boolean(favorites.find((el) => el.id === phone.id));
 
@@ -107,12 +103,12 @@ export const PhoneActions: React.FC<Props> = memo(({ phone }) => {
       <div className={s.container__capacity}>
         <h3 className={s.subHeading}>Select capacity</h3>
         <div className={s.container__btns}>
-          {phoneCapacity.map((cap) => {
+          {phone.capacityAvailable.map((cap) => {
             const isCurrCapacity = cap === phone.capacity;
 
             return (
               <Link
-                key={phone.id}
+                key={cap}
                 to={`/phones/${changeCapacity(phone.id, cap)}`}
                 className={cn({
                   [s.capacityBtn]: true,
@@ -185,4 +181,4 @@ export const PhoneActions: React.FC<Props> = memo(({ phone }) => {
       </ul>
     </div>
   );
-});
+};
