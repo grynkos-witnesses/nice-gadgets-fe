@@ -6,37 +6,45 @@ import { PrimaryButton } from '../PrimaryButton/PrimaryButton';
 import { useLocalStorage } from '../../hooks/useLocalStorage';
 import { ActiveButton } from '../ActiveButton/ActiveButton';
 import { Phone } from '../../types/Phone';
+import { FavoritePhone } from '../../types/FavoritePhone';
 
 interface Props {
-  product: Phone;
+  product: Phone | FavoritePhone;
   isInCart: boolean;
   isInFavorites: boolean;
 }
 
 export const Card: React.FC<Props> = ({ product, isInCart, isInFavorites }) => {
   const {
-    id,
-    itemId,
-    name,
-    fullPrice,
-    price,
-    screen,
-    capacity,
-    ram,
-    image,
-  } = product;
+    phoneId, name, fullPrice, price, screen, capacity, ram, image,
+  }
+    = product;
 
   const [, , addToLocalStorage, removeFromLocalStorage] = useLocalStorage();
 
-  const handleAddtoCartClick = (where: string) => addToLocalStorage(where, {
-    ...product,
-    id,
+  const handleAddtoCartClick = () => addToLocalStorage('cart', {
+    id: phoneId,
+    name,
+    image,
+    price,
     counter: 1,
+  });
+
+  const handleAddtoFavoritesClick = () => addToLocalStorage('favorites', {
+    id: phoneId,
+    phoneId,
+    name,
+    fullPrice,
+    price,
+    image,
+    screen,
+    capacity,
+    ram,
   });
 
   return (
     <section className={s.card}>
-      <Link to={{ pathname: `/phones/${itemId}` }}>
+      <Link to={{ pathname: `/phones/${phoneId}` }}>
         <img src={image} alt={name} className={s.card__img} />
 
         <h2 className={s.card__name}>{`${name} (iMT9G2FS/A)`}</h2>
@@ -72,12 +80,12 @@ export const Card: React.FC<Props> = ({ product, isInCart, isInFavorites }) => {
         <div className={s.card__buy__add}>
           {isInCart ? (
             <ActiveButton
-              onClick={() => removeFromLocalStorage('cart', id, true)}
+              onClick={() => removeFromLocalStorage('cart', phoneId, true)}
             >
               Added
             </ActiveButton>
           ) : (
-            <PrimaryButton onClick={() => handleAddtoCartClick('cart')}>
+            <PrimaryButton onClick={handleAddtoCartClick}>
               Add to cart
             </PrimaryButton>
           )}
@@ -87,7 +95,7 @@ export const Card: React.FC<Props> = ({ product, isInCart, isInFavorites }) => {
           <button
             type="button"
             className={s.card__buy__heart}
-            onClick={() => removeFromLocalStorage('favorites', id, true)}
+            onClick={() => removeFromLocalStorage('favorites', phoneId, true)}
           >
             <svg className={s.heartIcon}>
               <use href={`${icons}#icon-Favourites-Filled-Heart-Like`} />
@@ -97,7 +105,7 @@ export const Card: React.FC<Props> = ({ product, isInCart, isInFavorites }) => {
           <button
             type="button"
             className={s.card__buy__heart}
-            onClick={() => handleAddtoCartClick('favorites')}
+            onClick={handleAddtoFavoritesClick}
           >
             <svg className={s.heartIcon}>
               <use href={`${icons}#icon-Favourites-Heart-Like`} />

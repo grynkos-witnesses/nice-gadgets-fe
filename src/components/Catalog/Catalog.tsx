@@ -1,12 +1,13 @@
 import React from 'react';
 import { useLocalStorage } from '../../hooks/useLocalStorage';
+import { FavoritePhone } from '../../types/FavoritePhone';
 import { Phone } from '../../types/Phone';
 // import { PhoneInLocalStorage } from '../../types/PhoneInLocalStorage';
 import { Card } from '../Card';
 import CatalogSCSS from './Catalog.module.scss';
 
 type Props = {
-  products: Phone[];
+  products: Phone[] | FavoritePhone[];
 };
 
 export const Catalog: React.FC<Props> = ({ products }) => {
@@ -17,10 +18,10 @@ export const Catalog: React.FC<Props> = ({ products }) => {
       <div className={CatalogSCSS.catalog}>
         {products.map((product) => {
           const isInCart = Boolean(
-            cart.find((el) => el.id === product.id),
+            cart.find((el) => el.id === product.phoneId),
           );
           const isInFavorites = Boolean(
-            favorites.find((el) => el.id === product.id),
+            favorites.find((el) => el.id === product.phoneId),
           );
 
           return (

@@ -1,12 +1,11 @@
-export interface PhoneInLocalStorage {
+export interface FavoritePhone {
   id: string;
-  itemId: string;
+  phoneId: string;
   name: string;
-  price: number;
   fullPrice: number;
+  price: number;
   image: string;
   screen: string;
   capacity: string;
   ram: string;
-  counter: number;
 }

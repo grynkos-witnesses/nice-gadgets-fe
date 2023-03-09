@@ -22,14 +22,22 @@ export const PhoneActions: React.FC<Props> = ({ phone }) => {
 
   const handleAddtoCartClick = (where: string) => addToLocalStorage(where, {
     id: phone.id,
-    itemId: phone.id,
     name: phone.name,
-    price: phone.priceDiscount,
-    fullPrice: phone.priceRegular,
     image: phone.images[0],
+    price: phone.priceDiscount,
+    counter: 1,
+  });
+
+  const handleAddtoFavoritesClick = () => addToLocalStorage('favorites', {
+    id: phone.id,
+    phoneId: phone.id,
+    name: phone.name,
+    fullPrice: phone.priceRegular,
+    price: phone.priceDiscount,
+    image: phone.images[0],
+    screen: phone.screen,
     capacity: phone.capacity,
     ram: phone.ram,
-    counter: 1,
   });
 
   const colors: { [index: string]: string } = {
@@ -153,7 +161,7 @@ export const PhoneActions: React.FC<Props> = ({ phone }) => {
           <button
             type="button"
             className={s.btn__buy__heart}
-            onClick={() => handleAddtoCartClick('favorites')}
+            onClick={handleAddtoFavoritesClick}
           >
             <svg className={s.heartIcon}>
               <use href={`${icons}#icon-Favourites-Heart-Like`} />
