@@ -10,6 +10,10 @@
   background-color: $whiteColor;
 
   &__colors {
+    display: flex;
+    gap: 8px;
+
+    padding-bottom: 25px;
     margin-bottom: 24px;
 
     border-bottom: 1px solid $elementsColor;
@@ -128,115 +132,34 @@
       transform: scale(0.8);
     }
   }
+}
 
-  &_mdnGreen {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 28px;
-    height: 28px;
-    border-radius: 50%;
-    background-color: #5f7170;
+.colorBtn {
+  padding: 2px;
+  height: 32px;
+  width: 32px;
+  border-radius: 50%;
+  border: 1px solid $elementsColor;
+
+  transition: border-color $transitionSettings;
+
+  overflow: hidden;
+
+  cursor: pointer;
+
+  &:hover {
+    border-color: $primaryColor;
   }
 
-  &_black {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 28px;
-    height: 28px;
-    border-radius: 50%;
-    background-color: #1a1a00;
+  &__active {
+    border-color: $primaryColor;
   }
 
-  &_green {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 28px;
-    height: 28px;
-    border-radius: 50%;
-    background-color: #66ffc2;
-  }
+  &__background {
+    width: 100%;
+    height: 100%;
 
-  &_yellow {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 28px;
-    height: 28px;
     border-radius: 50%;
-    background-color: #ffff80;
-  }
-
-  &_white {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 28px;
-    height: 28px;
-    border-radius: 50%;
-    background-color: $whiteColor;
-  }
-
-  &_purple {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 28px;
-    height: 28px;
-    border-radius: 50%;
-    background-color: #ccb3ff;
-  }
-
-  &_red {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 28px;
-    height: 28px;
-    border-radius: 50%;
-    background-color: #e63900;
-  }
-
-  &_gold {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 28px;
-    height: 28px;
-    border-radius: 50%;
-    background-color: #fcdbc1;
-  }
-
-  &_silver {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 28px;
-    height: 28px;
-    border-radius: 50%;
-    background-color: #f0f0f0;
-  }
-
-  &_spaceGray {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 28px;
-    height: 28px;
-    border-radius: 50%;
-    background-color: #4c4c4c;
   }
 }
 
@@ -275,4 +198,7 @@
   background-color: $primaryColor;
   color: $whiteColor;
   border: 1px solid transparent;
+}
+
+.capacityBtn {
 }

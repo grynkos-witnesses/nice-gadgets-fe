@@ -22,7 +22,7 @@ export const ProductPage: FC = () => {
 
   useEffect(() => {
     window.scrollTo(0, 0);
-  }, []);
+  }, [productId]);
 
   useEffect(() => {
     loadProduct().then((loadedProduct) => setProduct(loadedProduct));
