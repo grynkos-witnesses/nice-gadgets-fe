@@ -2,7 +2,7 @@ import React from 'react';
 import Slider from 'react-slick';
 
 import s from './ProductPageSlider.module.scss';
-import './Slider.scss';
+import './ProductSlider.scss';
 
 type Props = {
   images: string[];

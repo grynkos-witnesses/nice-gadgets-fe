@@ -5,12 +5,8 @@
     width: max-content;
     height: 274px;
 
-    @include onTablet {
-      height: 340px;
-    }
-
-    @include onDesktop {
-      height: 430px;
+    @include onLaptop {
+      height: 442px;
     }
   }
 }
