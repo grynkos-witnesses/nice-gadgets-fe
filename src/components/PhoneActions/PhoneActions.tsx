@@ -82,7 +82,7 @@ export const PhoneActions: React.FC<Props> = ({ phone }) => {
     <div className={s.container}>
       <div className={s.colorsAndIdContainer}>
         <h3 className={s.subHeading}>Available colors</h3>
-        <h3 className={s.subHeading}>
+        <h3 className={[s.subHeading, s.subHeading__ID].join(' ')}>
           {`ID: ${Math.floor(100000 + Math.random() * 900000)}`}
         </h3>
       </div>

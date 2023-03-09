@@ -55,7 +55,7 @@ export const ProductInfo: FC<Props> = ({ product }) => {
           className="
             grid__item--mobile--1-4
             grid__item--tablet--8-12
-            grid__item--desktop--14-24"
+            grid__item--desktop--14-20"
         >
           <PhoneActions phone={product} />
         </div>
