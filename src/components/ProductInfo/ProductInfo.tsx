@@ -1,5 +1,6 @@
 import React, { FC } from 'react';
 import { FullPhone } from '../../types/FullPhone';
+import { Breadcrumbs } from '../Breadcrumbs/Breadcrumbs';
 import { PhoneActions } from '../PhoneActions/PhoneActions';
 import { ProductAbout } from '../ProductAbout/ProductAbout';
 import { ProductDescription } from '../ProductDescription/ProductDescription';
@@ -35,6 +36,8 @@ export const ProductInfo: FC<Props> = ({ product }) => {
 
   return (
     <div className={s.productInfo}>
+      <Breadcrumbs location={['/', '/phones', `/${name}`]} />
+
       <h1 className={`page__title ${s.productInfo__title}`}>{name}</h1>
 
       <div className={`grid ${s.productInfo__grid}`}>
