@@ -9,6 +9,12 @@
 
   background-color: $whiteColor;
 
+  &__capacity {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
   &__colors {
     display: flex;
     gap: 8px;
@@ -22,6 +28,10 @@
   &__btns {
     display: flex;
     align-items: center;
+
+    gap: 8px;
+
+    padding-bottom: 24px;
 
     margin-bottom: 32px;
 
@@ -52,60 +62,26 @@
   }
 }
 
-.intel {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
 .colorsAndIdContainer {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
-.btn {
-  display: inline-block;
-  position: relative;
+.intel {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 
-  margin-right: 8px;
-  margin-bottom: 20px;
-
-  width: 32px;
-  height: 32px;
-
-  border-radius: 50%;
-
-  background-color: $whiteColor;
-  border: 1px solid $elementsColor;
-
-  transition: all $transitionSettings;
-
-  &:hover {
-    border: 1px solid $primaryColor;
+  &__value {
+    font-family: 'Mont-Regular';
+    font-size: 12px;
   }
+}
 
+.btn {
   &__cart {
     width: 90%;
-  }
-
-  &__capacity {
-    margin-right: 8px;
-    margin-bottom: 24px;
-    padding: 8px;
-    color: $primaryColor;
-    background-color: $whiteColor;
-    border: 1px solid $elementsColor;
-    font-family: 'Mont-Regular';
-    font-size: 14px;
-    text-align: center;
-    transition: all $transitionSettings;
-
-    &:hover {
-      background-color: $primaryColor;
-      color: $whiteColor;
-      border: 1px solid transparent;
-    }
   }
 
   &__buy__heart {
@@ -163,11 +139,6 @@
   }
 }
 
-.value {
-  font-family: 'Mont-Regular';
-  font-size: 12px;
-}
-
 .heading {
   @extend %H2Text;
 
@@ -184,21 +155,36 @@
 
 .subHeading {
   display: inline-block;
-  margin-bottom: 8px;
   font-family: 'Mont-Regular';
   font-size: 12px;
   color: $secondaryColor;
 }
 
-.activeColor {
-  border: 1px solid $primaryColor;
-}
-
-.activeCapacity {
-  background-color: $primaryColor;
-  color: $whiteColor;
-  border: 1px solid transparent;
-}
-
 .capacityBtn {
+  padding: 8px;
+
+  color: $primaryColor;
+  font-family: 'Mont-Regular';
+  font-size: 14px;
+  text-align: center;
+
+  background-color: $whiteColor;
+
+  border: 1px solid $elementsColor;
+
+  transition: all $transitionSettings;
+
+  cursor: pointer;
+
+  &:hover {
+    color: $whiteColor;
+    background-color: $primaryColor;
+    border-color: transparent;
+  }
+
+  &__active {
+    color: $whiteColor;
+    background-color: $primaryColor;
+    border-color: transparent;
+  }
 }
