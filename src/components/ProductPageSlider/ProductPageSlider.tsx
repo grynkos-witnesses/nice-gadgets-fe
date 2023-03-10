@@ -1,11 +1,8 @@
 import React from 'react';
 import Slider from 'react-slick';
 
-import 'slick-carousel/slick/slick.css';
-import 'slick-carousel/slick/slick-theme.css';
-
 import s from './ProductPageSlider.module.scss';
-import './ProductSlider.scss';
+import bs from './ProductSlider.module.scss';
 
 type Props = {
   images: string[];
@@ -28,7 +25,7 @@ export const ProductPageSlider: React.FC<Props> = ({ images, name }) => {
   };
 
   return (
-    <div className="gallery">
+    <div className={bs.gallery}>
       <div className={s.slider}>
         <Slider className={s.slider__container} {...settings}>
           {images.map((image) => (

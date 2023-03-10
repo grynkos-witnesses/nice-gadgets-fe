@@ -3,7 +3,7 @@ import Slider from 'react-slick';
 
 import s from './Swiper.module.scss';
 import '../../base_styles/utils/_grid.scss';
-import './Slider.scss';
+import './Slider.module.scss';
 
 import mainBanner from '../../mock_data/img/mainBanner-mobile.png';
 import banner1 from '../../mock_data/img/banner-phones.png';

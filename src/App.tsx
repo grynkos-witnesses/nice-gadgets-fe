@@ -1,6 +1,10 @@
 import React from 'react';
 import { Outlet, useLocation } from 'react-router-dom';
 import './App.scss';
+
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
+
 import { BurgerMenu } from './components/BurgerMenu/BurgerMenu';
 import { Footer } from './components/Footer/Footer';
 import { Header } from './components/Header/Header';

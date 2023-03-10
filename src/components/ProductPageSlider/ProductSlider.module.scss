@@ -1,7 +1,7 @@
 @import '../../base_styles/';
 
-.gallery .slick {
-  &-slider {
+.gallery {
+  :global(.slick-slider) {
     display: flex;
     flex-direction: column;
     gap: 24px;
@@ -11,7 +11,7 @@
     }
   }
 
-  &-image {
+  :global(.slick-image) {
     object-fit: contain;
     object-position: top;
 
@@ -28,12 +28,12 @@
     @include onTablet {
       padding: 3px;
     }
-    &:hover {
+    :global(.slick-image:hover) {
       transform: scale(0.9);
     }
   }
 
-  &-dots {
+  :global(.slick-dots) {
     position: static;
     display: flex !important;
     align-items: center;
@@ -52,7 +52,7 @@
     }
   }
 
-  &-dots li {
+  :global(.slick-dots li) {
     width: 50px;
     height: 48px;
 
@@ -67,11 +67,11 @@
     }
   }
 
-  &-active .slick-image {
+  :global(.slick-active .slick-image) {
     border: 1px solid $primaryColor;
   }
 
-  &-slide {
+  :global(.slick-slide) {
     display: none;
     align-items: center;
     height: 274px;
@@ -82,7 +82,7 @@
     }
   }
 
-  &-initialized &-slide {
+  :global(.slick-initialized .slick-slide) {
     display: flex;
     justify-content: center;
   }

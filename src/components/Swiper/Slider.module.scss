@@ -1,9 +1,9 @@
 @import '../../base_styles/';
 
-.banner .slick {
+.banner {
   @include onTablet {
-    &-prev,
-    &-next {
+    :global(.slick-prev),
+    :global(.slick-next) {
       font-size: 0;
       line-height: 0;
 
@@ -33,12 +33,12 @@
       }
     }
 
-    &-prev {
+    :global(.slick-prev) {
       left: -45px;
       position: absolute;
       z-index: 1;
 
-      &::after {
+      :global(.slick-prev::after) {
         content: '';
         display: block;
         width: 15px;
@@ -51,7 +51,7 @@
       }
     }
 
-    &-next {
+    :global(.slick-next) {
       right: -45px;
 
       &::before {
@@ -68,7 +68,7 @@
     }
   }
 
-  &-dot {
+  :global(.slick-dot) {
     background: $elementsColor;
     transition: opacity $transitionSettings, background $transitionSettings;
 
@@ -78,7 +78,7 @@
     }
   }
 
-  &-dots {
+  :global(.slick-dots) {
     position: absolute;
     display: block;
 
@@ -88,7 +88,7 @@
     list-style: none;
     text-align: center;
 
-    & li {
+    :global(.slick-dots li) {
       position: relative;
 
       display: inline-block;
@@ -97,7 +97,7 @@
 
       cursor: pointer;
 
-      & button {
+      :global(.slick-dots button) {
         font-size: 0;
         line-height: 0;
 
@@ -116,13 +116,13 @@
     }
   }
 
-  &-active {
-    .slick-dot {
+  :global(.slick-active) {
+    :global(.slick-dot) {
       background: $primaryColor;
     }
   }
 
-  &-slider {
+  :global(.slick-slider) {
     position: relative;
 
     display: block;
@@ -139,7 +139,7 @@
     -webkit-tap-highlight-color: transparent;
   }
 
-  &-list {
+  :global(.slick-list) {
     position: relative;
 
     display: block;
@@ -148,17 +148,17 @@
     margin: 0;
     padding: 0;
   }
-  &-list:focus {
+  :global(.slick-list:focus) {
     outline: none;
   }
 
-  &-slider &-track,
-  &-slider &-list {
+  :global(.slick-slider .slick-track,
+  .slick-slider .slick-list) {
     -ms-transform: translate3d(0, 0, 0);
     transform: translate3d(0, 0, 0);
   }
 
-  &-track {
+  :global(.slick-track) {
     position: relative;
     top: 0;
     left: 0;
@@ -167,52 +167,52 @@
     margin-left: auto;
     margin-right: auto;
   }
-  &-track:before,
-  &-track:after {
+  :global(.slick-track:before,
+  .slick-track:after) {
     display: table;
 
     content: '';
   }
-  &-track:after {
+  :global(.slick-track:after) {
     clear: both;
   }
-  &-loading &-track {
+  :global(.slick-loading .slick-track){
     visibility: hidden;
   }
 
-  &-slide {
+  :global(.slick-slide) {
     display: none;
     float: left;
 
     height: 100%;
     min-height: 1px;
   }
-  [dir='rtl'] &-slide {
+  :global([dir='rtl'] .slick-slide ) {
     float: right;
   }
-  &-slide img {
+  :global(.slick-slide img) {
     display: block;
   }
-  &-slide &-loading img {
+  :global(.slick-slide .slick-loading img) {
     display: none;
   }
-  &-slide.dragging img {
+  :global(.slick-slide.dragging img) {
     pointer-events: none;
   }
-  &-initialized &-slide {
+  :global(.slick-initialized .slick-slide) {
     display: block;
   }
-  &-loading &-slide {
+  :global(.slick-loading .slick-slide) {
     visibility: hidden;
   }
-  &-vertical &-slide {
+  :global(.slick-vertical .slick-slide) {
     display: block;
 
     height: auto;
 
     border: 1px solid transparent;
   }
-  &-arrow &-hidden {
+  :global(.slick-arrow .slick-hidden) {
     display: none;
   }
 }
