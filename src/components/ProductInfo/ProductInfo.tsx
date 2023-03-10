@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import React, { FC } from 'react';
 import { FullPhone } from '../../types/FullPhone';
 import { Breadcrumbs } from '../Breadcrumbs/Breadcrumbs';
@@ -35,9 +36,15 @@ export const ProductInfo: FC<Props> = ({ product }) => {
     cell,
   } = product;
 
+  console.log(product.name.split(' ')[1]);
+
   return (
     <div className={s.productInfo}>
-      <Breadcrumbs location={['/', '/phones', `/${name}`]} />
+      {product.name.split(' ')[1] === 'iPhone' ? (
+        <Breadcrumbs location={['/', '/phones', `/${name}`]} />
+      ) : (
+        <Breadcrumbs location={['/', '/tablets', `/${name}`]} />
+      )}
 
       <h1 className={`page__title ${s.productInfo__title}`}>{name}</h1>
 
