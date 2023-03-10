@@ -52,6 +52,7 @@ export const PhoneActions: React.FC<Props> = ({ phone }) => {
     white: '#fffff',
     purple: '#ccb3ff',
     red: '#e63900',
+    blue: '#425cde',
   };
 
   function changeCapacity(id: string, newCapacity: string) {
