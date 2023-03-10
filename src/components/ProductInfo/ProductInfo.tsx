@@ -40,9 +40,11 @@ export const ProductInfo: FC<Props> = ({ product }) => {
 
   return (
     <div className={s.productInfo}>
-      {(product.name.split(' ')[1]) === 'iPhone'
-        ? (<Breadcrumbs location={['/', '/phones', `/${name}`]} />)
-        : (<Breadcrumbs location={['/', '/tablets', `/${name}`]} />)}
+      {product.name.split(' ')[1] === 'iPhone' ? (
+        <Breadcrumbs location={['/', '/phones', `/${name}`]} />
+      ) : (
+        <Breadcrumbs location={['/', '/tablets', `/${name}`]} />
+      )}
 
       <h1 className={`page__title ${s.productInfo__title}`}>{name}</h1>
 
