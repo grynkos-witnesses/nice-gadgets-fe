@@ -7,6 +7,7 @@ import { App } from './App';
 import { NotFoundPage } from './pages/NotFoundPage/NotFoundPage';
 import { HomePage } from './pages/HomePage/HomePage';
 import { PhonesPage } from './pages/PhonesPage/PhonesPage';
+import { TabletsPage } from './pages/TabletsPage/TabletsPage';
 import { ProductPage } from './pages/ProductPage/ProductPage';
 import { CartPage } from './pages/CartPage/CartPage';
 import { FavoritesPage } from './pages/FavoritesPage/FavoritesPage';
@@ -23,6 +24,11 @@ ReactDOM.render(
 
           <Route path="phones">
             <Route index element={<PhonesPage />} />
+            <Route path=":productId" element={<ProductPage />} />
+          </Route>
+
+          <Route path="tablets">
+            <Route index element={<TabletsPage />} />
             <Route path=":productId" element={<ProductPage />} />
           </Route>
 
