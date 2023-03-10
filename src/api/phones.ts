@@ -1,5 +1,6 @@
 import axios from 'axios';
 import { PhonesResponse } from '../types/PhonesResponse';
+import { TabletsResponse } from '../types/TabletsResponse';
 import { Phone } from '../types/Phone';
 import { FullPhone } from '../types/FullPhone';
 
@@ -12,6 +13,16 @@ export function getPhones(
 ): Promise<PhonesResponse> {
   return axios
     .get(`/products?page=${page}&perPage=${perPage}&sortBy=${sortBy}`)
+    .then((res) => res.data);
+}
+
+export function getTablets(
+  page: number,
+  perPage: number,
+  sortBy: string,
+): Promise<TabletsResponse> {
+  return axios
+    .get(`/products/tablets?page=${page}&perPage=${perPage}&sortBy=${sortBy}`)
     .then((res) => res.data);
 }
 
