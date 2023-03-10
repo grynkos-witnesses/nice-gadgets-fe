@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import s from './Card.module.scss';
 import icons from '../../icons/iconsSprite.svg';
 import { PrimaryButton } from '../PrimaryButton/PrimaryButton';
@@ -20,6 +20,7 @@ export const Card: React.FC<Props> = ({ product, isInCart, isInFavorites }) => {
   }
     = product;
 
+  const location = useLocation();
   const [, , addToLocalStorage, removeFromLocalStorage] = useLocalStorage();
 
   const handleAddtoCartClick = () => addToLocalStorage('cart', {
@@ -44,7 +45,10 @@ export const Card: React.FC<Props> = ({ product, isInCart, isInFavorites }) => {
 
   return (
     <section className={s.card}>
-      <Link to={{ pathname: `/phones/${phoneId}` }} className={s.card__link}>
+      <Link
+        to={{ pathname: `${location.pathname}/${phoneId}` }}
+        className={s.card__link}
+      >
         <img src={image} alt={name} className={s.card__img} />
 
         <h2 className={s.card__name}>{`${name} (iMT9G2FS/A)`}</h2>
