@@ -47,7 +47,7 @@ export const TabletsPage = () => {
   return (
     <div className={s.tabletsPage}>
       <div className="container">
-        <Breadcrumbs location={['/', '/tablets']} />
+        <Breadcrumbs />
 
         <h1 className={`page__title ${s.tabletsPage__title}`}>Tablets</h1>
 

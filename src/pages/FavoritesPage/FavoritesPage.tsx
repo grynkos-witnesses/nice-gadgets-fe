@@ -14,7 +14,7 @@ export const FavoritesPage: FC = () => {
   return (
     <div className={s.favoritesPage}>
       <div className="container">
-        <Breadcrumbs location={['/', '/Favorites']} />
+        <Breadcrumbs />
         <h1 className={`page__title ${s.favoritesPage__title}`}>Favorites</h1>
 
         {favoritesItems.length ? (
