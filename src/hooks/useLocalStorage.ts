@@ -1,11 +1,17 @@
+/* eslint-disable no-debugger */
 /* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable consistent-return */
-import { useEffect, useState } from 'react';
+import {
+  useCallback, useEffect, useMemo, useState,
+} from 'react';
 import { CartPhone } from '../types/CartPhone';
 import { FavoritePhone } from '../types/FavoritePhone';
 
-type LocalAddFunc = (key: string, value: CartPhone | FavoritePhone) => void;
-type LocalRemoveFunc = (
+export type LocalAddFunc = (
+  key: string,
+  value: CartPhone | FavoritePhone,
+) => void;
+export type LocalRemoveFunc = (
   key: string,
   removingElId: string,
   clearCompletely: boolean,
@@ -13,6 +19,7 @@ type LocalRemoveFunc = (
 type HookOutput = [CartPhone[], FavoritePhone[], LocalAddFunc, LocalRemoveFunc];
 
 export function useLocalStorage(): HookOutput {
+  const event: any = useMemo(() => new Event('storage'), []);
   const cartJSON = localStorage.getItem('cart') || '[]';
   const favoritesJSON = localStorage.getItem('favorites') || '[]';
 
@@ -20,110 +27,115 @@ export function useLocalStorage(): HookOutput {
   const [favorites, setFavorites] = useState(JSON.parse(favoritesJSON));
 
   useEffect(() => {
-    const handleStorage = (event: any) => {
-      if (event.key === 'cart') {
-        setCart(event.body);
+    const handleStorage = (e: any) => {
+      if (e.key === 'cart') {
+        setCart(e.body);
       }
 
-      if (event.key === 'favorites') {
-        setFavorites(event.body);
+      if (e.key === 'favorites') {
+        setFavorites(e.body);
       }
     };
 
     window.addEventListener('storage', handleStorage);
 
     return () => window.removeEventListener('storage', handleStorage);
-  }, []);
+  }, [event.key, event.body]);
 
-  function addToLocalStorage(key: string, value: CartPhone | FavoritePhone) {
-    const stringStorage = localStorage.getItem(key);
+  const addToLocalStorage = useCallback(
+    (key: string, value: CartPhone | FavoritePhone) => {
+      const stringStorage = localStorage.getItem(key);
 
-    const storage = stringStorage ? JSON.parse(stringStorage) : [];
+      const storage = stringStorage ? JSON.parse(stringStorage) : [];
 
-    const exsistingProduct = storage.find(
-      (el: { id: string }) => el.id === value.id,
-    );
+      const exsistingProduct = storage.find(
+        (el: { id: string }) => el.id === value.id,
+      );
 
-    switch (key) {
-      case 'cart':
-        if (exsistingProduct) {
-          exsistingProduct.counter += 1;
-        } else {
+      switch (key) {
+        case 'cart':
+          if (exsistingProduct) {
+            exsistingProduct.counter += 1;
+          } else {
+            storage.push(value);
+          }
+
+          break;
+
+        default:
+          if (exsistingProduct) {
+            return undefined;
+          }
+
           storage.push(value);
-        }
 
-        break;
+          break;
+      }
 
-      default:
-        if (exsistingProduct) {
-          return undefined;
-        }
+      localStorage.setItem(key, JSON.stringify(storage));
 
-        storage.push(value);
+      event.key = key;
+      event.body = storage;
 
-        break;
-    }
+      window.dispatchEvent(event);
+    },
+    [],
+  );
 
-    localStorage.setItem(key, JSON.stringify(storage));
+  const removeFromLocalStorage = useCallback(
+    (key: string, removingElId: string, clearCompletely = false) => {
+      const stringStorage = localStorage.getItem(key);
 
-    const event: any = new Event('storage');
+      let storage = stringStorage ? JSON.parse(stringStorage) : [];
 
-    event.key = key;
-    event.body = storage;
+      const exsistingProduct = storage.find(
+        (el: { id: string }) => el.id === removingElId,
+      );
 
-    window.dispatchEvent(event);
-  }
+      if (!exsistingProduct) {
+        return;
+      }
 
-  function removeFromLocalStorage(
-    key: string,
-    removingElId: string,
-    clearCompletely = false,
-  ) {
-    const stringStorage = localStorage.getItem(key);
-
-    let storage = stringStorage ? JSON.parse(stringStorage) : [];
-
-    const exsistingProduct = storage.find(
-      (el: { id: string }) => el.id === removingElId,
-    );
-
-    if (!exsistingProduct) {
-      return;
-    }
-
-    if (clearCompletely) {
-      storage = storage.filter((el: { id: string }) => el.id !== removingElId);
-    }
-
-    switch (key) {
-      case 'cart':
-        if (exsistingProduct.counter > 1) {
-          exsistingProduct.counter -= 1;
-        } else {
-          storage = storage.filter(
-            (el: { id: string }) => el.id !== removingElId,
-          );
-        }
-
-        break;
-
-      default:
+      if (clearCompletely) {
         storage = storage.filter(
           (el: { id: string }) => el.id !== removingElId,
         );
+      }
 
-        break;
-    }
+      switch (key) {
+        case 'cart':
+          if (exsistingProduct.counter > 1) {
+            exsistingProduct.counter -= 1;
+          } else {
+            storage = storage.filter(
+              (el: { id: string }) => el.id !== removingElId,
+            );
+          }
 
-    localStorage.setItem(key, JSON.stringify(storage));
+          break;
 
-    const event: any = new Event('storage');
+        default:
+          storage = storage.filter(
+            (el: { id: string }) => el.id !== removingElId,
+          );
 
-    event.key = key;
-    event.body = storage;
+          break;
+      }
 
-    window.dispatchEvent(event);
-  }
+      localStorage.setItem(key, JSON.stringify(storage));
 
-  return [cart, favorites, addToLocalStorage, removeFromLocalStorage];
+      event.key = key;
+      event.body = storage;
+
+      window.dispatchEvent(event);
+    },
+    [],
+  );
+
+  const HO: HookOutput = useMemo(
+    () => [cart, favorites, addToLocalStorage, removeFromLocalStorage],
+    [cart, favorites],
+  );
+
+  return HO;
 }

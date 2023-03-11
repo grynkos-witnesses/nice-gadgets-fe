@@ -1,4 +1,3 @@
-/* eslint-disable no-console */
 import React, { FC } from 'react';
 import { FullPhone } from '../../types/FullPhone';
 import { Breadcrumbs } from '../Breadcrumbs/Breadcrumbs';
@@ -16,15 +15,8 @@ interface Props {
 
 export const ProductInfo: FC<Props> = ({ product }) => {
   const {
-    // id,
-    // namespaceId,
     name,
-    // capacityAvailable,
     capacity,
-    // priceRegular,
-    // priceDiscount,
-    // colorsAvailable,
-    // color,
     images,
     description,
     screen,

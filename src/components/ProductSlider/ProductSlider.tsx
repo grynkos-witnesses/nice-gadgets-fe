@@ -1,4 +1,6 @@
-import React, { FC, useEffect, useState } from 'react';
+import React, {
+  FC, memo, useEffect, useState,
+} from 'react';
 
 import { Notify } from 'notiflix';
 import { Phone } from '../../types/Phone';
@@ -13,11 +15,12 @@ interface Props {
   fetchProducts: () => Promise<Phone[]>;
 }
 
-export const ProductSlider: FC<Props> = ({ fetchProducts }) => {
+export const ProductSlider: FC<Props> = memo(({ fetchProducts }) => {
   const [cards, setCards] = useState<Phone[]>([]);
   const [translate, setTranslate] = useState(0);
   const [stepSize, setStepSize] = useState(0);
-  const [cart, favorites] = useLocalStorage();
+  const [cart, favorites, addToLocalStorage, removeFromLocalStorage]
+    = useLocalStorage();
 
   const styles = {
     transform: `translateX(${translate}px)`,
@@ -97,11 +100,13 @@ export const ProductSlider: FC<Props> = ({ fetchProducts }) => {
             );
 
             return (
-              <div key={card.id} className={s.slider__item}>
+              <div key={card.phoneId} className={s.slider__item}>
                 <Card
                   product={card}
                   isInCart={isInCart}
                   isInFavorites={isInFavorites}
+                  addToLocalStorage={addToLocalStorage}
+                  removeFromLocalStorage={removeFromLocalStorage}
                 />
               </div>
             );
@@ -110,4 +115,4 @@ export const ProductSlider: FC<Props> = ({ fetchProducts }) => {
       </div>
     </section>
   );
-};
+});

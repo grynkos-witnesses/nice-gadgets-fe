@@ -2,7 +2,6 @@ import React from 'react';
 import { useLocalStorage } from '../../hooks/useLocalStorage';
 import { FavoritePhone } from '../../types/FavoritePhone';
 import { Phone } from '../../types/Phone';
-// import { PhoneInLocalStorage } from '../../types/PhoneInLocalStorage';
 import { Card } from '../Card';
 import CatalogSCSS from './Catalog.module.scss';
 
@@ -11,7 +10,8 @@ type Props = {
 };
 
 export const Catalog: React.FC<Props> = ({ products }) => {
-  const [cart, favorites] = useLocalStorage();
+  const [cart, favorites, addToLocalStorage, removeFromLocalStorage]
+    = useLocalStorage();
 
   return (
     <>
@@ -30,6 +30,8 @@ export const Catalog: React.FC<Props> = ({ products }) => {
                 product={product}
                 isInCart={isInCart}
                 isInFavorites={isInFavorites}
+                addToLocalStorage={addToLocalStorage}
+                removeFromLocalStorage={removeFromLocalStorage}
               />
             </div>
           );
