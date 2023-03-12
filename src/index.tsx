@@ -11,6 +11,7 @@ import { TabletsPage } from './pages/TabletsPage/TabletsPage';
 import { ProductPage } from './pages/ProductPage/ProductPage';
 import { CartPage } from './pages/CartPage/CartPage';
 import { FavoritesPage } from './pages/FavoritesPage/FavoritesPage';
+import { ContactsPage } from './pages/ContactsPage/ContactsPage';
 
 ReactDOM.render(
   <React.StrictMode>
@@ -32,6 +33,7 @@ ReactDOM.render(
             <Route path=":productId" element={<ProductPage />} />
           </Route>
 
+          <Route path="contacts" element={<ContactsPage />} />
           <Route path="cart" element={<CartPage />} />
           <Route path="favorites" element={<FavoritesPage />} />
         </Route>

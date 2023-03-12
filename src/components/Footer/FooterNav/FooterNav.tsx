@@ -8,9 +8,10 @@ export const FooterNav: React.FC = memo(() => {
       <FooterNavLink
         to="https://github.com/grynkos-witnesses/nice-gadgets-fe"
         text="github"
+        target="_blank"
       />
       <FooterNavLink to="/contacts" text="contacts" />
-      <FooterNavLink to="/rights" text="rights" />
+      <FooterNavLink to="/rights" text="rights" target="_blank" />
     </div>
   );
 });

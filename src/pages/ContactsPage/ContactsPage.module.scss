@@ -1,0 +1,59 @@
+@import '../../base_styles/index.scss';
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.listContainer {
+  display: flex;
+  gap: 16px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  @include onDesktop {
+    flex-direction: row;
+  }
+}
+
+.infoContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 8px 16px 8px 0px;
+}
+
+.card {
+  display: flex;
+
+  background-color: $elementsColor;
+  border-radius: 8%;
+
+  height: 140px;
+  width: 90%;
+}
+
+.image {
+  display: inline-block;
+  width: 140px;
+  height: 140px;
+
+  margin-right: 16px;
+
+  border-radius: 8%;
+}
+
+.name {
+  font-family: 'Mont-Regular';
+  font-size: 20px;
+}
+
+.link {
+  display: block;
+  font-family: 'Mont-Regular';
+  font-size: 14px;
+
+  margin-top: 4px;
+}
