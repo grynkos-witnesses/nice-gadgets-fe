@@ -4,7 +4,7 @@ import { TabletsResponse } from '../types/TabletsResponse';
 import { Phone } from '../types/Phone';
 import { FullPhone } from '../types/FullPhone';
 
-axios.defaults.baseURL = 'https://secret-meadow-92340.herokuapp.com/';
+axios.defaults.baseURL = 'https://nice-gadgets-8ipl.onrender.com';
 
 export function getPhones(
   page: number,
