@@ -41,7 +41,7 @@ export const ProductSlider: FC<Props> = memo(({ fetchProducts }) => {
 
   useEffect(() => {
     if (windowWidth >= 1200) {
-      setStepSize((272 + 16));
+      setStepSize(272 + 16);
     }
 
     if (windowWidth < 1200) {
@@ -85,46 +85,51 @@ export const ProductSlider: FC<Props> = memo(({ fetchProducts }) => {
 
   return (
     <section className={s.slider}>
-      {isLoading
-        ? <Loader type="local" />
-        : (
-          <>
-            <div className={s.scroll}>
-              <div className={s.scroll__container}>
-                <IconButton disabled={translate === 0} onClick={goBack}>
-                  <use href={`${icons}#icon-Chevron-Arrow-Left`} />
-                </IconButton>
+      {isLoading ? (
+        <Loader type="local" />
+      ) : (
+        <>
+          <div className={s.scroll}>
+            <div className={s.scroll__container}>
+              <IconButton disabled={translate === 0} onClick={goBack}>
+                <use href={`${icons}#icon-Chevron-Arrow-Left`} />
+              </IconButton>
 
-                <IconButton disabled={translate <= -maxTranslate} onClick={goNext}>
-                  <use href={`${icons}#icon-Chevron-Arrow-Right`} />
-                </IconButton>
-              </div>
+              <IconButton
+                disabled={translate <= -maxTranslate}
+                onClick={goNext}
+              >
+                <use href={`${icons}#icon-Chevron-Arrow-Right`} />
+              </IconButton>
             </div>
+          </div>
 
-            <div className={s.slider__container}>
-              <div className={s.slider__content} style={styles}>
-                {cards.map((card) => {
-                  const isInCart = Boolean(cart.find((el) => el.id === card.phoneId));
-                  const isInFavorites = Boolean(
-                    favorites.find((el) => el.id === card.phoneId),
-                  );
+          <div className={s.slider__container}>
+            <div className={s.slider__content} style={styles}>
+              {cards.map((card) => {
+                const isInCart = Boolean(
+                  cart.find((el) => el.id === card.phoneId),
+                );
+                const isInFavorites = Boolean(
+                  favorites.find((el) => el.id === card.phoneId),
+                );
 
-                  return (
-                    <div key={card.phoneId} className={s.slider__item}>
-                      <Card
-                        product={card}
-                        isInCart={isInCart}
-                        isInFavorites={isInFavorites}
-                        addToLocalStorage={addToLocalStorage}
-                        removeFromLocalStorage={removeFromLocalStorage}
-                      />
-                    </div>
-                  );
-                })}
-              </div>
+                return (
+                  <div key={card.phoneId} className={s.slider__item}>
+                    <Card
+                      product={card}
+                      isInCart={isInCart}
+                      isInFavorites={isInFavorites}
+                      addToLocalStorage={addToLocalStorage}
+                      removeFromLocalStorage={removeFromLocalStorage}
+                    />
+                  </div>
+                );
+              })}
             </div>
-          </>
-        )}
+          </div>
+        </>
+      )}
     </section>
   );
 });

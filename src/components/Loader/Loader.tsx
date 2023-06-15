@@ -3,7 +3,7 @@ import cn from 'classnames';
 import s from './Loader.module.scss';
 
 type Props = {
-  type: 'fullscreen' | 'local'
+  type?: 'fullscreen' | 'local';
 };
 
 export const Loader: FC<Props> = ({ type = 'fullscreen' }) => (
