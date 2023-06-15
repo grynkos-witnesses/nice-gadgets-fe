@@ -10,12 +10,14 @@ import icons from '../../icons/iconsSprite.svg';
 import s from './ProductSlider.module.scss';
 import { useLocalStorage } from '../../hooks/useLocalStorage';
 import { IconButton } from '../IconButton/IconButton';
+import { Loader } from '../Loader/Loader';
 
 interface Props {
   fetchProducts: () => Promise<Phone[]>;
 }
 
 export const ProductSlider: FC<Props> = memo(({ fetchProducts }) => {
+  const [isLoading, setIsloading] = useState(false);
   const [cards, setCards] = useState<Phone[]>([]);
   const [translate, setTranslate] = useState(0);
   const [stepSize, setStepSize] = useState(0);
@@ -39,7 +41,7 @@ export const ProductSlider: FC<Props> = memo(({ fetchProducts }) => {
 
   useEffect(() => {
     if (windowWidth >= 1200) {
-      setStepSize(272 + 16);
+      setStepSize((272 + 16));
     }
 
     if (windowWidth < 1200) {
@@ -53,11 +55,15 @@ export const ProductSlider: FC<Props> = memo(({ fetchProducts }) => {
 
   const getProdducts = async () => {
     try {
+      setIsloading(true);
+
       const loadedCards = await fetchProducts();
 
       setCards(loadedCards);
     } catch (error) {
       Notify.failure('Cant load data');
+    } finally {
+      setIsloading(false);
     }
   };
 
@@ -79,40 +85,46 @@ export const ProductSlider: FC<Props> = memo(({ fetchProducts }) => {
 
   return (
     <section className={s.slider}>
-      <div className={s.scroll}>
-        <div className={s.scroll__container}>
-          <IconButton disabled={translate === 0} onClick={goBack}>
-            <use href={`${icons}#icon-Chevron-Arrow-Left`} />
-          </IconButton>
+      {isLoading
+        ? <Loader type="local" />
+        : (
+          <>
+            <div className={s.scroll}>
+              <div className={s.scroll__container}>
+                <IconButton disabled={translate === 0} onClick={goBack}>
+                  <use href={`${icons}#icon-Chevron-Arrow-Left`} />
+                </IconButton>
 
-          <IconButton disabled={translate <= -maxTranslate} onClick={goNext}>
-            <use href={`${icons}#icon-Chevron-Arrow-Right`} />
-          </IconButton>
-        </div>
-      </div>
-
-      <div className={s.slider__container}>
-        <div className={s.slider__content} style={styles}>
-          {cards.map((card) => {
-            const isInCart = Boolean(cart.find((el) => el.id === card.phoneId));
-            const isInFavorites = Boolean(
-              favorites.find((el) => el.id === card.phoneId),
-            );
-
-            return (
-              <div key={card.phoneId} className={s.slider__item}>
-                <Card
-                  product={card}
-                  isInCart={isInCart}
-                  isInFavorites={isInFavorites}
-                  addToLocalStorage={addToLocalStorage}
-                  removeFromLocalStorage={removeFromLocalStorage}
-                />
+                <IconButton disabled={translate <= -maxTranslate} onClick={goNext}>
+                  <use href={`${icons}#icon-Chevron-Arrow-Right`} />
+                </IconButton>
               </div>
-            );
-          })}
-        </div>
-      </div>
+            </div>
+
+            <div className={s.slider__container}>
+              <div className={s.slider__content} style={styles}>
+                {cards.map((card) => {
+                  const isInCart = Boolean(cart.find((el) => el.id === card.phoneId));
+                  const isInFavorites = Boolean(
+                    favorites.find((el) => el.id === card.phoneId),
+                  );
+
+                  return (
+                    <div key={card.phoneId} className={s.slider__item}>
+                      <Card
+                        product={card}
+                        isInCart={isInCart}
+                        isInFavorites={isInFavorites}
+                        addToLocalStorage={addToLocalStorage}
+                        removeFromLocalStorage={removeFromLocalStorage}
+                      />
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+          </>
+        )}
     </section>
   );
 });
