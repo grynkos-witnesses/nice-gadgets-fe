@@ -3,7 +3,7 @@
 ## General info
 This project, built using React and other related technologies, is the best example of teamwork you have ever seen. This is the frontend part of a full-stack project hosted on the Heroku service. All the data displayed here is obtained directly from the server, which we implemented in the backend part.
 
-## [Demo Link](https://www.figma.com/file/T5ttF21UnT6RRmCQQaZc6L/Phone-catalog-(V2)-Original?node-id=0%3A1)
+## [Demo Link](https://grynkos-witnesses.github.io/nice-gadgets-fe/)
 
 ## [Design](https://www.figma.com/file/T5ttF21UnT6RRmCQQaZc6L/Phone-catalog-(V2)-Original?node-id=0%3A1)
 	
