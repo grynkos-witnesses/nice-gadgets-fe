@@ -5,8 +5,7 @@ This project, built using React and other related technologies, is the best exam
 
 ## [Demo Link](https://www.figma.com/file/T5ttF21UnT6RRmCQQaZc6L/Phone-catalog-(V2)-Original?node-id=0%3A1)
 
-## Design
-* [Figma](https://www.figma.com/file/T5ttF21UnT6RRmCQQaZc6L/Phone-catalog-(V2)-Original?node-id=0%3A1)
+## [Design](https://www.figma.com/file/T5ttF21UnT6RRmCQQaZc6L/Phone-catalog-(V2)-Original?node-id=0%3A1)
 	
 ## Technologies
 The following technologies were used to build this project:
