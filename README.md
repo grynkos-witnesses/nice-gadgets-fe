@@ -3,6 +3,8 @@
 ## General info
 This project, built using React and other related technologies, is the best example of teamwork you have ever seen. This is the frontend part of a full-stack project hosted on the Heroku service. All the data displayed here is obtained directly from the server, which we implemented in the backend part.
 
+## [Demo Link](https://www.figma.com/file/T5ttF21UnT6RRmCQQaZc6L/Phone-catalog-(V2)-Original?node-id=0%3A1)
+
 ## Design
 * [Figma](https://www.figma.com/file/T5ttF21UnT6RRmCQQaZc6L/Phone-catalog-(V2)-Original?node-id=0%3A1)
 	
@@ -91,9 +93,3 @@ The project is structured as follows:
 This project demonstrates how to build a modern frontend application using React and related technologies. By using modular CSS techniques like module CSS and BEM, we can write CSS that is more maintainable and easier to read. TypeScript adds type safety to our code, which makes it easier to catch bugs during development. React-Slick allows us to build responsive, customizable carousels and sliders that work well on both desktop and mobile devices.
 
 If you have any questions or feedback about this project, please feel free to reach out to the contributors. We hope this project inspires you to build your own frontend projects using the latest web technologies!
-
-
-## Heroku
-This server hosting on heroku.app so you can check it too: 
-
-* [Heroku](https://nice-gadgets.herokuapp.com/)
